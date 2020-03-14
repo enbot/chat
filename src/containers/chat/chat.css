@@ -1,6 +1,6 @@
 .chat{
     z-index: 3;
-    background: red;
+    background: gray;
     width: 100vw;
     height: 100vh;
     position: fixed;
