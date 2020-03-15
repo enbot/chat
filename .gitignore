@@ -1,30 +1,26 @@
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+# Created by https://www.gitignore.io/api/sass,react
+# Edit at https://www.gitignore.io/?templates=sass,react
 
-# dependencies
+### react ###
+.DS_*
+*.log
+logs
+**/*.backup.*
+**/*.back.*
+
 node_modules
-*/.pnp
-.pnp.js
+bower_components
 
-# testing
-/coverage
+*.sublime*
 
-# production
-*/build
+psd
+thumb
+sketch
 
-# misc
-.DS_Store
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
+### Sass ###
+.sass-cache/
+*.css.map
+*.sass.map
+*.scss.map
 
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-
-# output
-*.pyc
-
-# app
-.brain
-.history
+# End of https://www.gitignore.io/api/sass,react

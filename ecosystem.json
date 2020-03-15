@@ -1,0 +1,14 @@
+{
+    "apps": [
+        {
+            "name": "sass",
+            "script": "gulp",
+            "args": "sass"
+        },
+        {
+            "name": "react",
+            "script": "npm",
+            "args": "start"
+        }
+    ]
+}
