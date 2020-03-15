@@ -1,7 +1,7 @@
 import React from 'react';
-import Space from './containers/space/space'
-import Bot from './containers/bot/bot'
-import Chat from './containers/chat/chat'
+import Space from './containers/space'
+import Bot from './containers/bot'
+import Chat from './containers/chat'
 import './styles/app.css';
 
 function App() {

@@ -6,4 +6,11 @@
     position: fixed;
     top: 0;
     left: 0;
+
+    .messages{
+        background-color: blue;
+        overflow-x: hidden;
+        overflow-y: auto;
+        height: 300px;
+    }
 }

@@ -1,14 +1,22 @@
 {
   "name": "enbot-chat",
-  "version": "0.1.0",
+  "description": "",
+  "version": "1.0.0",
+  "author": "Nathan Botelho",
   "private": true,
+  "license": "MIT",
+  "homepage": "https://github.com/enbot/enbot-chat#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/enbot/enbot-chat.git"
+  },
+  "bugs": {
+    "url": "https://github.com/enbot/enbot-chat/issues"
+  },
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
-    "fs": "0.0.1-security",
-    "gulp": "^4.0.2",
-    "gulp-sass": "^4.0.2",
     "moment": "^2.24.0",
     "react": "^16.13.0",
     "react-dom": "^16.13.0",

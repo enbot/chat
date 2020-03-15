@@ -1,0 +1,15 @@
+.chat {
+  z-index: 3;
+  background: transparent;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0; }
+  .chat .messages {
+    background-color: blue;
+    overflow-x: hidden;
+    overflow-y: auto;
+    height: 300px; }
+
+/*# sourceMappingURL=chat.css.map */

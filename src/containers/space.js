@@ -1,5 +1,5 @@
 import React from 'react';
-import './space.css';
+import '../styles/space.css';
 
 export default class Space extends React.Component {
 

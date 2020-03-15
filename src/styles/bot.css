@@ -1,0 +1,10 @@
+.space {
+  z-index: 2;
+  background: transparent;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0; }
+
+/*# sourceMappingURL=bot.css.map */

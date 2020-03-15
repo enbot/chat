@@ -1,14 +1,16 @@
+import moment from 'moment';
 import React from 'react';
-// import moment from 'moment';
-import './chat.css';
+import Message from '../models/message';
+import '../styles/chat.css';
 
 export default class Chat extends React.Component {
 
     constructor(props) {
         super(props);
+
         this.state = {
             convo: [
-                { text: 'abc', date: '1970-01-01' }
+                { text: 'abc', date: moment() }
             ],
             message: ''
         };
@@ -25,23 +27,20 @@ export default class Chat extends React.Component {
     }
 
     handleChange = e => {
-        const message = e.target.value;
-        this.setState({ message });
-
-
+        this.setState({ message: e.target.value });
     };
 
     onSubmit = e => {
         e.preventDefault();
+
         if (this.state.message) {
 
             const text = this.state.message
 
             this.setState(
                 { convo: [...this.state.convo, { text, date: '010101' }], message: '' },
-                () => {
-                    this.scrollToBottom();
-                }
+                () => this.scrollToBottom()
+
             );
 
         }
