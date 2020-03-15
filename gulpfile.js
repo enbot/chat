@@ -19,3 +19,11 @@
 
 // pm2 start my-app/node_modules/react-scripts/scripts/start.js --name "my-app"
 // https://stackoverflow.com/questions/50885455/watch-sass-scss-and-nodemon-together
+
+var sass = require("node-sass");
+var fs = require("fs");
+sass.render({ file: "styles.scss" }, (err, results) => {
+    if (err) { console.log(err); }
+    fs.writeFile("styles.css", results.css, err => console.log);
+    console.log('scss -> css complete!');
+});

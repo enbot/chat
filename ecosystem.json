@@ -1,14 +1,13 @@
 {
     "apps": [
         {
-            "name": "sass",
-            "script": "gulp",
-            "args": "sass"
-        },
-        {
-            "name": "react",
-            "script": "npm",
-            "args": "start"
+            "name": "sass build",
+            "script": "gulpfile.js",
+            "watch": true,
+            "ignore_watch": [
+                "node_modules"
+            ],
+            "autorestart": false
         }
     ]
 }
