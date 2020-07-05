@@ -1,0 +1,13 @@
+$chat-width: 600px;
+$chat-height: 80vh;
+
+.chat {
+    position: absolute;
+    width: $chat-width;
+    height: $chat-height;
+    top: #{(100vh - $chat-height) / 2};
+    right: 7vw;
+    background-color: green;
+    border: solid 1px lime;
+    box-sizing: border-box;
+}

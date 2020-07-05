@@ -8,8 +8,8 @@ import { SharedModule } from '../../shared/shared.module';
         ChatComponent,
     ],
     imports: [
-        SharedModule,
         ChatRoutingModule,
+        SharedModule,
     ]
 })
 export class ChatModule { }

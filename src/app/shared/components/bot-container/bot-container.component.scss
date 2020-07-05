@@ -1,0 +1,13 @@
+$bot-width: 750px;
+$bot-height: 750px;
+
+.bot {
+    position: absolute;
+    width: $bot-width;
+    height: $bot-height;
+    top: calc((100vh - #{$bot-height}) / 2 );
+    left: 7vw;
+    background-color: #990000;
+    border: solid 1px red;
+    box-sizing: border-box;
+}
