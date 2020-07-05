@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ChatService } from '../../../core/services/chat.service';
 
 @Component({
   selector: 'app-chat-container',
@@ -7,9 +8,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ChatContainerComponent implements OnInit {
 
-  constructor() { }
+  message: string;
+
+  disabled: boolean;
+
+  constructor(private chatService: ChatService) { }
 
   ngOnInit(): void {
+    this.message = '';
+    this.disabled = false;
+  }
+
+  async send(): Promise<void> {
+    this.disabled = true;
+    await this.chatService.send(this.message);
+    this.message = '';
+    this.disabled = false;
   }
 
 }

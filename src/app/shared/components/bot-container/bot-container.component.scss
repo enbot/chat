@@ -7,7 +7,10 @@ $bot-height: 750px;
     height: $bot-height;
     top: calc((100vh - #{$bot-height}) / 2 );
     left: 7vw;
-    background-color: #990000;
-    border: solid 1px red;
+    background-color: #333333;
+    border: solid 1px #444444;
     box-sizing: border-box;
+    display: flex;
+    justify-content: space-evenly;
+    padding-top: 20vh;
 }

@@ -16,8 +16,8 @@ import { WallpaperContainerComponent } from './components/wallpaper-container/wa
     ChatBalloonComponent,
     BotContainerComponent,
     BotEyeLeftComponent,
-    WallpaperContainerComponent,
     BotEyeRightComponent,
+    WallpaperContainerComponent,
   ],
   imports: [
     CommonModule,
