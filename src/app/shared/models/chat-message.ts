@@ -3,11 +3,8 @@ import { TypeSide } from '../interfaces/type-side';
 export class ChatMessage {
 
     public readonly when: Date;
-
     public readonly content: string;
-
     public readonly author: string;
-
     public readonly side: TypeSide;
 
     constructor(

@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { TypeCommand } from '../../shared/interfaces/type-command';
+import { BotCommand } from 'src/app/shared/models/bot-command';
 import { Subject } from 'rxjs';
 
 @Injectable({
@@ -25,12 +26,13 @@ export class CommandService {
     ];
   }
 
-  public isCommand(text: string): boolean {
-    // return this.commandList.indexOf(command as TypeCommand) !== -1;
-    return false;
+  public isCommand(command: string): boolean {
+    return this.commandList.indexOf(command as TypeCommand) !== -1;
   }
 
-  public runCommand(text: TypeCommand): void {
+  public runCommand(command: TypeCommand): void {
+
+    const botCommand = new BotCommand(command);
 
     // const command = new BotCommand(text);
 

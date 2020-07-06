@@ -21,7 +21,7 @@ export class ChatContainerComponent implements OnInit {
 
   async send(): Promise<void> {
     this.disabled = true;
-    await this.chatService.send(this.message);
+    await this.chatService.input(this.message);
     this.message = '';
     this.disabled = false;
   }
