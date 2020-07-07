@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { TypeCommand } from '../../shared/interfaces/type-command';
-import { BotCommand } from 'src/app/shared/models/bot-command';
+import { AppCommand } from 'src/app/shared/models/app-command';
 import { Subject } from 'rxjs';
 
 @Injectable({
@@ -8,7 +8,7 @@ import { Subject } from 'rxjs';
 })
 export class CommandService {
 
-  public readonly onCommand: Subject<TypeCommand>;
+  public readonly onCommand: Subject<AppCommand>;
 
   public readonly commandList: TypeCommand[];
 
@@ -26,17 +26,17 @@ export class CommandService {
     ];
   }
 
-  public isCommand(command: string): boolean {
-    return this.commandList.indexOf(command as TypeCommand) !== -1;
+  public isCommand(text: string): boolean {
+    const command = text as TypeCommand;
+    const commandList = this.commandList;
+    const commandIndex = commandList.indexOf(command);
+    const isCommand = commandIndex !== -1;
+    return isCommand;
   }
 
   public runCommand(command: TypeCommand): void {
-
-    const botCommand = new BotCommand(command);
-
-    // const command = new BotCommand(text);
-
-    // this.onCommand.next(command);
+    const botCommand = new AppCommand(command);
+    this.onCommand.next(botCommand);
   }
 
 }
