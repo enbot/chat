@@ -1,16 +1,15 @@
-import { BotStateAngry } from '../models/bot-state-angry';
-import { BotStateNormal } from '../models/bot-state-normal';
 import { BotCommandList } from '../interfaces/bot-command-list';
+import * as cs from '../models/command-states';
 
 export function botCommandFactory(): BotCommandList {
     return {
-        CHANGE_STATE_NORMAL: new BotStateNormal(),
-        CHANGE_STATE_ANGRY: new BotStateAngry(),
-        CHANGE_STATE_HAPPY: new BotStateNormal(),
-        CHANGE_STATE_STAR: new BotStateNormal(),
-        CHANGE_TATE_SAD: new BotStateNormal(),
-        CHANGE_STATE_CLOSED: new BotStateNormal(),
-        CHANGE_STATE_BORED: new BotStateNormal(),
-        CHANGE_STATE_CAREFUL: new BotStateNormal(),
+        CHANGE_STATE_NORMAL: new cs.BotStateNormal(),
+        CHANGE_STATE_ANGRY: new cs.BotStateAngry(),
+        CHANGE_STATE_HAPPY: new cs.BotStateNormal(),
+        CHANGE_STATE_STAR: new cs.BotStateNormal(),
+        CHANGE_TATE_SAD: new cs.BotStateNormal(),
+        CHANGE_STATE_CLOSED: new cs.BotStateNormal(),
+        CHANGE_STATE_BORED: new cs.BotStateNormal(),
+        CHANGE_STATE_CAREFUL: new cs.BotStateNormal(),
     };
 }

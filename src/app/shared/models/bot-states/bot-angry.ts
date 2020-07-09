@@ -1,6 +1,6 @@
-import { BotCommand } from '../interfaces/bot-command';
+import { BotCommand } from '../../interfaces/bot-command';
 
-export class BotStateNormal implements BotCommand {
+export class BotStateAngry implements BotCommand {
 
     public readonly wrapper = {
         top: {
@@ -17,6 +17,17 @@ export class BotStateNormal implements BotCommand {
             vertical: 100,
             horizontal: 0,
         }
+    };
+
+    public readonly head = {
+        animation: null,
+        rotate: null,
+    };
+
+    public readonly eye = {
+        width: 240,
+        height: 240,
+        radius: 50,
     };
 
     public readonly clip = {
