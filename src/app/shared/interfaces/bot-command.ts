@@ -1,13 +1,6 @@
-import { TypeDegree, TypePercent } from './type-metrics';
-
-export type BotCommandClipForm = 'star' | null;
+import { TypeDegree, TypePercent, TypePixels } from './type-metrics';
 
 export interface BotCommandWrapper {
-    top: BotCommandWrapperSide;
-    bot: BotCommandWrapperSide;
-}
-
-export interface BotCommandWrapperSide {
     rotate: TypeDegree;
     width: TypePercent;
     height: TypePercent;
@@ -15,11 +8,21 @@ export interface BotCommandWrapperSide {
     horizontal: TypePercent;
 }
 
-export interface BotCommandClip {
-    form: BotCommandClipForm;
-}
-
 export interface BotCommand {
-    wrapper: BotCommandWrapper;
-    clip: BotCommandClip;
+
+    wrapper: {
+        top: BotCommandWrapper;
+        bot: BotCommandWrapper;
+    };
+
+    eye: {
+        width: TypePixels;
+        height: TypePixels;
+        radius: TypePercent;
+    };
+
+    clip: {
+        form: string | null;
+    };
+
 }

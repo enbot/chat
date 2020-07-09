@@ -1,7 +1,8 @@
+import { TypeCommandResolved } from '../interfaces/type-command-resolved';
+import { TypeCommand } from '../interfaces/type-command';
 import { AllCommandsListKey } from '../interfaces/all-commands-list-key';
 import { AllCommandsKey } from '../interfaces/all-commands-key';
 import { CommandContainer } from './command-container';
-import { TypeCommand } from '../interfaces/type-command';
 
 export class CommandResolver extends CommandContainer {
 
@@ -13,12 +14,16 @@ export class CommandResolver extends CommandContainer {
         return CommandContainer[key][value];
     }
 
-    public static resolve(command: TypeCommand): string[] | void {
+    public static resolve(command: TypeCommand): TypeCommandResolved {
 
         // for ( in ) {
         //     for (of ) {
         //     }
         // }
+
+        return {
+            valid: false
+        };
 
     }
 
