@@ -1,3 +1,7 @@
-import { TypeCommand } from '../interfaces/type-command';
+import { WallpaperCommandList } from '../interfaces/wallpaper-command-list';
 
-export function wallpaperCommandFactory(command: TypeCommand): void { }
+export function wallpaperCommandFactory(): WallpaperCommandList {
+    return {
+
+    };
+}

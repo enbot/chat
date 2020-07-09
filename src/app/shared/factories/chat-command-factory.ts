@@ -1,3 +1,7 @@
-import { TypeCommand } from '../interfaces/type-command';
+import { ChatCommandList } from '../interfaces/chat-command-list';
 
-export function chatCommandFactory(command: TypeCommand): void { }
+export function chatCommandFactory(): ChatCommandList {
+    return {
+
+    };
+}

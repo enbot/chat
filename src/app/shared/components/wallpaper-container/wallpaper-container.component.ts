@@ -6,10 +6,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./wallpaper-container.component.scss']
 })
 export class WallpaperContainerComponent implements OnInit {
+  
+  selectedClass : 'wallpaper-red' |'wallpaper-blue'
 
   constructor() { }
 
   ngOnInit(): void {
   }
+
+  // onWallpaper.subscribe ( pica )=> this.selecteClass =  pica
 
 }

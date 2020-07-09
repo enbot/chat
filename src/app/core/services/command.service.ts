@@ -1,6 +1,10 @@
 import { Injectable } from '@angular/core';
 import { TypeCommand } from '../../shared/interfaces/type-command';
 import { AppCommand } from 'src/app/shared/models/app-command';
+import { BotCommand } from 'src/app/shared/interfaces/bot-command';
+import { ChatCommand } from 'src/app/shared/interfaces/chat-command';
+import { WallpaperCommand } from 'src/app/shared/interfaces/wallpaper-command';
+import { CommandResolver } from 'src/app/shared/models/command-resolver';
 import { Subject } from 'rxjs';
 
 @Injectable({
@@ -8,35 +12,32 @@ import { Subject } from 'rxjs';
 })
 export class CommandService {
 
-  public readonly onCommand: Subject<AppCommand>;
+  public readonly onBotCommand: Subject<BotCommand>;
 
-  public readonly commandList: TypeCommand[];
+  public readonly onChatCommand: Subject<ChatCommand>;
+
+  public readonly onWallpaperCommand: Subject<WallpaperCommand>;
 
   constructor() {
-    this.onCommand = new Subject();
-    this.commandList = [
-      'CHANGE_STATE_ANGRY',
-      'CHANGE_STATE_HAPPY',
-      'CHANGE_STATE_STAR',
-      'CHANGE_STATE_SAD',
-      'CHANGE_STATE_CLOSED',
-      'CHANGE_STATE_BORED',
-      'CHANGE_STATE_CAREFUL',
-      'CHANGE_STATE_NORMAL',
-    ];
+    this.onBotCommand = new Subject();
+    this.onChatCommand = new Subject();
+    this.onWallpaperCommand = new Subject();
   }
 
-  public isCommand(text: string): boolean {
-    const command = text as TypeCommand;
-    const commandList = this.commandList;
-    const commandIndex = commandList.indexOf(command);
-    const isCommand = commandIndex !== -1;
-    return isCommand;
+  public isCommand(command: string): boolean {
+    return CommandResolver.resolve(command) ? true : false;
   }
 
   public runCommand(command: TypeCommand): void {
-    const botCommand = new AppCommand(command);
-    this.onCommand.next(botCommand);
+
+    // const enums = CommandResolver.resolve(command);
+    // const worker = CommandResolver.assemble(enums[0]);
+
+    // const emitter = enums[] +
+
+    // const botCommand = new AppCommand(command);
+    // this.onCommand.next(botCommand);
+
   }
 
 }

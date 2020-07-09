@@ -7,9 +7,30 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BotContainerComponent implements OnInit {
 
+  eye: BotCmmand = {
+
+
+    eye : {
+      width // pappaa
+    }
+
+
+    wrapper : {
+
+      bot : //papapa
+      top : //papapa
+
+    }
+
+    clip // papap
+
+  }
+
   constructor() { }
 
   ngOnInit(): void {
   }
+
+  // onBotCommand.subscribe =>  
 
 }

@@ -1,19 +1,16 @@
-import { TypeCommand } from '../interfaces/type-command';
-import { BotCommand } from '../interfaces/bot-command';
-import { BotStateNormal } from '../commands';
-import { BotStateAngry } from '../commands';
+import { BotStateAngry } from '../models/bot-state-angry';
+import { BotStateNormal } from '../models/bot-state-normal';
+import { BotCommandList } from '../interfaces/bot-command-list';
 
-export function botCommandFactory(command: TypeCommand): BotCommand {
-    const availableCommands = {
+export function botCommandFactory(): BotCommandList {
+    return {
         CHANGE_STATE_NORMAL: new BotStateNormal(),
         CHANGE_STATE_ANGRY: new BotStateAngry(),
-        // 'CHANGE_STATE_HAPPY':
-        // 'CHANGE_STATE_STAR':
-        // 'CHANGE_STATE_SAD':
-        // 'CHANGE_STATE_CLOSED':
-        // 'CHANGE_STATE_BORED':
-        // 'CHANGE_STATE_CAREFUL':
+        CHANGE_STATE_HAPPY: new BotStateNormal(),
+        CHANGE_STATE_STAR: new BotStateNormal(),
+        CHANGE_TATE_SAD: new BotStateNormal(),
+        CHANGE_STATE_CLOSED: new BotStateNormal(),
+        CHANGE_STATE_BORED: new BotStateNormal(),
+        CHANGE_STATE_CAREFUL: new BotStateNormal(),
     };
-    const selectedCommand = availableCommands[command];
-    return selectedCommand;
 }
