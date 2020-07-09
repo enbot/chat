@@ -1,9 +1,5 @@
-export type TypeCommand =
-    'CHANGE_STATE_ANGRY' |
-    'CHANGE_STATE_HAPPY' |
-    'CHANGE_STATE_STAR' |
-    'CHANGE_STATE_SAD' |
-    'CHANGE_STATE_CLOSED' |
-    'CHANGE_STATE_BORED' |
-    'CHANGE_STATE_CAREFUL' |
-    'CHANGE_STATE_NORMAL';
+import { BotCommand } from './bot-command';
+import { ChatCommand } from './chat-command';
+import { WallpaperCommand } from './wallpaper-command';
+
+export type TypeCommand = BotCommand | ChatCommand | WallpaperCommand;
