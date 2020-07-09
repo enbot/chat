@@ -9,7 +9,6 @@ export class BotEyeLeftComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void { }
 
 }

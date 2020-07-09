@@ -10,22 +10,34 @@ export class CommandResolver extends CommandContainer {
         super();
     }
 
-    public static assemble(key: AllCommandsListKey, value: AllCommandsKey): TypeCommand {
-        return CommandContainer[key][value];
+    public static assemble(listKey: AllCommandsListKey, commandKey: AllCommandsKey): TypeCommand {
+        return CommandContainer[listKey][commandKey];
     }
 
-    public static resolve(command: TypeCommand): TypeCommandResolved {
+    public static resolve(commandKey: AllCommandsKey): TypeCommandResolved {
+        const lists = [
+            { name: 'bot', content: CommandContainer.bot },
+            { name: 'chat', content: CommandContainer.chat },
+            { name: 'wallpaper', content: CommandContainer.wallpaper },
+        ];
 
-        // for ( in ) {
-        //     for (of ) {
-        //     }
-        // }
+        for (const list of lists) {
+            const listName = list.name as AllCommandsListKey;
+            const keys = Object.keys(list.content);
+            const keyIndex = keys.indexOf(commandKey);
+            const keyName = keys[keyIndex] as AllCommandsKey;
+            const keyExists = keyIndex !== -1;
 
-        return {
-            valid: false
-        };
+            if (keyExists) {
+                return {
+                    valid: true,
+                    list: listName,
+                    key: keyName,
+                };
+            }
+        }
 
+        return { valid: false };
     }
-
 
 }

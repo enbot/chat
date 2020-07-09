@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs';
-import { TypeCommand } from 'src/app/shared/interfaces/type-command';
 import { ChatMessage } from '../../shared/models/chat-message';
 import { CommandService } from './command.service';
 import { HttpService } from './http.service';
+import { AllCommandsKey } from 'src/app/shared/interfaces/all-commands-key';
 
 @Injectable({
     providedIn: 'root'
@@ -28,7 +28,7 @@ export class ChatService {
     public input(content: string): void {
         const isCommand = this.commandService.isCommand(content);
         if (isCommand) {
-            this.commandService.runCommand(content as TypeCommand);
+            this.commandService.runCommand(content as AllCommandsKey);
         } else {
 
             const request = { content };
