@@ -20,8 +20,8 @@ export class BotStateAngry implements BotCommand {
     };
 
     public readonly head = {
-        animation: null,
-        rotate: null,
+        animation: 'floating',
+        rotate: 0,
     };
 
     public readonly eye = {
@@ -31,7 +31,7 @@ export class BotStateAngry implements BotCommand {
     };
 
     public readonly clip = {
-        form: null
+        form: ''
     };
 
 }

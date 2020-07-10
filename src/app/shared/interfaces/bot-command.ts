@@ -1,4 +1,4 @@
-import { TypeDegree, TypePercent, TypePixels, className } from './type-metrics';
+import { TypeDegree, TypePercent, TypePixels, TypeClip, TypeClass } from './type-metrics';
 
 export interface BotCommandWrapper {
     rotate: TypeDegree;
@@ -22,12 +22,12 @@ export interface BotCommand {
     };
 
     head: {
-        animation: className | null;
-        rotate: TypeDegree | null;
+        animation: TypeClass;
+        rotate: TypeDegree;
     };
 
     clip: {
-        form: string | null;
+        form: TypeClip;
     };
 
 }

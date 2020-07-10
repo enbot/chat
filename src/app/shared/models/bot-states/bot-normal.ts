@@ -7,21 +7,21 @@ export class BotStateNormal implements BotCommand {
             rotate: 0,
             width: 100,
             height: 100,
-            vertical: 100,
+            vertical: 70,
             horizontal: 0,
         },
         bot: {
             rotate: 0,
             width: 100,
             height: 100,
-            vertical: 100,
+            vertical: 70,
             horizontal: 0,
         }
     };
 
     public readonly head = {
-        animation: null,
-        rotate: null,
+        animation: 'floating',
+        rotate: 0,
     };
 
     public readonly eye = {
@@ -31,7 +31,7 @@ export class BotStateNormal implements BotCommand {
     };
 
     public readonly clip = {
-        form: null
+        form: '',
     };
 
 }
