@@ -1,1 +1,11 @@
-<p>bot-head works!</p>
+<div class="head">
+
+    <div [ngClass]="classes(command)" [ngStyle]="transform(command)">
+
+        <app-bot-eye-left [command]="command"></app-bot-eye-left>
+
+        <app-bot-eye-right [command]="command"></app-bot-eye-right>
+
+    </div>
+
+</div>

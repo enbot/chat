@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { BotCommand } from 'src/app/shared/interfaces/bot-command';
 
 @Component({
   selector: 'app-bot-eye-right',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./bot-eye-right.component.scss']
 })
 export class BotEyeRightComponent implements OnInit {
+
+  @Input() command: BotCommand;
 
   constructor() { }
 

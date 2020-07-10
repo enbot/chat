@@ -17,6 +17,7 @@ export class ChatContainerComponent implements OnInit {
     ngOnInit(): void {
         this.message = '';
         this.disabled = false;
+        this.chatService.test();
     }
 
     async send(): Promise<void> {
