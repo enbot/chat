@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { BotCommand } from 'src/app/shared/interfaces/bot-command';
-import { TypeStyle, TypeWrapper } from 'src/app/shared/interfaces/type-metrics';
+import { TypeStyle } from 'src/app/shared/interfaces/type-metrics';
 
 @Component({
   selector: 'app-bot-eye-left',

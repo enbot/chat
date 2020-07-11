@@ -1,33 +1,47 @@
-import { TypeDegree, TypePercent, TypePixels, TypeClip, TypeClass } from './type-metrics';
-
-export interface BotCommandWrapper {
-    rotate: TypeDegree;
-    width: TypePercent;
-    height: TypePercent;
-    vertical: TypePercent;
-    horizontal: TypePercent;
-}
+import { TypeDegree, TypePercent, TypePixels, TypeClip, TypeClass, TypeHex } from './type-metrics';
 
 export interface BotCommand {
 
-    wrapper: {
-        top: BotCommandWrapper;
-        bot: BotCommandWrapper;
+    head: {
+        color: TypeHex;
+        animation: TypeClass;
+        rotate: TypeDegree;
+    };
+
+    eyebrow: {
+        color: TypeHex;
+        width: TypePixels;
+        height: TypePixels;
+        radius: TypePercent;
     };
 
     eye: {
         width: TypePixels;
         height: TypePixels;
         radius: TypePercent;
+        state: TypeClass;
     };
 
-    head: {
-        animation: TypeClass;
-        rotate: TypeDegree;
-    };
-
-    clip: {
+    iris: {
+        color: TypeHex;
         form: TypeClip;
+    };
+
+    lid: {
+        top: {
+            rotate: TypeDegree;
+            width: TypePercent;
+            height: TypePercent;
+            vertical: TypePercent;
+            horizontal: TypePercent;
+        };
+        bot: {
+            rotate: TypeDegree;
+            width: TypePercent;
+            height: TypePercent;
+            vertical: TypePercent;
+            horizontal: TypePercent;
+        };
     };
 
 }
