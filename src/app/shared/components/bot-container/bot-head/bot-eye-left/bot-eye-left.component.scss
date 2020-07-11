@@ -24,11 +24,15 @@
             overflow: hidden;
             box-shadow: 0 0 0 15px black;
             background: white;
-            // background-image: url("https://upload.wikimedia.org/wikipedia/commons/2/22/Animated_fire_by_nevit.gif");
-            // background-image: url("https://thumbs.gfycat.com/SpecificDaringKakapo-size_restricted.gif");
-            // background-image: url("https://img.memecdn.com/epic-gif_o_304965.gif");
 
-            background-image: url('https://cdn.pixilart.com/photos/large/82de6b3873e9520.gif');
+            &.fire{
+                background-image: url("https://upload.wikimedia.org/wikipedia/commons/2/22/Animated_fire_by_nevit.gif");
+            }
+
+            // background-image: url("https://thumbs.gfycat.com/SpecificDaringKakapo-size_restricted.gif");
+            background-image: url("https://img.memecdn.com/epic-gif_o_304965.gif");
+
+            // background-image: url('https://cdn.pixilart.com/photos/large/82de6b3873e9520.gif');
             // background-image: url(https://media1.tenor.com/images/5a6943b…/tenor.gif?itemid=11458702);
             // background-size: cover;
             // background-position: 30% 50px;;
