@@ -1,7 +1,11 @@
-import { BotCommand } from '../../interfaces/bot-command';
+// import { BotState } from './bot-state';
 
 export class BotStateNormal {
-
-    // implements BotCommand
-
+    constructor() {
+        // super(
+        //     {
+        //         extends BotState
+        //     },
+        // )
+    }
 }

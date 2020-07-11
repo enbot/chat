@@ -1,19 +1,9 @@
-<div class="eye">
+<div [ngClass]="command.eyeClasses()" [ngStyle]="command.eyeStyles()">
     <div class="wrapper">
-        <div class="sclera">
-            <div class="lid top"> </div>
-            <div class="lid bot"> </div>
-            <div class="iris"> </div>
+        <div [ngClass]="command.scleraClasses()" [ngStyle]="command.scleraStyles()">
+            <div [ngClass]="command.lidLeftTopClasses()" [ngStyle]="command.lidLeftTopStyles()"> </div>
+            <div [ngClass]="command.lidLeftBotClasses()" [ngStyle]="command.lidLeftBotStyles()"> </div>
+            <div [ngClass]="command.irisClasses()" [ngStyle]="command.irisStyles()"> </div>
         </div>
     </div>
 </div>
-
-<!-- <div class="eye" [ngStyle]="eye()">
-    <div class="sclera" [ngStyle]="sclera()">
-        <div class="iris">
-
-            <div class="wrapper wrapper-top" [ngStyle]="top()"></div>
-            <div class="wrapper wrapper-bot" [ngStyle]="bot()"></div>
-        </div>
-    </div>
-</div> -->

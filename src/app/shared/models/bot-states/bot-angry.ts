@@ -1,40 +1,37 @@
-import { BotCommand, BotCommandHead, BotCommandEyebrow, BotCommandEye, BotCommandIris, BotCommandLid } from '../../interfaces/bot-command';
+import { BotState } from './bot-state';
 
-export class BotStateAngry implements BotCommand {
-
-    public readonly head: BotCommandHead;
-    public readonly eyebrow: BotCommandEyebrow;
-    public readonly eye: BotCommandEye;
-    public readonly iris: BotCommandIris;
-    public readonly lid: BotCommandLid;
+export class BotStateAngry extends BotState {
 
     constructor() {
-        this.head = {
+        const head = {
             color: '#000000',
             animation: 'floating',
             rotate: 0,
         };
 
-        this.eyebrow = {
+        const eyebrow = {
             color: '#ffffff',
             height: 50,
             width: 200,
             radius: 4,
         };
 
-        this.eye = {
+        const eye = {
             width: 200,
             height: 300,
             radius: 100,
             background: 'fire',
         };
 
-        this.iris = {
+        const iris = {
             color: '#000000',
             clip: 'none',
+            width: 50,
+            height: 80,
+            radius: 50,
         };
 
-        this.lid = {
+        const lid = {
             left: {
                 top: {
                     rotate: 110,
@@ -68,6 +65,9 @@ export class BotStateAngry implements BotCommand {
                 },
             },
         };
+
+        super(head, eyebrow, eye, iris, lid);
+
     }
 
 }

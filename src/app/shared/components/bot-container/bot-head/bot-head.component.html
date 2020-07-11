@@ -1,6 +1,6 @@
-<div class="head">
+<div class="container">
 
-    <div [ngClass]="classes(command)" [ngStyle]="transform(command)">
+    <div [ngClass]="command.headClasses()" [ngStyle]="command.headStyles()">
 
         <app-bot-eye-left [command]="command"></app-bot-eye-left>
 
