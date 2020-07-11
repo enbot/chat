@@ -26,7 +26,7 @@ export class BotStateAngry implements BotCommand {
             width: 200,
             height: 300,
             radius: 100,
-            state: 'fire',
+            background: 'fire',
         };
 
         this.iris = {

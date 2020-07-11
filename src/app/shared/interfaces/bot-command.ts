@@ -17,7 +17,7 @@ export interface BotCommandEye {
     width: TypePixels;
     height: TypePixels;
     radius: TypePercent;
-    state: TypeClass;
+    background: TypeClass;
 }
 
 export interface BotCommandIris {
