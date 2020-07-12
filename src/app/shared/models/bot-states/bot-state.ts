@@ -96,7 +96,7 @@ export class BotState implements BotCommand {
         return {
             transform: `rotate(${this.lid.right.top.rotate}deg)`,
             top: `${this.lid.right.top.vertical}%`,
-            left: `${this.lid.right.top.horizontal}%`,
+            right: `${this.lid.right.top.horizontal}%`,
             width: `${this.lid.right.top.width}%`,
             height: `${this.lid.right.top.height}%`,
         };
@@ -106,7 +106,7 @@ export class BotState implements BotCommand {
         return {
             transform: `rotate(${this.lid.right.bot.rotate}deg)`,
             top: `${this.lid.right.bot.vertical}%`,
-            left: `${this.lid.right.bot.horizontal}%`,
+            right: `${this.lid.right.bot.horizontal}%`,
             width: `${this.lid.right.bot.width}%`,
             height: `${this.lid.right.bot.height}%`,
         };
