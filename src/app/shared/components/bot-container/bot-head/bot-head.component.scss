@@ -1,5 +1,5 @@
-$bot-width: 750px;
-$bot-height: 750px;
+$bot-width: 550px;
+$bot-height: 550px;
 
 .container {
     position: absolute;
@@ -9,7 +9,7 @@ $bot-height: 750px;
     left: 7vw;
     background-color: #333333;
     box-sizing: border-box;
-    padding-top: 20vh;
+    padding-top: 10vh;
 
     .head {
         display: flex;

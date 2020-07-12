@@ -13,7 +13,7 @@ export const eyebrow = {
 
 export const eye = {
     width: 200,
-    height: 300,
+    height: 290,
     radius: 100,
     background: 'fire',
 };
@@ -30,21 +30,21 @@ export const lid = {
     left: {
         top: {
             rotate: 20,
-            closed: 35,
+            closed: 25,
         },
         bot: {
-            rotate: 0,
-            closed: 0,
+            rotate: -20,
+            closed: 15,
         },
     },
     right: {
         top: {
             rotate: -20,
-            closed: 35,
+            closed: 25,
         },
         bot: {
-            rotate: 0,
-            closed: 0,
+            rotate: 20,
+            closed: 15,
         },
     },
 };
