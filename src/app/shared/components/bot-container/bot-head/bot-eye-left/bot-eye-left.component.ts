@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, OnDestroy } from '@angular/core';
+import { Component, OnInit, Input, OnDestroy, ViewChild, ElementRef } from '@angular/core';
 import { BotCommand } from 'src/app/shared/interfaces/bot-command';
 import { EventService } from 'src/app/core/services/event.service';
 import { Subscription, interval } from 'rxjs';
@@ -11,6 +11,8 @@ import { debounce } from 'rxjs/operators';
 })
 export class BotEyeLeftComponent implements OnInit, OnDestroy {
 
+  @ViewChild('eyeLeft') element: ElementRef;
+
   @Input() command: BotCommand;
 
   subscription: Subscription;
@@ -18,8 +20,13 @@ export class BotEyeLeftComponent implements OnInit, OnDestroy {
   constructor(private eventService: EventService) { }
 
   ngOnInit(): void {
-    this.subscription = this.eventService.onMouseMove
-      .subscribe(() => this.command.inputPosition(this.eventService.percentConfig));
+    // this.subscription = this.eventService.onMouseMove
+    // .subscribe(() => this.command.inputPosition(this.eventService.percentConfig));
+
+
+    console.log(this.element);
+
+
   }
 
   ngOnDestroy(): void {
