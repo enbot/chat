@@ -75,40 +75,28 @@ export class BotState implements BotCommand {
     public lidLeftTopStyles(): TypeStyle {
         return {
             transform: `rotate(${this.lid.left.top.rotate}deg)`,
-            top: `${this.lid.left.top.vertical}%`,
-            left: `${this.lid.left.top.horizontal}%`,
-            width: `${this.lid.left.top.width}%`,
-            height: `${this.lid.left.top.height}%`,
+            top: `-${100 - (this.lid.left.top.closed)}%`,
         };
     }
 
     public lidLeftBotStyles(): TypeStyle {
         return {
             transform: `rotate(${this.lid.left.bot.rotate}deg)`,
-            top: `${this.lid.left.bot.vertical}%`,
-            left: `${this.lid.left.bot.horizontal}%`,
-            width: `${this.lid.left.bot.width}%`,
-            height: `${this.lid.left.bot.height}%`,
+            bottom: `-${100 - (this.lid.left.bot.closed)}%`,
         };
     }
 
     public lidRightTopStyles(): TypeStyle {
         return {
             transform: `rotate(${this.lid.right.top.rotate}deg)`,
-            top: `${this.lid.right.top.vertical}%`,
-            right: `${this.lid.right.top.horizontal}%`,
-            width: `${this.lid.right.top.width}%`,
-            height: `${this.lid.right.top.height}%`,
+            top: `-${100 - (this.lid.right.top.closed)}%`,
         };
     }
 
     public lidRightBotStyles(): TypeStyle {
         return {
             transform: `rotate(${this.lid.right.bot.rotate}deg)`,
-            top: `${this.lid.right.bot.vertical}%`,
-            right: `${this.lid.right.bot.horizontal}%`,
-            width: `${this.lid.right.bot.width}%`,
-            height: `${this.lid.right.bot.height}%`,
+            bottom: `-${100 - (this.lid.right.bot.closed)}%`,
         };
     }
 

@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs';
-import { ChatMessage } from '../../shared/models/chat-message';
 import { CommandService } from './command.service';
 import { HttpService } from './http.service';
+import { ChatMessage } from '../../shared/models/general-config/chat-message';
 import { AllCommandsKey } from 'src/app/shared/interfaces/all-commands-key';
 
 @Injectable({

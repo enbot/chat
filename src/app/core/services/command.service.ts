@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { BotCommand } from 'src/app/shared/interfaces/bot-command';
 import { ChatCommand } from 'src/app/shared/interfaces/chat-command';
 import { WallpaperCommand } from 'src/app/shared/interfaces/wallpaper-command';
-import { CommandResolver } from 'src/app/shared/models/command-resolver';
+import { CommandResolver } from 'src/app/shared/models/general-config/command-resolver';
 import { Subject } from 'rxjs';
 import { AllCommandsKey } from 'src/app/shared/interfaces/all-commands-key';
 

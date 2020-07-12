@@ -40,10 +40,7 @@ export interface BotCommandLidSide {
 
 export interface BotCommandLidConfig {
     rotate: TypeDegree;
-    width: TypePercent;
-    height: TypePercent;
-    vertical: TypePercent;
-    horizontal: TypePercent;
+    closed: TypePercent;
 }
 
 export interface BotCommand {
