@@ -53,8 +53,8 @@ export class EventService {
   }
 
   public inputMouseMove(event: MouseEvent): void {
-    this.mousePositionX = event.screenX;
-    this.mousePositionY = event.screenY;
+    this.mousePositionX = event.pageX;
+    this.mousePositionY = event.pageY;
     this.onMouseMove.next(event);
   }
 

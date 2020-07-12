@@ -13,20 +13,6 @@ export class AppComponent {
 
   @HostListener('window:mousemove', ['$event']) handleMousemove(event: MouseEvent): void {
     this.eventService.inputMouseMove(event);
-
-    console.log('============');
-
-    console.log(this.eventService.screenConfig);
-    console.log(this.eventService.mouseConfig);
-    console.log(this.eventService.percentConfig);
-
-    // let screenWidth = window.screen.width;
-    // let screenHeight = window.screen.height;
-    // let computedPixelRatio = (window.screen.availWidth / document.documentElement.clientWidth);
-
-    console.log( window.screen.height );
-
-
   }
 
   @HostListener('window:resize', ['$event']) resizeHandler(event: ScreenEvent): void {

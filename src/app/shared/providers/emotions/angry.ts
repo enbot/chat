@@ -29,21 +29,21 @@ export const iris = {
 export const lid = {
     left: {
         top: {
-            rotate: 20,
+            rotate: 15,
             closed: 25,
         },
         bot: {
-            rotate: -20,
+            rotate: -15,
             closed: 15,
         },
     },
     right: {
         top: {
-            rotate: -20,
+            rotate: -15,
             closed: 25,
         },
         bot: {
-            rotate: 20,
+            rotate: 15,
             closed: 15,
         },
     },
