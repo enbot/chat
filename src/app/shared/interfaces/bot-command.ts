@@ -1,4 +1,6 @@
 import { TypeDegree, TypePercent, TypePixels, TypeStyle, TypeClass, TypeHex } from './type-metrics';
+import { Type } from '@angular/core';
+import { PercentConfig } from './percent-config';
 
 export interface BotCommandHead {
     color: TypeHex;
@@ -43,12 +45,19 @@ export interface BotCommandLidConfig {
     closed: TypePercent;
 }
 
+export interface BotCommandPosition {
+    x: TypePixels;
+    y: TypePixels;
+}
+
 export interface BotCommand {
+    position: BotCommandPosition;
     head: BotCommandHead;
     eyebrow: BotCommandEyebrow;
     eye: BotCommandEye;
     iris: BotCommandIris;
     lid: BotCommandLid;
+    inputPosition(config: PercentConfig): void;
     headClasses(): TypeClass;
     scleraClasses(): TypeClass;
     eyeClasses(): TypeClass;

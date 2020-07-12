@@ -1,7 +1,10 @@
-import { BotCommand, BotCommandHead, BotCommandEyebrow, BotCommandEye, BotCommandIris, BotCommandLid } from '../../interfaces/bot-command';
-import { TypeClass, TypeStyle } from '../../interfaces/type-metrics';
+import { BotCommand, BotCommandHead, BotCommandEyebrow, BotCommandEye, BotCommandIris, BotCommandLid, BotCommandPosition } from '../../interfaces/bot-command';
+import { TypeClass, TypeStyle, TypePercent } from '../../interfaces/type-metrics';
+import { PercentConfig } from '../../interfaces/percent-config';
 
 export class BotState implements BotCommand {
+
+    public position: BotCommandPosition;
 
     constructor(
         public readonly head: BotCommandHead,
@@ -9,7 +12,16 @@ export class BotState implements BotCommand {
         public readonly eye: BotCommandEye,
         public readonly iris: BotCommandIris,
         public readonly lid: BotCommandLid,
-    ) { }
+    ) {
+        this.position = { x: 0, y: 0 };
+    }
+
+    public inputPosition(config: PercentConfig): void {
+        this.position = {
+            x: config.x * 2,
+            y: config.y * 2,
+        };
+    }
 
     public headClasses(): TypeClass {
         return `head ${this.head.animation}`;
@@ -69,6 +81,8 @@ export class BotState implements BotCommand {
             width: `${this.iris.width}px`,
             height: `${this.iris.height}px`,
             borderRadius: `${this.iris.radius}%`,
+            top: `${this.position.y}px`,
+            left: `${this.position.x}px`,
         };
     }
 
