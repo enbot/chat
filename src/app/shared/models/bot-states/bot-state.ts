@@ -1,10 +1,8 @@
-import { BotCommand, BotCommandHead, BotCommandEyebrow, BotCommandEye, BotCommandIris, BotCommandLid, BotCommandPosition } from '../../interfaces/bot-command';
-import { TypeClass, TypeStyle, TypePercent } from '../../interfaces/type-metrics';
-import { PercentConfig } from '../../interfaces/percent-config';
+import { BotCommand, BotCommandHead, BotCommandEyebrow, BotCommandEye, BotCommandIris, BotCommandLid } from '../../interfaces/bot-command';
+import { TypeClass, TypeStyle } from '../../interfaces/type-metrics';
+import { BotActive } from './bot-active';
 
-export class BotState implements BotCommand {
-
-    public position: BotCommandPosition;
+export class BotState extends BotActive implements BotCommand {
 
     constructor(
         public readonly head: BotCommandHead,
@@ -13,14 +11,16 @@ export class BotState implements BotCommand {
         public readonly iris: BotCommandIris,
         public readonly lid: BotCommandLid,
     ) {
-        this.position = { x: 0, y: 0 };
-    }
-
-    public inputPosition(config: PercentConfig): void {
-        this.position = {
-            x: config.x * 2,
-            y: config.y * 2,
-        };
+        super({
+            eye: {
+                width: eye.width,
+                height: eye.height,
+            },
+            iris: {
+                width: iris.width,
+                height: iris.height,
+            },
+        });
     }
 
     public headClasses(): TypeClass {
@@ -81,8 +81,8 @@ export class BotState implements BotCommand {
             width: `${this.iris.width}px`,
             height: `${this.iris.height}px`,
             borderRadius: `${this.iris.radius}%`,
-            top: `${this.position.y}px`,
-            left: `${this.position.x}px`,
+            top: `${this.irisSize.y}px`,
+            left: `${this.irisSize.x}px`,
         };
     }
 

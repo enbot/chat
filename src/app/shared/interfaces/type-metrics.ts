@@ -14,6 +14,11 @@ export type TypeHex = string;
 
 export type TypeSide = 'left' | 'right';
 
+export interface TypeAxis {
+    x: number;
+    y: number;
+}
+
 export interface TypeStyle {
     [attr: string]: TypeMetric;
 }

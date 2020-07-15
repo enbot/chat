@@ -1,4 +1,4 @@
-import { TypeDegree, TypePercent, TypePixels, TypeStyle, TypeClass, TypeHex } from './type-metrics';
+import { TypeDegree, TypePercent, TypePixels, TypeStyle, TypeClass, TypeHex, TypeAxis } from './type-metrics';
 import { Type } from '@angular/core';
 import { PercentConfig } from './percent-config';
 
@@ -45,19 +45,12 @@ export interface BotCommandLidConfig {
     closed: TypePercent;
 }
 
-export interface BotCommandPosition {
-    x: TypePixels;
-    y: TypePixels;
-}
-
-export interface BotCommand {
-    position: BotCommandPosition;
+export interface BotCommand extends BotActives {
     head: BotCommandHead;
     eyebrow: BotCommandEyebrow;
     eye: BotCommandEye;
     iris: BotCommandIris;
     lid: BotCommandLid;
-    inputPosition(config: PercentConfig): void;
     headClasses(): TypeClass;
     scleraClasses(): TypeClass;
     eyeClasses(): TypeClass;
@@ -74,4 +67,27 @@ export interface BotCommand {
     lidLeftBotStyles(): TypeStyle;
     lidRightTopStyles(): TypeStyle;
     lidRightBotStyles(): TypeStyle;
+}
+
+export interface BotActives {
+    irisSize: TypeAxis;
+    inputMousePosition(config: PercentConfig): void;
+}
+
+export interface BotActivesLoadData {
+    eye: {
+        width: TypePixels;
+        height: TypePixels;
+    };
+    iris: {
+        width: TypePixels;
+        height: TypePixels;
+    };
+}
+
+export interface BotActivesIrisData {
+    baseSize: TypeAxis;
+    maxSize: TypeAxis;
+    minSize: TypeAxis;
+    pixelSize: TypeAxis;
 }
