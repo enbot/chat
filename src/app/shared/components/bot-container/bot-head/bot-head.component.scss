@@ -7,6 +7,7 @@ $bot-height: 550px;
     height: $bot-height;
     top: calc((100vh - #{$bot-height}) / 2);
     left: 7vw;
+    // background-color: #000000;
     background-color: #333333;
     box-sizing: border-box;
     padding-top: 10vh;
