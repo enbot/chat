@@ -1,5 +1,5 @@
-import { BotCommandList } from '../interfaces/bot-command-list';
-import { BotStateAngry } from '../models/bot-states/bot-angry';
+import { BotCommandList } from 'src/app/shared/interfaces/bot-command-list';
+import { BotStateAngry } from 'src/app/shared/models/bot-states/bot-angry';
 
 export function botCommandFactory(): BotCommandList {
     return {
