@@ -1,0 +1,19 @@
+.eye {
+    .wrapper {
+        .sclera {
+            &.fire {
+                background-image: url("../../../assets/gifs/fire.gif");
+            }
+
+            &.rainbow {
+                background-image: url("../../../assets/gifs/rainbow.gif");
+            }
+
+            &.clouds {
+                background-image: url("../../../assets/gifs/clouds.gif");
+                background-size: 1000px;
+                background-position: 10% 10%;
+            }
+        }
+    }
+}
