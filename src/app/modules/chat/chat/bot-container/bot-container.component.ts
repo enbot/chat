@@ -2,8 +2,8 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Subscription, interval } from 'rxjs';
 import { debounce } from 'rxjs/operators';
 import { CommandService } from 'src/app/core/services/command.service';
-import { BotCommand } from '../../interfaces/bot-command';
-import { BotStateAngry } from '../../models/bot-states/bot-angry';
+import { BotCommand } from 'src/app/shared/interfaces/bot-command';
+import { BotStateAngry } from 'src/app/shared/models/bot-states/bot-angry';
 
 @Component({
     selector: 'app-bot-container',
