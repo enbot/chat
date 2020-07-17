@@ -41,14 +41,4 @@ export class ChatService {
                 }, error => this.onError.next(error));
         }
     }
-
-    public test(): void {
-        console.log('normal');
-        this.input('CHANGE_STATE_NORMAL');
-        setTimeout(() => {
-            console.log('angry');
-            this.input('CHANGE_STATE_ANGRY');
-        }, 4000);
-    }
-
 }

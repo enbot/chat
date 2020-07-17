@@ -1,16 +1,17 @@
-$bot-width: 650px;
-$bot-height: 550px;
+$bot-width: 45vw;
+$bot-height: 90vh;
 
 .container {
     position: absolute;
     width: $bot-width;
     height: $bot-height;
     top: calc((100vh - #{$bot-height}) / 2);
-    left: 7vw;
+    left: 5vw;
     // background-color: #000000;
     background-color: #333333;
     box-sizing: border-box;
     padding-top: 10vh;
+    overflow: hidden;
 
     .head {
         display: flex;

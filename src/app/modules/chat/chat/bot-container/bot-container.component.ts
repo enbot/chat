@@ -3,7 +3,7 @@ import { Subscription, interval } from 'rxjs';
 import { debounce } from 'rxjs/operators';
 import { CommandService } from 'src/app/core/services/command.service';
 import { BotCommand } from 'src/app/shared/interfaces/bot-command';
-import { BotStateAngry } from 'src/app/shared/models/bot-states/bot-angry';
+import { BotStateNormal } from 'src/app/shared/models/bot-states/bot-normal';
 
 @Component({
     selector: 'app-bot-container',
@@ -12,7 +12,7 @@ import { BotStateAngry } from 'src/app/shared/models/bot-states/bot-angry';
 })
 export class BotContainerComponent implements OnInit, OnDestroy {
 
-    command: BotCommand = new BotStateAngry();
+    command: BotCommand = new BotStateNormal();
 
     subscription: Subscription;
 
