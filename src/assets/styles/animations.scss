@@ -1,0 +1,12 @@
+.floating {
+    animation: floating 700ms linear;
+}
+
+@keyframes floating{
+    0%, 100%{
+        margin-top: 0px;
+    }
+    50%{
+        margin-top: 10px;
+    }
+}

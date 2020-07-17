@@ -2,20 +2,20 @@
     .wrapper {
         .sclera {
             &.fire {
-                background-image: url("../../../assets/gifs/fire.gif");
+                background-image: url("../gifs/fire.gif");
             }
 
             &.rainbow {
-                background-image: url("../../../assets/gifs/rainbow.gif");
+                background-image: url("../gifs/rainbow.gif");
             }
 
             &.pink {
-                background-image: url("../../../assets/gifs/pink.gif");
+                background-image: url("../gifs/pink.gif");
                 background-size: cover;
             }
 
             &.clouds {
-                background-image: url("../../../assets/gifs/clouds.gif");
+                background-image: url("../gifs/clouds.gif");
                 background-size: 1000px;
                 background-position: 10% 10%;
             }

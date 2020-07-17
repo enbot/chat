@@ -13,7 +13,7 @@ export const eyebrow = {
 
 export const eye = {
     width: 200,
-    height: 290,
+    height: 240,
     radius: 100,
     background: 'fire',
 };
