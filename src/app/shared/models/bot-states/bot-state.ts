@@ -57,7 +57,8 @@ export class BotState extends BotActive implements BotCommand {
 
     public headStyles(): TypeStyle {
         return {
-            transform: `rotate(${this.head.rotate}deg)`
+            transform: `rotate(${this.head.rotate}deg)`,
+            backgroundColor: this.head.color,
         };
     }
 
@@ -65,6 +66,7 @@ export class BotState extends BotActive implements BotCommand {
         return {
             width: `${this.eye.width}px`,
             height: `${this.eye.height}px`,
+            backgroundColor: this.head.color,
         };
     }
 

@@ -1,9 +1,7 @@
-.eye {
-    background: #000000;
+@import '../../assets/styles/transitions.scss';
 
-    &, * {
-        transition: 500ms cubic-bezier(0.15, 0.65, 0.95, 0.95);
-    }
+.eye {
+    @include transitioning();
 
     .wrapper {
         width: 100%;
