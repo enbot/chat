@@ -13,38 +13,38 @@ export const eyebrow = {
 
 export const eye = {
     width: 200,
-    height: 290,
+    height: 260,
     radius: 100,
-    background: 'pink',
+    background: 'pellow',
 };
 
 export const iris = {
     color: '#000000',
     clip: 'none',
-    width: 50,
-    height: 80,
-    radius: 50,
+    width: 60,
+    height: 90,
+    radius: 15,
 };
 
 export const lid = {
     left: {
         top: {
             rotate: 0,
-            closed: 0,
+            closed: 1,
         },
         bot: {
-            rotate: 0,
-            closed: 0,
+            rotate: 10,
+            closed: 6,
         },
     },
     right: {
         top: {
             rotate: 0,
-            closed: 0,
+            closed: 1,
         },
         bot: {
-            rotate: 0,
-            closed: 0,
+            rotate: -10,
+            closed: 6,
         },
     },
 };

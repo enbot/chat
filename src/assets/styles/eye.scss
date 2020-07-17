@@ -1,4 +1,4 @@
-@import '../../assets/styles/transitions.scss';
+@import "../../assets/styles/transitions.scss";
 
 .eye {
     @include transitioning();
@@ -33,7 +33,7 @@
 
             .iris {
                 position: absolute;
-                transition: 10ms ease all;
+                transition: all 600ms ease, top 10ms ease, left 10ms ease;
             }
 
             .lid {

@@ -24,6 +24,15 @@
                 background-size: 1000px;
                 background-position: 10% 10%;
             }
+
+            &.light {
+                background-image: url("../gifs/light.gif");
+            }
+
+            &.pellow {
+                background-image: url("../gifs/pellow.gif");
+                background-size: 200px;
+            }
         }
     }
 }
