@@ -1,6 +1,9 @@
+import { BotCommandHead, BotCommandEyebrow, BotCommandEye, BotCommandIris, BotCommandLid } from './bot-parts';
+import { TypeAxis, TypePixels, TypeClass, TypeStyle } from './metric-types';
+
 export interface BotActives {
     irisSize: TypeAxis;
-    inputMousePosition(config: PercentConfig): void;
+    inputMousePosition(config: TypeAxis): void;
 }
 
 export interface BotActivesLoadData {
@@ -45,8 +48,6 @@ export interface BotCommand extends BotActives {
     lidRightBotStyles(): TypeStyle;
 }
 
-import { BotCommand } from './bot-command';
-
 export interface BotCommandList {
     CHANGE_STATE_NORMAL: BotCommand;
     CHANGE_STATE_ANGRY: BotCommand;
@@ -57,7 +58,5 @@ export interface BotCommandList {
     CHANGE_STATE_BORED: BotCommand;
     CHANGE_STATE_CAREFUL: BotCommand;
 }
-
-import { BotCommandList } from './bot-command-list';
 
 export type BotCommandKey = keyof BotCommandList;

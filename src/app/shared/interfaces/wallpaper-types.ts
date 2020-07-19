@@ -1,5 +1,7 @@
-export interface WallpaperCommand { }
+export interface WallpaperCommand {
+    [prop: string]: any;
+}
 
 export interface WallpaperCommandList { }
 
-export interface WallpaperCommand { }
+export type WallpaperCommandKey = keyof WallpaperCommandList;
