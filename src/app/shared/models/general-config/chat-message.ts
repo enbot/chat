@@ -1,4 +1,4 @@
-import { TypeSide } from 'src/app/shared/interfaces/type-metrics';
+import { TypeSide } from 'src/app/shared/interfaces/metric-types';
 
 export class ChatMessage {
 

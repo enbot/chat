@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
-import { BotCommand } from 'src/app/shared/interfaces/bot-command';
-import { ChatCommand } from 'src/app/shared/interfaces/chat-command';
-import { WallpaperCommand } from 'src/app/shared/interfaces/wallpaper-command';
+import { BotCommand } from 'src/app/shared/interfaces/bot-types';
+import { ChatCommand } from 'src/app/shared/interfaces/chat-types';
+import { WallpaperCommand } from 'src/app/shared/interfaces/wallpaper-types';
 import { CommandResolver } from 'src/app/shared/models/general-config/command-resolver';
+import { AllCommandsKey } from 'src/app/shared/interfaces/command-types';
 import { Subject } from 'rxjs';
-import { AllCommandsKey } from 'src/app/shared/interfaces/all-commands-key';
 
 @Injectable({
   providedIn: 'root'

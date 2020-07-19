@@ -1,6 +1,6 @@
 import { Component, OnInit, OnDestroy, Input } from '@angular/core';
-import { BotCommand } from 'src/app/shared/interfaces/bot-command';
 import { EventService } from 'src/app/core/services/event.service';
+import { BotCommand } from 'src/app/shared/interfaces/bot-types';
 import { Subscription } from 'rxjs';
 
 @Component({

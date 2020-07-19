@@ -1,5 +1,6 @@
-import { BotCommand, BotCommandHead, BotCommandEyebrow, BotCommandEye, BotCommandIris, BotCommandLid } from '../../interfaces/bot-command';
-import { TypeClass, TypeStyle } from '../../interfaces/type-metrics';
+import { BotCommandHead, BotCommandEyebrow, BotCommandEye, BotCommandIris, BotCommandLid } from 'src/app/shared/interfaces/bot-parts';
+import { TypeClass, TypeStyle } from 'src/app/shared/interfaces/metric-types';
+import { BotCommand } from 'src/app/shared/interfaces/bot-types';
 import { BotActive } from './bot-active';
 
 export class BotState extends BotActive implements BotCommand {

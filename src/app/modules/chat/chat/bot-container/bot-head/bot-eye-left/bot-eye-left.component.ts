@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { BotCommand } from 'src/app/shared/interfaces/bot-command';
+import { BotCommand } from 'src/app/shared/interfaces/bot-types';
 
 @Component({
   selector: 'app-bot-eye-left',

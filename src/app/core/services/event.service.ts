@@ -1,8 +1,6 @@
 import { Injectable } from '@angular/core';
-import { MouseConfig } from 'src/app/shared/interfaces/mouse-config';
-import { PercentConfig } from 'src/app/shared/interfaces/percent-config';
-import { ScreenConfig } from 'src/app/shared/interfaces/screen-config';
-import { ScreenEvent } from 'src/app/shared/interfaces/screen-event';
+import { TypeForm, TypeAxis } from 'src/app/shared/interfaces/metric-types';
+import { ScreenEvent } from 'src/app/shared/interfaces/screen-events';
 import { Subject } from 'rxjs';
 
 @Injectable({
@@ -31,24 +29,24 @@ export class EventService {
     this.mousePositionY = window.innerHeight / 2;
   }
 
-  public get percentConfig(): PercentConfig {
+  public get percentConfig(): TypeAxis {
     return {
       x: (this.mousePositionX / this.screenWidth) * 100,
       y: (this.mousePositionY / this.screenHeight) * 100,
     };
   }
 
-  public get mouseConfig(): MouseConfig {
+  public get mouseConfig(): TypeAxis {
     return {
       x: this.mousePositionX,
       y: this.mousePositionY,
     };
   }
 
-  public get screenConfig(): ScreenConfig {
+  public get screenConfig(): TypeForm {
     return {
       width: this.screenWidth,
-      hieght: this.screenHeight,
+      height: this.screenHeight,
     };
   }
 

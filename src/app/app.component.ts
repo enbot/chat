@@ -1,6 +1,6 @@
 import { Component, HostListener } from '@angular/core';
 import { EventService } from 'src/app/core/services/event.service';
-import { ScreenEvent } from './shared/interfaces/screen-event';
+import { ScreenEvent } from './shared/interfaces/screen-events';
 
 @Component({
   selector: 'app-root',

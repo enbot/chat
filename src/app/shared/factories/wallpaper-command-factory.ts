@@ -1,4 +1,4 @@
-import { WallpaperCommandList } from 'src/app/shared/interfaces/wallpaper-command-list';
+import { WallpaperCommandList } from 'src/app/shared/interfaces/wallpaper-types';
 
 export function wallpaperCommandFactory(): WallpaperCommandList {
     return {

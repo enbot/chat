@@ -1,9 +1,9 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Subscription, interval } from 'rxjs';
 import { debounce } from 'rxjs/operators';
-import { CommandService } from 'src/app/core/services/command.service';
-import { BotCommand } from 'src/app/shared/interfaces/bot-command';
 import { BotStateNormal } from 'src/app/shared/models/bot-states/bot-normal';
+import { CommandService } from 'src/app/core/services/command.service';
+import { BotCommand } from 'src/app/shared/interfaces/bot-types';
 
 @Component({
     selector: 'app-bot-container',

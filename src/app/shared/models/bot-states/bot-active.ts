@@ -1,7 +1,6 @@
-import { BotActives, BotActivesLoadData, BotActivesIrisData } from '../../interfaces/bot-command';
+import { BotActives, BotActivesLoadData, BotActivesIrisData } from 'src/app/shared/interfaces/bot-types';
 import { applyMinMaxRule } from '../../functions/apply-min-max-rule';
-import { PercentConfig } from '../../interfaces/percent-config';
-import { TypeAxis } from '../../interfaces/type-metrics';
+import { TypeAxis } from 'src/app/shared/interfaces/metric-types';
 
 export class BotActive implements BotActives {
 
@@ -31,7 +30,7 @@ export class BotActive implements BotActives {
         };
     }
 
-    public inputMousePosition(config: PercentConfig): void {
+    public inputMousePosition(config: TypeAxis): void {
         this.updateIrisData(config);
     }
 

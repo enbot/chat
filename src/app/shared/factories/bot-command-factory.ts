@@ -1,4 +1,4 @@
-import { BotCommandList } from 'src/app/shared/interfaces/bot-command-list';
+import { BotCommandList } from 'src/app/shared/interfaces/bot-types';
 import { BotStateNormal } from 'src/app/shared/models/bot-states/bot-normal';
 import { BotStateAngry } from 'src/app/shared/models/bot-states/bot-angry';
 import { BotStateSad } from 'src/app/shared/models/bot-states/bot-sad';

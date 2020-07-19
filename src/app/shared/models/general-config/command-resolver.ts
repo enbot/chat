@@ -1,7 +1,4 @@
-import { TypeCommandResolved } from 'src/app/shared/interfaces/type-command-resolved';
-import { TypeCommand } from 'src/app/shared/interfaces/type-command';
-import { AllCommandsListKey } from 'src/app/shared/interfaces/all-commands-list-key';
-import { AllCommandsKey } from 'src/app/shared/interfaces/all-commands-key';
+import { AllCommandsKey, AllCommandsListKey, TypeCommand, TypeCommandResolved } from 'src/app/shared/interfaces/command-types';
 import { CommandContainer } from './command-container';
 
 export class CommandResolver extends CommandContainer {
