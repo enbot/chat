@@ -14,10 +14,10 @@ export interface BotCommandEyebrow {
 }
 
 export interface BotCommandEye {
+    color: TypeClass;
     width: TypePixels;
     height: TypePixels;
     radius: TypePercent;
-    background: TypeClass;
 }
 
 export interface BotCommandIris {

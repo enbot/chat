@@ -29,7 +29,7 @@ export class BotState extends BotActive implements BotCommand {
     }
 
     public scleraClasses(): TypeClass {
-        return `sclera ${this.eye.background}`;
+        return `sclera`;
     }
 
     public eyeClasses(): TypeClass {
@@ -74,6 +74,7 @@ export class BotState extends BotActive implements BotCommand {
     public scleraStyles(): TypeStyle {
         return {
             borderRadius: `${this.eye.radius}%`,
+            backgroundColor: this.eye.color,
         };
     }
 

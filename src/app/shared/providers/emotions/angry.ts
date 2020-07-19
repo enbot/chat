@@ -12,10 +12,10 @@ export const eyebrow = {
 };
 
 export const eye = {
+    color: '#ff0000',
     width: 200,
     height: 240,
     radius: 100,
-    background: 'fire',
 };
 
 export const iris = {
