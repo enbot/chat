@@ -1,26 +1,30 @@
+import { Animation } from '../configs/animation';
+import { Color } from '../configs/color';
+import { Clip } from '../configs/clip';
+
 export const head = {
-    color: '#000000',
-    animation: 'floating',
+    color: Color.BLACK,
+    animation: Animation.FLOATING,
     rotate: 0,
 };
 
 export const eyebrow = {
-    color: '#ffffff',
+    color: Color.WHITE,
     height: 50,
     width: 200,
     radius: 4,
 };
 
 export const eye = {
-    color: '#ff0000',
+    color: Color.RED,
     width: 200,
-    height: 240,
+    height: 220,
     radius: 100,
 };
 
 export const iris = {
-    color: '#000000',
-    clip: 'none',
+    color: Color.BLACK,
+    clip: Clip.NONE,
     width: 60,
     height: 90,
     radius: 50,
@@ -34,7 +38,7 @@ export const lid = {
         },
         bot: {
             rotate: 15,
-            closed: 5,
+            closed: -2,
         },
     },
     right: {
@@ -44,7 +48,7 @@ export const lid = {
         },
         bot: {
             rotate: -15,
-            closed: 5,
+            closed: -2,
         },
     },
 };
