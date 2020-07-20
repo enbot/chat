@@ -74,7 +74,7 @@ export class BotState extends BotActive implements BotCommand {
     public scleraStyles(): TypeStyle {
         return {
             borderRadius: `${this.eye.radius}%`,
-            backgroundColor: this.eye.color,
+            backgroundColor: this.eye.color
         };
     }
 
