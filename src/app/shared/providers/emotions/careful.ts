@@ -33,22 +33,22 @@ export const iris = {
 export const lid = {
     left: {
         top: {
-            rotate: 15,
-            closed: 25,
+            rotate: 10,
+            closed: 20,
         },
         bot: {
-            rotate: -15,
-            closed: 15,
+            rotate: -10,
+            closed: 20,
         },
     },
     right: {
         top: {
-            rotate: -15,
-            closed: 25,
+            rotate: -10,
+            closed: 20,
         },
         bot: {
-            rotate: 15,
-            closed: 15,
+            rotate: 10,
+            closed: 20,
         },
     },
 };
