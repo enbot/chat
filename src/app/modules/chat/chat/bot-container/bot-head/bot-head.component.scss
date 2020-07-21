@@ -1,14 +1,11 @@
 @import "../../../../../../assets/styles/transitions.scss";
 
-$bot-width: 45vw;
-$bot-height: 90vh;
+$bot-width: 700px;
+$bot-height: 100%;
 
 .container {
-    position: absolute;
     width: $bot-width;
     height: $bot-height;
-    top: calc((100vh - #{$bot-height}) / 2);
-    left: 5vw;
     overflow: hidden;
 
     &,
