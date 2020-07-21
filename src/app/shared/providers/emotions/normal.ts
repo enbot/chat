@@ -17,8 +17,8 @@ export const eyebrow = {
 
 export const eye = {
     color: Color.WHITE,
-    width: 200,
-    height: 260,
+    width: 100,
+    height: 70,
     radius: 100,
 };
 

@@ -1,6 +1,7 @@
 import { BotActives, BotActivesLoadData, BotActivesIrisData } from 'src/app/shared/interfaces/bot-types';
-import { applyMinMaxRule } from '../../functions/apply-min-max-rule';
+import { applyMinMaxRule } from 'src/app/shared/functions/apply-min-max-rule';
 import { TypeAxis } from 'src/app/shared/interfaces/metric-types';
+import { Size } from 'src/app/shared/providers/configs/size';
 
 export class BotActive implements BotActives {
 
@@ -8,16 +9,16 @@ export class BotActive implements BotActives {
 
     constructor(data: BotActivesLoadData) {
         const irisBaseSize = {
-            x: (data.eye.width * 0.85) - 10,
-            y: (data.eye.height * 0.85) - 10,
+            x: (((data.eye.width * Size.PERCENT_MULTIPLY) * Size.EYE_WIDTH) * Size.EYE_INNER) - Size.EYE_GAP,
+            y: (((data.eye.height * Size.PERCENT_MULTIPLY) * Size.EYE_HEIGHT) * Size.EYE_INNER) - Size.EYE_GAP,
         };
         const irisMaxSize = {
             x: irisBaseSize.x - data.iris.width,
             y: irisBaseSize.y - data.iris.height,
         };
         const irisMinSize = {
-            x: 10,
-            y: 10
+            x: Size.EYE_GAP,
+            y: Size.EYE_GAP,
         };
         this.irisData = {
             baseSize: irisBaseSize,

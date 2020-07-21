@@ -15,8 +15,8 @@ export interface BotCommandEyebrow {
 
 export interface BotCommandEye {
     color: TypeClass;
-    width: TypePixels;
-    height: TypePixels;
+    width: TypePercent;
+    height: TypePercent;
     radius: TypePercent;
 }
 

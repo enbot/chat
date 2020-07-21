@@ -65,8 +65,8 @@ export class BotState extends BotActive implements BotCommand {
 
     public eyeStyles(): TypeStyle {
         return {
-            width: `${this.eye.width}px`,
-            height: `${this.eye.height}px`,
+            width: `${this.eye.width}%`,
+            height: `${this.eye.height}%`,
             backgroundColor: this.head.color,
         };
     }
