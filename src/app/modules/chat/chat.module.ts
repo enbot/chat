@@ -11,6 +11,7 @@ import { BotHeadComponent } from './chat/bot-container/bot-head/bot-head.compone
 import { BotTalkComponent } from './chat/bot-container/bot-talk/bot-talk.component';
 import { BotFaceComponent } from './chat/bot-container/bot-head/bot-face/bot-face.component';
 import { BotFaceSpacingComponent } from './chat/bot-container/bot-head/bot-face-spacing/bot-face-spacing.component';
+import { BotBodyComponent } from './chat/bot-container/bot-head/bot-body/bot-body.component';
 
 @NgModule({
     declarations: [
@@ -24,6 +25,7 @@ import { BotFaceSpacingComponent } from './chat/bot-container/bot-head/bot-face-
         WallpaperContainerComponent,
         BotFaceComponent,
         BotFaceSpacingComponent,
+        BotBodyComponent,
     ],
     imports: [
         ChatRoutingModule,
