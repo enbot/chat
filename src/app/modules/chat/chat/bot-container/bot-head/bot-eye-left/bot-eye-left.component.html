@@ -1,4 +1,4 @@
-<div class="viewport">
+<div [ngClass]="command.viewportClasses()" [ngStyle]="command.viewportStyles()">
     <div [ngClass]="command.eyeClasses()" [ngStyle]="command.eyeStyles()">
         <div class="wrapper">
             <div [ngClass]="command.scleraClasses()" [ngStyle]="command.scleraStyles()">

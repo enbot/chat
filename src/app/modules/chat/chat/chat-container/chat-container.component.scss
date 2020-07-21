@@ -1,19 +1,22 @@
 $chat-width: 45vw;
-$chat-height: 80vh;
+$chat-height: 90%;
 
 .chat {
     position: absolute;
     width: $chat-width;
     height: $chat-height;
-    top: #{(100vh - $chat-height) / 2};
-    right: 5vw;
+    top: #{(100% - $chat-height) / 2};
+    right: 1vw;
     background-color: transparent;
     box-sizing: border-box;
-    padding: 20px;
+    padding: 5px;
     display: grid;
     grid-gap: 2px;
     grid-template-columns: 1fr 1fr;
+    background-color: maroon;
 }
+
+// temp
 
 button {
     display: inline-block;

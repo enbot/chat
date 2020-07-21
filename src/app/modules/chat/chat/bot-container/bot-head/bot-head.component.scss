@@ -15,7 +15,8 @@ $bot-height: 100%;
 
     .head {
         @include transitioning();
-        padding-top: 10vh;
+        padding-top: 110px;
+        position: relative;
         display: flex;
         justify-content: space-evenly;
         box-sizing: border-box;

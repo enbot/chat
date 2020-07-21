@@ -1,6 +1,7 @@
 import { BotCommandHead, BotCommandEyebrow, BotCommandEye, BotCommandIris, BotCommandLid } from 'src/app/shared/interfaces/bot-parts';
 import { TypeClass, TypeStyle } from 'src/app/shared/interfaces/metric-types';
 import { BotCommand } from 'src/app/shared/interfaces/bot-types';
+import { Size } from 'src/app/shared/providers/configs/size';
 import { BotActive } from './bot-active';
 
 export class BotState extends BotActive implements BotCommand {
@@ -32,6 +33,10 @@ export class BotState extends BotActive implements BotCommand {
         return `sclera`;
     }
 
+    public viewportClasses(): TypeClass {
+        return `viewport`;
+    }
+
     public eyeClasses(): TypeClass {
         return 'eye';
     }
@@ -60,6 +65,13 @@ export class BotState extends BotActive implements BotCommand {
         return {
             transform: `rotate(${this.head.rotate}deg)`,
             backgroundColor: this.head.color,
+        };
+    }
+
+    public viewportStyles(): TypeStyle {
+        return {
+            width: `${Size.EYE_WIDTH}px`,
+            height: `${Size.EYE_HEIGHT}px`,
         };
     }
 

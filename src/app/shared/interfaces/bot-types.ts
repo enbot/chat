@@ -30,6 +30,7 @@ export interface BotCommand extends BotActives {
     eye: BotCommandEye;
     iris: BotCommandIris;
     lid: BotCommandLid;
+    viewportClasses(): TypeClass;
     headClasses(): TypeClass;
     scleraClasses(): TypeClass;
     eyeClasses(): TypeClass;
@@ -38,6 +39,7 @@ export interface BotCommand extends BotActives {
     lidLeftBotClasses(): TypeClass;
     lidRightTopClasses(): TypeClass;
     lidRightBotClasses(): TypeClass;
+    viewportStyles(): TypeStyle;
     headStyles(): TypeStyle;
     eyeStyles(): TypeStyle;
     scleraStyles(): TypeStyle;
