@@ -54,7 +54,7 @@ export interface BotCommandList {
     CHANGE_STATE_HAPPY: BotCommand;
     CHANGE_STATE_STAR: BotCommand;
     CHANGE_STATE_SAD: BotCommand;
-    CHANGE_STATE_CLOSED: BotCommand;
+    CHANGE_STATE_CONFUSED: BotCommand;
     CHANGE_STATE_BORED: BotCommand;
     CHANGE_STATE_CAREFUL: BotCommand;
 }

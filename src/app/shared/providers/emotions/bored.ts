@@ -16,39 +16,39 @@ export const eyebrow = {
 };
 
 export const eye = {
-    color: Color.RED,
+    color: Color.GREEN,
     width: 200,
-    height: 150,
+    height: 190,
     radius: 100,
 };
 
 export const iris = {
     color: Color.BLACK,
     clip: Clip.NONE,
-    width: 50,
-    height: 80,
-    radius: 20,
+    width: 45,
+    height: 75,
+    radius: 50,
 };
 
 export const lid = {
     left: {
         top: {
-            rotate: 5,
-            closed: 25,
+            rotate: 0,
+            closed: 40,
         },
         bot: {
-            rotate: -5,
-            closed: 25,
+            rotate: 10,
+            closed: -1,
         },
     },
     right: {
         top: {
-            rotate: -5,
-            closed: 25,
+            rotate: 0,
+            closed: 40,
         },
         bot: {
-            rotate: 5,
-            closed: 25,
+            rotate: -10,
+            closed: -1,
         },
     },
 };

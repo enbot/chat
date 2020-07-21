@@ -3,6 +3,7 @@ import { BotStateNormal } from 'src/app/shared/models/bot-states/bot-normal';
 import { BotStateCareful } from 'src/app/shared/models/bot-states/bot-careful';
 import { BotStateAngry } from 'src/app/shared/models/bot-states/bot-angry';
 import { BotStateHappy } from 'src/app/shared/models/bot-states/bot-happy';
+import { BotStateBored } from 'src/app/shared/models/bot-states/bot-bored';
 import { BotStateSad } from 'src/app/shared/models/bot-states/bot-sad';
 
 export function botCommandFactory(): BotCommandList {
@@ -12,8 +13,8 @@ export function botCommandFactory(): BotCommandList {
         CHANGE_STATE_HAPPY: new BotStateHappy(),
         CHANGE_STATE_STAR: new BotStateAngry(),
         CHANGE_STATE_SAD: new BotStateSad(),
-        CHANGE_STATE_CLOSED: new BotStateAngry(),
-        CHANGE_STATE_BORED: new BotStateAngry(),
+        CHANGE_STATE_CONFUSED: new BotStateAngry(),
+        CHANGE_STATE_BORED: new BotStateBored(),
         CHANGE_STATE_CAREFUL: new BotStateCareful(),
     };
 }
