@@ -18,15 +18,15 @@ export const eyebrow = {
 export const eye = {
     color: Color.RED,
     width: 100,
-    height: 50,
+    height: 60,
     radius: 100,
 };
 
 export const iris = {
     color: Color.BLACK,
     clip: Clip.NONE,
-    width: 50,
-    height: 80,
+    width: 40,
+    height: 70,
     radius: 20,
 };
 

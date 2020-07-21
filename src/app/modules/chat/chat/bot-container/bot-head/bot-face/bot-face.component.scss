@@ -1,0 +1,41 @@
+.face {
+    position: absolute;
+    width: 90%;
+    height: 53%;
+    top: 90px;
+    left: 5%;
+
+    .wrapper {
+        position: relative;
+        width: 100%;
+        height: 100%;
+
+        .visor {
+            background-image: url("../../../../../../../assets/images/pixel.png");
+            background-color: rgba(255, 255, 255, 0.2);
+            position: absolute;
+            top: 16%;
+            left: 18%;
+            width: 64%;
+            height: 68%;
+            z-index: 1;
+        }
+
+        .helmet {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 2;
+
+            img {
+                width: auto;
+                height: 390px;
+            }
+        }
+    }
+}

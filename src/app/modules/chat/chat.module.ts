@@ -9,6 +9,8 @@ import { BotEyeLeftComponent } from './chat/bot-container/bot-head/bot-eye-left/
 import { BotEyeRightComponent } from './chat/bot-container/bot-head/bot-eye-right/bot-eye-right.component';
 import { BotHeadComponent } from './chat/bot-container/bot-head/bot-head.component';
 import { BotTalkComponent } from './chat/bot-container/bot-talk/bot-talk.component';
+import { BotFaceComponent } from './chat/bot-container/bot-head/bot-face/bot-face.component';
+import { BotFaceSpacingComponent } from './chat/bot-container/bot-head/bot-face-spacing/bot-face-spacing.component';
 
 @NgModule({
     declarations: [
@@ -20,6 +22,8 @@ import { BotTalkComponent } from './chat/bot-container/bot-talk/bot-talk.compone
         BotTalkComponent,
         ChatContainerComponent,
         WallpaperContainerComponent,
+        BotFaceComponent,
+        BotFaceSpacingComponent,
     ],
     imports: [
         ChatRoutingModule,

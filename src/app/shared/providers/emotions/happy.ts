@@ -25,8 +25,8 @@ export const eye = {
 export const iris = {
     color: Color.BLACK,
     clip: Clip.NONE,
-    width: 65,
-    height: 95,
+    width: 55,
+    height: 85,
     radius: 40,
 };
 
