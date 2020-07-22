@@ -1,18 +1,45 @@
-.wrapper {
+.align {
     display: flex;
     justify-content: center;
     position: absolute;
     width: 100%;
-    height: 400px;
+    height: 205px;
     top: 60%;
     left: 0;
+    background-color: rgba(255, 0, 0, 0.4);
 
-    .body {
-        background-color: #f0f0f0;
-        width: 170px;
-        height: 160px;
-        border-top-left-radius: 50%;
-        border-top-right-radius: 50%;
+    .wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        position: relative;
+        width: 270px;
+        height: 100%;
         z-index: 10;
+        perspective: 35px;
+        background-color: rgba(0, 0, 255, 0.4);
+
+        .body {
+            height: 85%;
+            width: auto;
+        }
+
+        .hand {
+            position: absolute;
+            height: 75%;
+            width: auto;
+
+            &.left {
+                transform: rotate(20deg);
+                left: -29px;
+                top: 30px;
+            }
+
+            &.right {
+                transform: rotate(-20deg);
+                right: -29px;
+                top: 30px;
+            }
+        }
     }
 }

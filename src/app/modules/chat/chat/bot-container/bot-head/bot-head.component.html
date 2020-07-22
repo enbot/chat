@@ -1,6 +1,6 @@
 <div class="container">
     <div [ngClass]="command.headClasses()" [ngStyle]="command.headStyles()">
-        <!-- <app-bot-body></app-bot-body> -->
+        <app-bot-body [command]="command"></app-bot-body>
         <app-bot-eye-left [command]="command"></app-bot-eye-left>
         <app-bot-face-spacing></app-bot-face-spacing>
         <app-bot-eye-right [command]="command"></app-bot-eye-right>

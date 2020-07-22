@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { BotCommand } from 'src/app/shared/interfaces/bot-types';
 
 @Component({
   selector: 'app-bot-body',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./bot-body.component.scss']
 })
 export class BotBodyComponent implements OnInit {
+
+  @Input() command: BotCommand;
 
   constructor() { }
 

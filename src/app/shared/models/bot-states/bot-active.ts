@@ -7,6 +7,8 @@ export class BotActive implements BotActives {
 
     private irisData: BotActivesIrisData;
 
+    // private bodyData
+
     constructor(data: BotActivesLoadData) {
         const irisBaseSize = {
             x: (((data.eye.width * Size.PERCENT_MULTIPLY) * Size.EYE_WIDTH) * Size.EYE_INNER) - Size.EYE_GAP,
