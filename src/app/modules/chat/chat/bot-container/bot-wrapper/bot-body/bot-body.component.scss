@@ -6,7 +6,6 @@
     height: 205px;
     top: 60%;
     left: 0;
-    background-color: rgba(255, 0, 0, 0.4);
 
     .wrapper {
         display: flex;
@@ -17,28 +16,35 @@
         height: 100%;
         z-index: 10;
         perspective: 35px;
-        background-color: rgba(0, 0, 255, 0.4);
+
+        &.floating {
+            animation: floating 2s ease 50ms infinite;
+        }
 
         .body {
             height: 85%;
             width: auto;
         }
 
-        .hand {
+        .arm {
             position: absolute;
-            height: 75%;
+            height: 65%;
             width: auto;
+
+            &.floating {
+                animation: floating 2s ease 100ms infinite;
+            }
 
             &.left {
                 transform: rotate(20deg);
-                left: -29px;
-                top: 30px;
+                left: -15px;
+                top: 40px;
             }
 
             &.right {
                 transform: rotate(-20deg);
-                right: -29px;
-                top: 30px;
+                right: -15px;
+                top: 40px;
             }
         }
     }
