@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { BotTalkComponent } from './bot-talk.component';
+import { BotHelmetComponent } from './bot-helmet.component';
 
-describe('BotTalkComponent', () => {
-  let component: BotTalkComponent;
-  let fixture: ComponentFixture<BotTalkComponent>;
+describe('BotHelmetComponent', () => {
+  let component: BotHelmetComponent;
+  let fixture: ComponentFixture<BotHelmetComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ BotTalkComponent ]
+      declarations: [ BotHelmetComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(BotTalkComponent);
+    fixture = TestBed.createComponent(BotHelmetComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

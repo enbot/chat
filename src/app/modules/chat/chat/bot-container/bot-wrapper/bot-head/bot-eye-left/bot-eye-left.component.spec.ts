@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { BotFaceSpacingComponent } from './bot-face-spacing.component';
+import { BotEyeLeftComponent } from './bot-eye-left.component';
 
-describe('BotFaceSpacingComponent', () => {
-  let component: BotFaceSpacingComponent;
-  let fixture: ComponentFixture<BotFaceSpacingComponent>;
+describe('BotEyeLeftComponent', () => {
+  let component: BotEyeLeftComponent;
+  let fixture: ComponentFixture<BotEyeLeftComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ BotFaceSpacingComponent ]
+      declarations: [ BotEyeLeftComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(BotFaceSpacingComponent);
+    fixture = TestBed.createComponent(BotEyeLeftComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

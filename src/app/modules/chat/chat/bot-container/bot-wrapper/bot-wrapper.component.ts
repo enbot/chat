@@ -4,11 +4,11 @@ import { BotCommand } from 'src/app/shared/interfaces/bot-types';
 import { Subscription } from 'rxjs';
 
 @Component({
-  selector: 'app-bot-head',
-  templateUrl: './bot-head.component.html',
-  styleUrls: ['./bot-head.component.scss']
+  selector: 'app-bot-wrapper',
+  templateUrl: './bot-wrapper.component.html',
+  styleUrls: ['./bot-wrapper.component.scss']
 })
-export class BotHeadComponent implements OnInit, OnDestroy {
+export class BotWrapperComponent implements OnInit, OnDestroy {
 
   @Input() command: BotCommand;
 

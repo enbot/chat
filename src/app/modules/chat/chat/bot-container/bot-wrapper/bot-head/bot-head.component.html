@@ -1,0 +1,17 @@
+<div class="head" [ngStyle]="command.headStyles()">
+    <div class="wrapper">
+        <div class="screen" [ngStyle]="command.screenStyles()">
+            <div class="wrapper">
+                <div class="face">
+                    <app-bot-eye-left [command]="command"></app-bot-eye-left>
+                    <app-bot-eye-space [command]="command"></app-bot-eye-space>
+                    <app-bot-eye-right [command]="command"></app-bot-eye-right>
+                </div>
+                <div class="visor"> </div>
+            </div>
+        </div>
+        <div class="helmet">
+            <img src="assets/svg/helmet.svg">
+        </div>
+    </div>
+</div>

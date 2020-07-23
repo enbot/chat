@@ -32,7 +32,7 @@ export class BotState extends BotActive implements BotCommand {
         };
     }
 
-    public helmetStyles(): TypeStyle {
+    public screenStyles(): TypeStyle {
         return {
             backgroundColor: this.head.color,
         };

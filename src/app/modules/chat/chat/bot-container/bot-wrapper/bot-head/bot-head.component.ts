@@ -2,11 +2,11 @@ import { Component, OnInit, Input } from '@angular/core';
 import { BotCommand } from 'src/app/shared/interfaces/bot-types';
 
 @Component({
-  selector: 'app-bot-face',
-  templateUrl: './bot-face.component.html',
-  styleUrls: ['./bot-face.component.scss']
+  selector: 'app-bot-head',
+  templateUrl: './bot-head.component.html',
+  styleUrls: ['./bot-head.component.scss']
 })
-export class BotFaceComponent implements OnInit {
+export class BotHeadComponent implements OnInit {
 
   @Input() command: BotCommand;
 

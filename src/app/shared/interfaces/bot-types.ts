@@ -32,7 +32,7 @@ export interface BotCommand extends BotActives {
     iris: BotCommandIris;
     lid: BotCommandLid;
     bodyStyles(): TypeStyle;
-    helmetStyles(): TypeStyle;
+    screenStyles(): TypeStyle;
     viewportStyles(): TypeStyle;
     headStyles(): TypeStyle;
     eyeStyles(): TypeStyle;
