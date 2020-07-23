@@ -3,7 +3,7 @@ import { Subscription, interval } from 'rxjs';
 import { debounce } from 'rxjs/operators';
 import { BotStateNormal } from 'src/app/shared/models/bot-states/bot-normal';
 import { CommandService } from 'src/app/core/services/command.service';
-import { BotCommand } from 'src/app/shared/interfaces/bot-types';
+import { BotState } from 'src/app/shared/models/bot-states/bot-state';
 
 @Component({
     selector: 'app-bot-container',
@@ -12,14 +12,14 @@ import { BotCommand } from 'src/app/shared/interfaces/bot-types';
 })
 export class BotContainerComponent implements OnInit, OnDestroy {
 
-    command: BotCommand = new BotStateNormal();
+    command: BotState = new BotStateNormal();
 
     subscription: Subscription;
 
     constructor(private commandService: CommandService) { }
 
     ngOnInit(): void {
-        this.subscription = this.commandService.botCommand
+        this.subscription = this.commandService.botState
             .pipe(debounce(() => interval(400)))
             .subscribe(command => this.command = command);
     }

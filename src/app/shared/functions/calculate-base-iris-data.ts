@@ -1,12 +1,13 @@
 import { BotCommandEye, BotCommandIris } from '../interfaces/bot-parts';
 import { BotActiveIrisData } from '../interfaces/bot-active';
+import { Percent } from '../providers/configs/percent';
 import { Size } from '../providers/configs/size';
 
 export function calculateBaseIrisData(eye: BotCommandEye, iris: BotCommandIris): BotActiveIrisData {
 
     const irisBaseSize = {
-        x: (((eye.width * Size.PERCENT_MULTIPLY) * Size.EYE_WIDTH) * Size.EYE_INNER) - Size.EYE_GAP,
-        y: (((eye.height * Size.PERCENT_MULTIPLY) * Size.EYE_HEIGHT) * Size.EYE_INNER) - Size.EYE_GAP,
+        x: (((eye.width * Percent.MULTIPLY) * Size.EYE_WIDTH) * Size.EYE_INNER) - Size.EYE_GAP,
+        y: (((eye.height * Percent.MULTIPLY) * Size.EYE_HEIGHT) * Size.EYE_INNER) - Size.EYE_GAP,
     };
 
     const irisMaxSize = {

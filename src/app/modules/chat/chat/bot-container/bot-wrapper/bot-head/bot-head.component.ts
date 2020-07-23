@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { BotCommand } from 'src/app/shared/interfaces/bot-types';
+import { BotState } from 'src/app/shared/models/bot-states/bot-state';
 
 @Component({
   selector: 'app-bot-head',
@@ -8,7 +8,7 @@ import { BotCommand } from 'src/app/shared/interfaces/bot-types';
 })
 export class BotHeadComponent implements OnInit {
 
-  @Input() command: BotCommand;
+  @Input() command: BotState;
 
   constructor() { }
 

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { BotCommand } from 'src/app/shared/interfaces/bot-types';
+import { BotState } from 'src/app/shared/models/bot-states/bot-state';
 import { ChatCommand } from 'src/app/shared/interfaces/chat-types';
 import { WallpaperCommand } from 'src/app/shared/interfaces/wallpaper-types';
 import { CommandResolver } from 'src/app/shared/models/general-config/command-resolver';
@@ -11,16 +11,16 @@ import { Subject } from 'rxjs';
 })
 export class CommandService {
 
-  public readonly botCommand: Subject<BotCommand>;
+  public readonly botState: Subject<BotState>;
 
-  public readonly chatCommand: Subject<ChatCommand>;
+  public readonly chatState: Subject<ChatCommand>;
 
-  public readonly wallpaperCommand: Subject<WallpaperCommand>;
+  public readonly wallpaperState: Subject<WallpaperCommand>;
 
   constructor() {
-    this.botCommand = new Subject();
-    this.chatCommand = new Subject();
-    this.wallpaperCommand = new Subject();
+    this.botState = new Subject();
+    this.chatState = new Subject();
+    this.wallpaperState = new Subject();
   }
 
   public isCommand(command: string): boolean {
@@ -33,7 +33,7 @@ export class CommandService {
       const listName = resolved.list;
       const keyName = resolved.key;
       const instance = CommandResolver.assemble(listName, keyName);
-      const subjectName = `${listName}Command`;
+      const subjectName = `${listName}State`;
       const subjectEmitter = this[subjectName];
       subjectEmitter.next(instance);
     }

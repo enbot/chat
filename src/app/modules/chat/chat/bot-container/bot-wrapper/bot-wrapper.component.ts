@@ -1,6 +1,6 @@
 import { Component, OnInit, OnDestroy, Input } from '@angular/core';
 import { EventService } from 'src/app/core/services/event.service';
-import { BotCommand } from 'src/app/shared/interfaces/bot-types';
+import { BotState } from 'src/app/shared/models/bot-states/bot-state';
 import { Subscription } from 'rxjs';
 
 @Component({
@@ -10,7 +10,7 @@ import { Subscription } from 'rxjs';
 })
 export class BotWrapperComponent implements OnInit, OnDestroy {
 
-  @Input() command: BotCommand;
+  @Input() command: BotState;
 
   subscription: Subscription;
 

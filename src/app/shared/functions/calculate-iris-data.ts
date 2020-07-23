@@ -1,6 +1,7 @@
 import { TypeAxis } from '../interfaces/metric-types';
 import { BotActiveIrisData } from '../interfaces/bot-active';
 import { applyMinMaxRule } from './apply-min-max-rule';
+import { Percent } from '../providers/configs/percent';
 
 export function calculateIrisData(config: TypeAxis, irisData: BotActiveIrisData): TypeAxis {
 
@@ -9,8 +10,8 @@ export function calculateIrisData(config: TypeAxis, irisData: BotActiveIrisData)
     const irisMinSize = irisData.minSize;
 
     const screenPercentBase = {
-        x: config.x * 0.01,
-        y: config.y * 0.01,
+        x: config.x * Percent.MULTIPLY,
+        y: config.y * Percent.MULTIPLY,
     };
 
     const irisPixelSize = {
