@@ -1,8 +1,11 @@
 import { TypeDegree, TypePercent, TypeHex, TypeClass, TypePixels } from './metric-types';
 
+export interface BotCommandBody {
+    color: TypeHex;
+}
+
 export interface BotCommandHead {
     color: TypeHex;
-    animation: TypeClass;
     rotate: TypeDegree;
 }
 

@@ -11,14 +11,22 @@
         height: 100%;
 
         .visor {
-            background-image: url("../../../../../../../assets/images/pixel.png");
             position: absolute;
             top: 14%;
             left: 17%;
             width: 66%;
             height: 72%;
-            z-index: 1;
             border-radius: 17%;
+
+            &.back{
+                z-index: -1;
+            }
+
+            &.wave{
+                background-image: url("../../../../../../../assets/images/pixel.png");
+                animation: wave 200ms ease infinite;
+                z-index: 2; 
+            }
         }
 
         .helmet {
@@ -30,7 +38,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            z-index: 2;
+            z-index: 3;
 
             img {
                 width: auto;

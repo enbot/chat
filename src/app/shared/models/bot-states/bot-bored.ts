@@ -4,6 +4,7 @@ import { BotState } from './bot-state';
 export class BotStateBored extends BotState  {
     constructor() {
         super(
+            bored.body,
             bored.head,
             bored.eyebrow,
             bored.eye,

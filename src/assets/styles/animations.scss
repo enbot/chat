@@ -1,7 +1,3 @@
-.floating {
-    animation: floating 2s ease infinite;
-}
-
 @keyframes floating {
     0%,
     100% {
@@ -10,10 +6,6 @@
     50% {
         margin-top: 10px;
     }
-}
-
-.wave {
-    animation: wave 200ms ease infinite;
 }
 
 @keyframes wave {

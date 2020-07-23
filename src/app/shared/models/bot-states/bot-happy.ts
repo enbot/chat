@@ -4,6 +4,7 @@ import { BotState } from './bot-state';
 export class BotStateHappy extends BotState {
     constructor() {
         super(
+            happy.body,
             happy.head,
             happy.eyebrow,
             happy.eye,

@@ -22,5 +22,9 @@ $bot-height: 100%;
         box-sizing: border-box;
         width: 100%;
         height: 100%;
+
+        &.floating {
+            animation: floating 2s ease infinite;
+        }
     }
 }

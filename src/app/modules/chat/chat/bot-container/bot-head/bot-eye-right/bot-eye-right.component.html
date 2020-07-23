@@ -1,10 +1,10 @@
-<div [ngClass]="command.viewportClasses()" [ngStyle]="command.viewportStyles()">
-    <div [ngClass]="command.eyeClasses()" [ngStyle]="command.eyeStyles()">
+<div class="viewport" [ngStyle]="command.viewportStyles()">
+    <div class="eye" [ngStyle]="command.eyeStyles()">
         <div class="wrapper">
-            <div [ngClass]="command.scleraClasses()" [ngStyle]="command.scleraStyles()">
-                <div [ngClass]="command.lidRightTopClasses()" [ngStyle]="command.lidRightTopStyles()"> </div>
-                <div [ngClass]="command.lidRightBotClasses()" [ngStyle]="command.lidRightBotStyles()"> </div>
-                <div [ngClass]="command.irisClasses()" [ngStyle]="command.irisStyles()"> </div>
+            <div class="sclera" [ngStyle]="command.scleraStyles()">
+                <div class="lid top" [ngStyle]="command.lidRightTopStyles()"> </div>
+                <div class="lid bot" [ngStyle]="command.lidRightBotStyles()"> </div>
+                <div class="iris" [ngStyle]="command.irisStyles()"> </div>
             </div>
         </div>
     </div>

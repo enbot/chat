@@ -1,28 +1,31 @@
-import { Animation } from '../configs/animation';
+import * as parts from '../../interfaces/bot-parts';
 import { Color } from '../configs/color';
 import { Clip } from '../configs/clip';
 
-export const head = {
+export const body: parts.BotCommandBody = {
+    color: Color.SNOW,
+};
+
+export const head: parts.BotCommandHead = {
     color: Color.BLACK,
-    animation: Animation.FLOATING,
     rotate: 0,
 };
 
-export const eyebrow = {
+export const eyebrow: parts.BotCommandEyebrow = {
     color: Color.WHITE,
     height: 50,
     width: 200,
     radius: 4,
 };
 
-export const eye = {
+export const eye: parts.BotCommandEye = {
     color: Color.YELLOW,
     width: 100,
     height: 70,
     radius: 100,
 };
 
-export const iris = {
+export const iris: parts.BotCommandIris = {
     color: Color.BLACK,
     clip: Clip.NONE,
     width: 55,
@@ -30,7 +33,7 @@ export const iris = {
     radius: 40,
 };
 
-export const lid = {
+export const lid: parts.BotCommandLid = {
     left: {
         top: {
             rotate: 0,

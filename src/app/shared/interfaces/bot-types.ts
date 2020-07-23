@@ -1,5 +1,5 @@
-import { BotCommandHead, BotCommandEyebrow, BotCommandEye, BotCommandIris, BotCommandLid } from './bot-parts';
-import { TypeAxis, TypePixels, TypeClass, TypeStyle } from './metric-types';
+import { BotCommandHead, BotCommandEyebrow, BotCommandEye, BotCommandIris, BotCommandLid, BotCommandBody } from './bot-parts';
+import { TypeAxis, TypePixels, TypeStyle } from './metric-types';
 
 export interface BotActives {
     irisSize: TypeAxis;
@@ -25,20 +25,14 @@ export interface BotActivesIrisData {
 }
 
 export interface BotCommand extends BotActives {
+    body: BotCommandBody;
     head: BotCommandHead;
     eyebrow: BotCommandEyebrow;
     eye: BotCommandEye;
     iris: BotCommandIris;
     lid: BotCommandLid;
-    viewportClasses(): TypeClass;
-    headClasses(): TypeClass;
-    scleraClasses(): TypeClass;
-    eyeClasses(): TypeClass;
-    irisClasses(): TypeClass;
-    lidLeftTopClasses(): TypeClass;
-    lidLeftBotClasses(): TypeClass;
-    lidRightTopClasses(): TypeClass;
-    lidRightBotClasses(): TypeClass;
+    bodyStyles(): TypeStyle;
+    helmetStyles(): TypeStyle;
     viewportStyles(): TypeStyle;
     headStyles(): TypeStyle;
     eyeStyles(): TypeStyle;

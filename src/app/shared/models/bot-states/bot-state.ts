@@ -1,5 +1,5 @@
-import { BotCommandHead, BotCommandEyebrow, BotCommandEye, BotCommandIris, BotCommandLid } from 'src/app/shared/interfaces/bot-parts';
-import { TypeClass, TypeStyle } from 'src/app/shared/interfaces/metric-types';
+import { BotCommandHead, BotCommandEyebrow, BotCommandEye, BotCommandIris, BotCommandLid, BotCommandBody } from 'src/app/shared/interfaces/bot-parts';
+import { TypeStyle } from 'src/app/shared/interfaces/metric-types';
 import { BotCommand } from 'src/app/shared/interfaces/bot-types';
 import { Size } from 'src/app/shared/providers/configs/size';
 import { BotActive } from './bot-active';
@@ -7,6 +7,7 @@ import { BotActive } from './bot-active';
 export class BotState extends BotActive implements BotCommand {
 
     constructor(
+        public readonly body: BotCommandBody,
         public readonly head: BotCommandHead,
         public readonly eyebrow: BotCommandEyebrow,
         public readonly eye: BotCommandEye,
@@ -25,46 +26,21 @@ export class BotState extends BotActive implements BotCommand {
         });
     }
 
-    public headClasses(): TypeClass {
-        return `head ${this.head.animation}`;
+    public bodyStyles(): TypeStyle {
+        return {
+            fill: this.body.color,
+        };
     }
 
-    public scleraClasses(): TypeClass {
-        return `sclera`;
-    }
-
-    public viewportClasses(): TypeClass {
-        return `viewport`;
-    }
-
-    public eyeClasses(): TypeClass {
-        return 'eye';
-    }
-
-    public irisClasses(): TypeClass {
-        return 'iris';
-    }
-
-    public lidLeftTopClasses(): TypeClass {
-        return 'lid top';
-    }
-
-    public lidLeftBotClasses(): TypeClass {
-        return 'lid bot';
-    }
-
-    public lidRightTopClasses(): TypeClass {
-        return 'lid top';
-    }
-
-    public lidRightBotClasses(): TypeClass {
-        return 'lid bot';
+    public helmetStyles(): TypeStyle {
+        return {
+            backgroundColor: this.head.color,
+        };
     }
 
     public headStyles(): TypeStyle {
         return {
             transform: `rotate(${this.head.rotate}deg)`,
-            backgroundColor: this.head.color,
         };
     }
 
