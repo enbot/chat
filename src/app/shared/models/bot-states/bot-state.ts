@@ -26,6 +26,12 @@ export class BotState implements BotCommand, BotActive {
         this.containerData = calculateBaseContainerData();
     }
 
+    public containerStyles(): TypeStyle {
+        return {
+            transform: `rotateX(${this.containerRotation.x}deg) rotateY(${this.containerRotation.y}deg)`
+        };
+    }
+
     public bodyStyles(): TypeStyle {
         return {
             fill: this.body.color,

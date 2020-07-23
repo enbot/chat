@@ -8,6 +8,7 @@ export interface BotCommand {
     eye: parts.BotCommandEye;
     iris: parts.BotCommandIris;
     lid: parts.BotCommandLid;
+    containerStyles(): TypeStyle;
     bodyStyles(): TypeStyle;
     screenStyles(): TypeStyle;
     viewportStyles(): TypeStyle;

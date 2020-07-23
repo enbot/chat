@@ -13,8 +13,7 @@ $bot-height: 100%;
     display: flex;
     justify-content: center;
     box-sizing: border-box;
-
-    background-color: rgb(0, 255, 102);
+    transform-style: preserve-3d;
 
     &.floating {
         animation: floating 2s ease infinite;

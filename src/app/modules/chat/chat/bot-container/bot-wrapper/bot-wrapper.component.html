@@ -1,4 +1,4 @@
-<div class="container floating">
+<div class="container floating" [ngStyle]="command.containerStyles()">
     <app-bot-body [command]="command"></app-bot-body>
     <app-bot-head [command]="command"></app-bot-head>
 </div>

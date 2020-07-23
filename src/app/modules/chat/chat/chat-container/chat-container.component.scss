@@ -15,7 +15,7 @@ $chat-height: 90%;
     display: grid;
     grid-gap: 2px;
     grid-template-columns: 1fr 1fr;
-    background-color: maroon;
+    // background-color: maroon;
 }
 
 // temp
@@ -43,12 +43,12 @@ button {
     }
 
     &:not(.disabled) {
-        background: #0069ed;
+        background: #ccbb6e;
         color: #ffffff;
 
         &:hover,
         &:focus {
-            background: #0053ba;
+            background: #b3a258;
         }
         &:focus {
             outline: 1px solid #fff;
