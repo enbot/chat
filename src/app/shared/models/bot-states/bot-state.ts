@@ -1,29 +1,29 @@
-import { BotCommandHead, BotCommandEyebrow, BotCommandEye, BotCommandIris, BotCommandLid, BotCommandBody } from 'src/app/shared/interfaces/bot-parts';
-import { TypeStyle } from 'src/app/shared/interfaces/metric-types';
+import * as parts from 'src/app/shared/interfaces/bot-parts';
+import { BotActive, BotActiveIrisData, BotActiveContainerData } from 'src/app/shared/interfaces/bot-active';
+import { calculateBaseContainerData } from '../../functions/calculate-base-container-data';
+import { calculateBaseIrisData } from '../../functions/calculate-base-iris-data';
+import { calculateContainerData } from '../../functions/calculate-container-data';
+import { calculateIrisData } from '../../functions/calculate-iris-data';
+import { TypeStyle, TypeAxis } from 'src/app/shared/interfaces/metric-types';
 import { BotCommand } from 'src/app/shared/interfaces/bot-types';
 import { Size } from 'src/app/shared/providers/configs/size';
-import { BotActive } from './bot-active';
 
-export class BotState extends BotActive implements BotCommand {
+export class BotState implements BotCommand, BotActive {
+
+    private irisData: BotActiveIrisData;
+
+    private containerData: BotActiveContainerData;
 
     constructor(
-        public readonly body: BotCommandBody,
-        public readonly head: BotCommandHead,
-        public readonly eyebrow: BotCommandEyebrow,
-        public readonly eye: BotCommandEye,
-        public readonly iris: BotCommandIris,
-        public readonly lid: BotCommandLid,
+        public readonly body: parts.BotCommandBody,
+        public readonly head: parts.BotCommandHead,
+        public readonly eyebrow: parts.BotCommandEyebrow,
+        public readonly eye: parts.BotCommandEye,
+        public readonly iris: parts.BotCommandIris,
+        public readonly lid: parts.BotCommandLid,
     ) {
-        super({
-            eye: {
-                width: eye.width,
-                height: eye.height,
-            },
-            iris: {
-                width: iris.width,
-                height: iris.height,
-            },
-        });
+        this.irisData = calculateBaseIrisData(eye, iris);
+        this.containerData = calculateBaseContainerData();
     }
 
     public bodyStyles(): TypeStyle {
@@ -104,6 +104,27 @@ export class BotState extends BotActive implements BotCommand {
             transform: `rotate(${this.lid.right.bot.rotate}deg)`,
             bottom: `-${100 - (this.lid.right.bot.closed)}%`,
         };
+    }
+
+    public inputMousePosition(config: TypeAxis): void {
+        this.updateIrisData(config);
+        this.updateContainerData(config);
+    }
+
+    public get irisSize(): TypeAxis {
+        return this.irisData.pixelSize;
+    }
+
+    public get containerRotation(): TypeAxis {
+        return this.containerData.degRotation;
+    }
+
+    private updateIrisData(config: TypeAxis): void {
+        this.irisData.pixelSize = calculateIrisData(config, this.irisData);
+    }
+
+    private updateContainerData(config: TypeAxis): void {
+        this.containerData.degRotation = calculateContainerData(config, this.containerData);
     }
 
 }

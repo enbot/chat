@@ -1,36 +1,13 @@
-import { BotCommandHead, BotCommandEyebrow, BotCommandEye, BotCommandIris, BotCommandLid, BotCommandBody } from './bot-parts';
-import { TypeAxis, TypePixels, TypeStyle } from './metric-types';
+import * as parts from './bot-parts';
+import { TypeStyle } from './metric-types';
 
-export interface BotActives {
-    irisSize: TypeAxis;
-    inputMousePosition(config: TypeAxis): void;
-}
-
-export interface BotActivesLoadData {
-    eye: {
-        width: TypePixels;
-        height: TypePixels;
-    };
-    iris: {
-        width: TypePixels;
-        height: TypePixels;
-    };
-}
-
-export interface BotActivesIrisData {
-    baseSize: TypeAxis;
-    maxSize: TypeAxis;
-    minSize: TypeAxis;
-    pixelSize: TypeAxis;
-}
-
-export interface BotCommand extends BotActives {
-    body: BotCommandBody;
-    head: BotCommandHead;
-    eyebrow: BotCommandEyebrow;
-    eye: BotCommandEye;
-    iris: BotCommandIris;
-    lid: BotCommandLid;
+export interface BotCommand {
+    body: parts.BotCommandBody;
+    head: parts.BotCommandHead;
+    eyebrow: parts.BotCommandEyebrow;
+    eye: parts.BotCommandEye;
+    iris: parts.BotCommandIris;
+    lid: parts.BotCommandLid;
     bodyStyles(): TypeStyle;
     screenStyles(): TypeStyle;
     viewportStyles(): TypeStyle;
