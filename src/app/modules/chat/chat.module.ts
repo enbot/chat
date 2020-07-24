@@ -12,6 +12,9 @@ import { BotHelmetComponent } from './chat/bot-container/bot-wrapper/bot-head/bo
 import { BotEyeLeftComponent } from './chat/bot-container/bot-wrapper/bot-head/bot-eye-left/bot-eye-left.component';
 import { BotEyeRightComponent } from './chat/bot-container/bot-wrapper/bot-head/bot-eye-right/bot-eye-right.component';
 import { BotEyeSpaceComponent } from './chat/bot-container/bot-wrapper/bot-head/bot-eye-space/bot-eye-space.component';
+import { ChatWrapperComponent } from './chat/chat-container/chat-wrapper/chat-wrapper.component';
+import { ChatControlsComponent } from './chat/chat-container/chat-wrapper/chat-controls/chat-controls.component';
+import { ChatMessagesComponent } from './chat/chat-container/chat-wrapper/chat-messages/chat-messages.component';
 
 @NgModule({
     declarations: [
@@ -26,6 +29,9 @@ import { BotEyeSpaceComponent } from './chat/bot-container/bot-wrapper/bot-head/
         BotEyeLeftComponent,
         BotEyeRightComponent,
         BotEyeSpaceComponent,
+        ChatWrapperComponent,
+        ChatControlsComponent,
+        ChatMessagesComponent,
     ],
     imports: [
         ChatRoutingModule,
