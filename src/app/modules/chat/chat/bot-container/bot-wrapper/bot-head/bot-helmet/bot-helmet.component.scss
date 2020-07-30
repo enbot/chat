@@ -12,7 +12,7 @@
     z-index: 3;
 
     svg {
-        @include transitioning();
+        @include transitioning;
         width: auto;
         height: 390px;
     }

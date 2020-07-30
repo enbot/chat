@@ -6,7 +6,7 @@
     align-items: center;
 
     .eye {
-        @include transitioning();
+        @include transitioning;
 
         .wrapper {
             width: 100%;

@@ -4,7 +4,7 @@ $bot-width: 700px;
 $bot-height: 100%;
 
 .container {
-    @include transitioning();
+    @include transitioning;
     width: $bot-width;
     height: $bot-height;
     overflow: hidden;

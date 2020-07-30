@@ -8,7 +8,7 @@ export const body: parts.BotCommandBody = {
 
 export const head: parts.BotCommandHead = {
     color: Color.BLACK,
-    rotate: 0,
+    rotate: -5,
 };
 
 export const eyebrow: parts.BotCommandEyebrow = {
@@ -19,39 +19,39 @@ export const eyebrow: parts.BotCommandEyebrow = {
 };
 
 export const eye: parts.BotCommandEye = {
-    color: Color.CYAN,
+    color: Color.PINK,
     width: 100,
-    height: 30,
+    height: 70,
     radius: 100,
 };
 
 export const iris: parts.BotCommandIris = {
     color: Color.BLACK,
     clip: Clip.NONE,
-    width: 35,
-    height: 30,
-    radius: 20,
+    width: 40,
+    height: 60,
+    radius: 50,
 };
 
 export const lid: parts.BotCommandLid = {
     left: {
         top: {
-            rotate: 3,
-            closed: 30,
+            rotate: 0,
+            closed: 25,
         },
         bot: {
-            rotate: -3,
-            closed: 30,
+            rotate: 0,
+            closed: 25,
         },
     },
     right: {
         top: {
-            rotate: -3,
-            closed: 30,
+            rotate: 0,
+            closed: 5,
         },
         bot: {
-            rotate: 3,
-            closed: 30,
+            rotate: 0,
+            closed: 5,
         },
     },
 };
