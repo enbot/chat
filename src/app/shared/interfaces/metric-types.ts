@@ -4,13 +4,17 @@ export type TypePercent = number;
 
 export type TypePixels = number;
 
+export type TypeMilliseconds = number;
+
+export type TypeSeconds = number;
+
 export type TypeClip = string;
 
 export type TypeClass = string;
 
 export type TypeHex = string;
 
-export type TypeMetric = TypeDegree | TypePercent | TypePixels | TypeClip | TypeClass | TypeHex;
+export type TypeMetric = TypeDegree | TypePercent | TypePixels | TypeMilliseconds | TypeSeconds | TypeClip | TypeClass | TypeHex;
 
 export type TypeSide = 'left' | 'right';
 

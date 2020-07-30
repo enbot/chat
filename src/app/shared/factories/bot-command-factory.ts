@@ -8,13 +8,13 @@ import { BotStateSad } from 'src/app/shared/models/bot-states/bot-sad';
 
 export function botCommandFactory(): BotCommandList {
     return {
-        CHANGE_STATE_NORMAL: new BotStateNormal(),
-        CHANGE_STATE_ANGRY: new BotStateAngry(),
-        CHANGE_STATE_HAPPY: new BotStateHappy(),
-        CHANGE_STATE_STAR: new BotStateAngry(),
-        CHANGE_STATE_SAD: new BotStateSad(),
-        CHANGE_STATE_CONFUSED: new BotStateAngry(),
-        CHANGE_STATE_BORED: new BotStateBored(),
-        CHANGE_STATE_CAREFUL: new BotStateCareful(),
+        CHANGE_EMOTION_NORMAL: new BotStateNormal(),
+        CHANGE_EMOTION_ANGRY: new BotStateAngry(),
+        CHANGE_EMOTION_HAPPY: new BotStateHappy(),
+        CHANGE_EMOTION_STAR: new BotStateAngry(),
+        CHANGE_EMOTION_SAD: new BotStateSad(),
+        CHANGE_EMOTION_CONFUSED: new BotStateAngry(),
+        CHANGE_EMOTION_BORED: new BotStateBored(),
+        CHANGE_EMOTION_CAREFUL: new BotStateCareful(),
     };
 }

@@ -1,16 +1,18 @@
-import { TypeDegree, TypePercent, TypeHex, TypeClass, TypePixels } from './metric-types';
+import { TypeDegree, TypePercent, TypeClass, TypePixels } from './metric-types';
+import { Color } from '../providers/configs/color';
+import { Clip } from '../providers/configs/clip';
 
 export interface BotCommandBody {
-    color: TypeHex;
+    color: Color;
 }
 
 export interface BotCommandHead {
-    color: TypeHex;
+    color: Color;
     rotate: TypeDegree;
 }
 
 export interface BotCommandEyebrow {
-    color: TypeHex;
+    color: Color;
     width: TypePixels;
     height: TypePixels;
     radius: TypePercent;
@@ -24,8 +26,8 @@ export interface BotCommandEye {
 }
 
 export interface BotCommandIris {
-    color: TypeHex;
-    clip: TypeClass;
+    color: Color;
+    clip: Clip;
     width: TypePixels;
     height: TypePixels;
     radius: TypePercent;

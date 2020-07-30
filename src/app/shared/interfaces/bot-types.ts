@@ -23,14 +23,14 @@ export interface BotCommand {
 }
 
 export interface BotCommandList {
-    CHANGE_STATE_NORMAL: BotCommand;
-    CHANGE_STATE_ANGRY: BotCommand;
-    CHANGE_STATE_HAPPY: BotCommand;
-    CHANGE_STATE_STAR: BotCommand;
-    CHANGE_STATE_SAD: BotCommand;
-    CHANGE_STATE_CONFUSED: BotCommand;
-    CHANGE_STATE_BORED: BotCommand;
-    CHANGE_STATE_CAREFUL: BotCommand;
+    CHANGE_EMOTION_NORMAL: BotCommand;
+    CHANGE_EMOTION_ANGRY: BotCommand;
+    CHANGE_EMOTION_HAPPY: BotCommand;
+    CHANGE_EMOTION_STAR: BotCommand;
+    CHANGE_EMOTION_SAD: BotCommand;
+    CHANGE_EMOTION_CONFUSED: BotCommand;
+    CHANGE_EMOTION_BORED: BotCommand;
+    CHANGE_EMOTION_CAREFUL: BotCommand;
 }
 
 export type BotCommandKey = keyof BotCommandList;
