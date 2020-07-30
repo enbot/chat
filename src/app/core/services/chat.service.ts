@@ -30,15 +30,15 @@ export class ChatService {
         if (isCommand) {
             this.commandService.runCommand(content as AllCommandsKey);
         } else {
-            const request = { content };
-            this.httpService.post('/message', request)
-                .subscribe(response => {
-                    const sentMessage = new ChatMessage(request.content, 'you', 'left');
-                    const receivedMessage = new ChatMessage(response.content, 'enbot', 'right');
-                    this.onSend.next(sentMessage);
-                    this.onReceive.next(receivedMessage);
-                    this.commandService.runCommand(response.command);
-                }, error => this.onError.next(error));
+            // const request = { content };
+            // this.httpService.post('/message', request)
+            //     .subscribe(response => {
+            //         const sentMessage = new ChatMessage(request.content, 'you', 'left');
+            //         const receivedMessage = new ChatMessage(response.content, 'enbot', 'right');
+            //         this.onSend.next(sentMessage);
+            //         this.onReceive.next(receivedMessage);
+            //         this.commandService.runCommand(response.command);
+            //     }, error => this.onError.next(error));
         }
     }
 }

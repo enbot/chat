@@ -1,7 +1,9 @@
-import { TypeMilliseconds } from '../interfaces/metric-types';
+import { TypeMilliseconds, TypePercent } from '../interfaces/metric-types';
 import { Transition } from '../providers/configs/transition';
 import { Effect } from '../providers/configs/effect';
 import { Color } from '../providers/configs/color';
+
+export type WallpaperComponentType = 'image';
 
 export interface WallpaperImage {
     name: string;
@@ -10,8 +12,10 @@ export interface WallpaperImage {
 }
 
 export interface WallpaperComponent {
-    name: string;
-    color: Color;
+    name: WallpaperComponentType;
+    width: TypePercent;
+    height: TypePercent;
+    wallpaper: Color;
     metadata: {
         url: string | null;
     };
@@ -21,4 +25,5 @@ export interface WallpaperTransition {
     name: Transition;
     delay: TypeMilliseconds;
     offset: TypeMilliseconds;
+    duration: TypeMilliseconds;
 }

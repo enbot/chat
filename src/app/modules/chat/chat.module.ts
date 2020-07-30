@@ -15,6 +15,10 @@ import { BotEyeSpaceComponent } from './chat/bot-container/bot-wrapper/bot-head/
 import { ChatWrapperComponent } from './chat/chat-container/chat-wrapper/chat-wrapper.component';
 import { ChatControlsComponent } from './chat/chat-container/chat-wrapper/chat-controls/chat-controls.component';
 import { ChatMessagesComponent } from './chat/chat-container/chat-wrapper/chat-messages/chat-messages.component';
+import { WallpaperWrapperComponent } from './chat/wallpaper-container/wallpaper-wrapper/wallpaper-wrapper.component';
+import { WallpaperImageComponent } from './chat/wallpaper-container/wallpaper-wrapper/wallpaper-image/wallpaper-image.component';
+import { WallpaperTransitionComponent } from './chat/wallpaper-container/wallpaper-wrapper/wallpaper-transition/wallpaper-transition.component';
+import { WallpaperBackgroundComponent } from './chat/wallpaper-container/wallpaper-wrapper/wallpaper-background/wallpaper-background.component';
 
 @NgModule({
     declarations: [
@@ -32,6 +36,10 @@ import { ChatMessagesComponent } from './chat/chat-container/chat-wrapper/chat-m
         ChatWrapperComponent,
         ChatControlsComponent,
         ChatMessagesComponent,
+        WallpaperWrapperComponent,
+        WallpaperImageComponent,
+        WallpaperTransitionComponent,
+        WallpaperBackgroundComponent,
     ],
     imports: [
         ChatRoutingModule,

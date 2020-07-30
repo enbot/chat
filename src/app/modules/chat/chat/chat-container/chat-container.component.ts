@@ -10,12 +10,15 @@ export class ChatContainerComponent implements OnInit {
 
     message: string;
 
+    placeholder: string;
+
     disabled: boolean;
 
     constructor(private chatService: ChatService) { }
 
     ngOnInit(): void {
         this.message = '';
+        this.placeholder = '';
         this.disabled = false;
     }
 

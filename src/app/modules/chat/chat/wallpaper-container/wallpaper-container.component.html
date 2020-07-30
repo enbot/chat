@@ -1,3 +1,5 @@
 <div class="container">
-    <div class="wallpaper"> </div>
+    <div class="viewport" [ngStyle]="command.viewportStyles()">
+        <app-wallpaper-wrapper [command]="command"></app-wallpaper-wrapper>
+    </div>
 </div>

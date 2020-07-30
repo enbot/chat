@@ -1,14 +1,33 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Subscription, interval } from 'rxjs';
+import { debounce } from 'rxjs/operators';
+import { CommandService } from 'src/app/core/services/command.service';
+import { WallpaperState } from 'src/app/shared/models/wallpaper-states/wallpaper-state';
+import { WallpaperStateDark } from 'src/app/shared/models/wallpaper-states/wallpaper-dark';
 
 @Component({
   selector: 'app-wallpaper-container',
   templateUrl: './wallpaper-container.component.html',
   styleUrls: ['./wallpaper-container.component.scss']
 })
-export class WallpaperContainerComponent implements OnInit {
+export class WallpaperContainerComponent implements OnInit, OnDestroy {
 
-  constructor() { }
+  command: WallpaperState = new WallpaperStateDark();
 
-  ngOnInit(): void { }
+  subscription: Subscription;
+
+  constructor(private commandService: CommandService) { }
+
+  ngOnInit(): void {
+    this.subscription = this.commandService.wallpaperState
+      .pipe(debounce(() => interval(400)))
+      .subscribe(command => this.command = command);
+  }
+
+  ngOnDestroy(): void {
+    if (this.subscription) {
+      this.subscription.unsubscribe();
+    }
+  }
 
 }

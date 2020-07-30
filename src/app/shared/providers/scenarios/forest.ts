@@ -10,8 +10,10 @@ export const image: parts.WallpaperImage = {
 }
 
 export const component: parts.WallpaperComponent = {
-    name: 'string',
-    color: Color.BLACK,
+    name: 'image',
+    width: 100,
+    height: 100,
+    wallpaper: Color.BLACK,
     metadata: {
         url: null,
     },
@@ -21,4 +23,5 @@ export const transition: parts.WallpaperTransition = {
     name: Transition.NONE,
     delay: 100,
     offset: 3000,
+    duration: 1000,
 }

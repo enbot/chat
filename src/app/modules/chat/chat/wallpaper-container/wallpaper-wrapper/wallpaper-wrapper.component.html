@@ -1,0 +1,13 @@
+<div class="wrapper">
+    <div class="transition">
+        <app-wallpaper-transition [command]="command"> </app-wallpaper-transition>
+    </div>
+    <div class="background">
+        <app-wallpaper-background [command]="command"> </app-wallpaper-background>
+    </div>
+    <div class="component">
+        <ng-container *ngIf="command.component.name === 'image'">
+            <app-wallpaper-image [command]="command"> </app-wallpaper-image>
+        </ng-container>
+    </div>
+</div>

@@ -5,8 +5,6 @@ import { applyMinMaxRule } from './apply-min-max-rule';
 
 export function calculateContainerData(config: TypeAxis, containerData: BotActiveContainerData): TypeAxis {
 
-    console.log(config);
-
     const containerBaseRotation = containerData.baseRotation;
     const containerMaxRotation = containerData.maxRotation;
     const containerMinRotation = containerData.minRotation;

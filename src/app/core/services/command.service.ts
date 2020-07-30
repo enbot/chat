@@ -5,6 +5,7 @@ import { WallpaperCommand } from 'src/app/shared/interfaces/wallpaper-types';
 import { CommandResolver } from 'src/app/shared/models/general-config/command-resolver';
 import { AllCommandsKey } from 'src/app/shared/interfaces/command-types';
 import { Subject } from 'rxjs';
+import { WallpaperState } from 'src/app/shared/models/wallpaper-states/wallpaper-state';
 
 @Injectable({
   providedIn: 'root'
@@ -13,14 +14,14 @@ export class CommandService {
 
   public readonly botState: Subject<BotState>;
 
-  public readonly chatState: Subject<ChatCommand>;
+  public readonly wallpaperState: Subject<WallpaperState>;
 
-  public readonly wallpaperState: Subject<WallpaperCommand>;
+  public readonly chatState: Subject<ChatCommand>;
 
   constructor() {
     this.botState = new Subject();
-    this.chatState = new Subject();
     this.wallpaperState = new Subject();
+    this.chatState = new Subject();
   }
 
   public isCommand(command: string): boolean {

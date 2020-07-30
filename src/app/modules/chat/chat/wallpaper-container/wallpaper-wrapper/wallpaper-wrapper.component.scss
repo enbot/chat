@@ -1,0 +1,24 @@
+.wrapper {
+    box-sizing: border-box;
+
+    & > * {
+        box-sizing: border-box;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+    }
+
+    .transition {
+        z-index: 3;
+    }
+
+    .component {
+        z-index: 2;
+    }
+
+    .background {
+        z-index: 1;
+    }
+}
