@@ -1,6 +1,11 @@
 create chat
 create intro
-autodeploy root gh-pages
 create electron environment
-create screen actions
 create eyebrow
+
+wallpaper -> transition
+wallpaper -> iframe
+
+eye -> last data functions
+
+keyframes enum

@@ -6,7 +6,7 @@
         <app-wallpaper-background [command]="command"> </app-wallpaper-background>
     </div>
     <div class="component">
-        <ng-container *ngIf="command.component.name === 'image'">
+        <ng-container *ngIf="command.component.wallpaper === 'image'">
             <app-wallpaper-image [command]="command"> </app-wallpaper-image>
         </ng-container>
     </div>

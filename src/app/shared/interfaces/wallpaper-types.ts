@@ -2,7 +2,7 @@ import * as parts from './wallpaper-parts';
 import { TypeStyle } from './metric-types';
 
 export interface WallpaperCommand {
-    image: parts.WallpaperImage;
+    metadata: parts.WallpaperMetadata;
     component: parts.WallpaperComponent;
     transition: parts.WallpaperTransition;
     backgroundStyles(): TypeStyle;

@@ -5,22 +5,23 @@ import { TypeStyle } from '../../interfaces/metric-types';
 export class WallpaperState implements WallpaperCommand {
 
     constructor(
-        public readonly image: parts.WallpaperImage,
+        public readonly metadata: parts.WallpaperMetadata,
         public readonly component: parts.WallpaperComponent,
         public readonly transition: parts.WallpaperTransition,
     ) {
 
     }
 
-    // wallpaperStyles(): TypeStyle {
-    //     return {
-    //         background image papapa
-    //     };
+    // export interface WallpaperTransition {
+    //     name: Transition;
+    //     delay: TypeMilliseconds;
+    //     offset: TypeMilliseconds;
+    //     duration: TypeMilliseconds;
     // }
 
     backgroundStyles(): TypeStyle {
         return {
-            backgroundColor: this.component.wallpaper,
+            backgroundColor: this.component.color,
         };
     }
 
@@ -33,17 +34,9 @@ export class WallpaperState implements WallpaperCommand {
 
     imageStyles(): TypeStyle {
         return {
-            backgroundImage: `url(${this.image.path}${this.image.name})`,
-            filter: this.image.effect
+            backgroundImage: `url(${this.metadata.path})`,
+            filter: this.metadata.effect
         };
     }
 
-
 }
-
-// export interface WallpaperTransition {
-//     name: Transition;
-//     delay: TypeMilliseconds;
-//     offset: TypeMilliseconds;
-//     duration: TypeMilliseconds;
-// }

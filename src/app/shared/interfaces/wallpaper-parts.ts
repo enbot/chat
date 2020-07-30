@@ -1,24 +1,20 @@
 import { TypeMilliseconds, TypePercent } from '../interfaces/metric-types';
 import { Transition } from '../providers/configs/transition';
+import { Wallpaper } from '../providers/configs/wallpaper';
 import { Effect } from '../providers/configs/effect';
 import { Color } from '../providers/configs/color';
 
-export type WallpaperComponentType = 'image';
-
-export interface WallpaperImage {
-    name: string;
-    path: string;
-    effect: Effect;
+export interface WallpaperMetadata {
+    path?: string;
+    effect?: Effect;
+    url?: string;
 }
 
 export interface WallpaperComponent {
-    name: WallpaperComponentType;
+    wallpaper: Wallpaper;
+    color: Color;
     width: TypePercent;
     height: TypePercent;
-    wallpaper: Color;
-    metadata: {
-        url: string | null;
-    };
 }
 
 export interface WallpaperTransition {

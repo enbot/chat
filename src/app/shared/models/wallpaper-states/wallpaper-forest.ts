@@ -4,7 +4,7 @@ import { WallpaperState } from './wallpaper-state';
 export class WallpaperStateForest extends WallpaperState {
     constructor() {
         super(
-            forest.image,
+            forest.metadata,
             forest.component,
             forest.transition,
         );
