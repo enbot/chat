@@ -8,23 +8,34 @@ import { ChatService } from 'src/app/core/services/chat.service';
 })
 export class ChatControlsComponent implements OnInit {
 
-  message: string;
-  placeholder: string;
-  disabled: boolean;
+  public message: string;
+  public placeholder: string;
+  public disabled: boolean;
 
-  constructor(private chatService: ChatService) { }
+  constructor(
+    private chatService: ChatService,
+  ) { }
 
   ngOnInit(): void {
-    this.message = '';
-    this.placeholder = '';
-    this.disabled = false;
+    this.enableChat();
   }
 
   async send(): Promise<void> {
-    this.disabled = true;
+    this.disableChat();
     await this.chatService.input(this.message);
+    setTimeout(() => this.enableChat(), 3000);
+  }
+
+  public enableChat(): void {
     this.message = '';
     this.disabled = false;
+    this.placeholder = 'Send a message...';
+  }
+
+  public disableChat(): void {
+    this.message = '';
+    this.disabled = true;
+    this.placeholder = 'Waiting...';
   }
 
 }

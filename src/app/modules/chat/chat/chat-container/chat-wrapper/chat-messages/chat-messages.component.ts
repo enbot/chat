@@ -10,11 +10,11 @@ import { ChatMessage } from 'src/app/shared/models/general-config/chat-message';
 })
 export class ChatMessagesComponent implements OnInit, OnDestroy {
 
-  receiveSubscription: Subscription;
+  // messages : 
 
-  sendSubscription: Subscription;
-
-  errorSubscription: Subscription;
+  private receiveSubscription: Subscription;
+  private sendSubscription: Subscription;
+  private errorSubscription: Subscription;
 
   constructor(private chatService: ChatService) { }
 

@@ -4,7 +4,6 @@ import { applyMinMaxRule } from './apply-min-max-rule';
 import { Percent } from '../providers/configs/percent';
 
 export function calculateIrisData(config: TypeAxis, irisData: BotActiveIrisData): TypeAxis {
-
     const irisBaseSize = irisData.baseSize;
     const irisMaxSize = irisData.maxSize;
     const irisMinSize = irisData.minSize;
@@ -23,5 +22,4 @@ export function calculateIrisData(config: TypeAxis, irisData: BotActiveIrisData)
         x: applyMinMaxRule(irisPixelSize.x, irisMaxSize.x, irisMinSize.x),
         y: applyMinMaxRule(irisPixelSize.y, irisMaxSize.y, irisMinSize.y),
     };
-
 }

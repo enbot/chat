@@ -4,7 +4,6 @@ import { Percent } from '../providers/configs/percent';
 import { applyMinMaxRule } from './apply-min-max-rule';
 
 export function calculateContainerData(config: TypeAxis, containerData: BotActiveContainerData): TypeAxis {
-
     const containerBaseRotation = containerData.baseRotation;
     const containerMaxRotation = containerData.maxRotation;
     const containerMinRotation = containerData.minRotation;
@@ -33,5 +32,4 @@ export function calculateContainerData(config: TypeAxis, containerData: BotActiv
         x: applyMinMaxRule(containerDegreeRotation.x, containerMaxRotation.x, containerMinRotation.x),
         y: applyMinMaxRule(containerDegreeRotation.y, containerMaxRotation.y, containerMinRotation.y),
     };
-
 }

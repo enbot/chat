@@ -4,6 +4,8 @@
     display: flex;
     justify-content: flex-end;
     align-items: center;
+    box-sizing: border-box;
+    padding: 0 30px;
 
     .chat {
         height: 100%;
@@ -12,13 +14,13 @@
         position: relative;
 
         .messages {
-            height: calc(100% - 70px);
+            height: calc(100% - 55px);
             width: 100%;
         }
 
         .controls {
             width: 100%;
-            height: 70px;
+            height: 55px;
         }
     }
 }
