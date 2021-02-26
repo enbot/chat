@@ -13,10 +13,21 @@ import { WallpaperState } from 'src/app/shared/models/wallpaper-states/wallpaper
 export class CommandService {
 
   public readonly botState: Subject<BotState>;
-
   public readonly wallpaperState: Subject<WallpaperState>;
-
   public readonly chatState: Subject<ChatCommand>;
+
+  //   <!-- bot commands -->
+  // <!-- <button (click)="test('CHANGE_EMOTION_NORMAL')"> CHANGE_EMOTION_NORMAL </button> -->
+  // <!-- <button (click)="test('CHANGE_EMOTION_ANGRY')"> CHANGE_EMOTION_ANGRY </button> -->
+  // <!-- <button (click)="test('CHANGE_EMOTION_SAD')"> CHANGE_EMOTION_SAD </button> -->
+  // <!-- <button (click)="test('CHANGE_EMOTION_HAPPY')"> CHANGE_EMOTION_HAPPY </button> -->
+  // <!-- <button (click)="test('CHANGE_EMOTION_BORED')"> CHANGE_EMOTION_BORED </button> -->
+  // <!-- <button (click)="test('CHANGE_EMOTION_CAREFUL')"> CHANGE_EMOTION_CAREFUL </button> -->
+  // <!-- <button (click)="test('CHANGE_EMOTION_CONFUSED')"> CHANGE_EMOTION_CONFUSED </button> -->
+
+  // <!-- wallpaper commands -->
+  // <!-- <button (click)="test('CHANGE_SCENARIO_FOREST')"> CHANGE_SCENARIO_FOREST </button> -->
+  // <!-- <button class="disabled"> CHANGE_SCENARIO_SNOW </button> (click)="test('CHANGE_SCENARIO_SNOW')" -->
 
   constructor() {
     this.botState = new Subject();

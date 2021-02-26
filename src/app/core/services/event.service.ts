@@ -9,15 +9,11 @@ import { Subject } from 'rxjs';
 export class EventService {
 
   public readonly onMouseMove: Subject<MouseEvent>;
-
   public readonly onScreenResize: Subject<ScreenEvent>;
 
   private screenWidth: number;
-
   private screenHeight: number;
-
   private mousePositionX: number;
-
   private mousePositionY: number;
 
   constructor() {
