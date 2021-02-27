@@ -1,14 +1,13 @@
 import * as parts from './chat-parts';
 
 export interface ChatCommand {
-    message: string;
-    image: parts.ChatImage;
+    content: parts.ChatContent;
     shape: parts.ChatShape;
 }
 
 export interface ChatCommandList {
     CHANGE_BALLOON_DANGER: ChatCommand;
-    CHANGE_BALLOON_DEFAULT: ChatCommand;
+    CHANGE_BALLOON_STANDARD: ChatCommand;
     CHANGE_BALLOON_RAINBOW: ChatCommand;
     CHANGE_BALLOON_WARNING: ChatCommand;
 }

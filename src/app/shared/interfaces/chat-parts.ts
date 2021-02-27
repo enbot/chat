@@ -1,11 +1,12 @@
 import { TypeClass, TypeHex } from '../interfaces/metric-types';
 
-export interface ChatImage {
-    path: string;
+export interface ChatContent {
+    color: TypeHex;
+    effect: TypeClass;
 }
 
 export interface ChatShape {
-    color: TypeHex;
     background: TypeHex;
     shape: TypeClass;
+    effect: TypeClass;
 }

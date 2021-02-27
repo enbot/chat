@@ -1,27 +1,15 @@
+// import * as parts from '../../interfaces/chat-parts';
+// import { Color } from '../configs/color';
+// import { Balloon } from '../configs/balloon';
+// import { Effect } from '../configs/effect';
 
+// export const content: parts.ChatContent = {
+//     svg: 'robot',
+// };
 
-
-// export const body: parts.BotCommandBody = {
+// export const shape: parts.ChatShape = {
 //     color: Color.SNOW,
+//     background: Color.LIGHTRED,
+//     shape: Balloon.SPIKED,
+//     effect: Effect.NONE
 // };
-
-// export const head: parts.BotCommandHead = {
-//     color: Color.BLACK,
-//     rotate: 0,
-// };
-
-// import * as parts from './chat-parts';
-
-// export interface ChatCommand {
-//     image: parts.ChatImage;
-//     shape: parts.ChatShape;
-// }
-
-// export interface ChatCommandList {
-//     CHANGE_BALLOON_DANGER: ChatCommand;
-//     CHANGE_BALLOON_DEFAULT: ChatCommand;
-//     CHANGE_BALLOON_RAINBOW: ChatCommand;
-//     CHANGE_BALLOON_WARNING: ChatCommand;
-// }
-
-// export type ChatCommandKey = keyof ChatCommandList;

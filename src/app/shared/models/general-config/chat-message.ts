@@ -12,4 +12,8 @@ export class ChatMessage {
         this.when = new Date();
     }
 
+    // getXesque() {
+    //     return 'A xesque ago'
+    // }
+
 }

@@ -9,4 +9,6 @@ export enum Color {
     GREEN = '#00ff00',
     SNOW = '#f0f0f0',
     CYAN = '#00ffff',
+    LIGHTRED = '#000000',
+    LIGHTYELLOW = '#000000',
 }
