@@ -8,18 +8,18 @@ export interface BotCommand {
     eye: parts.BotCommandEye;
     iris: parts.BotCommandIris;
     lid: parts.BotCommandLid;
-    containerStyles(): TypeStyle;
-    bodyStyles(): TypeStyle;
-    screenStyles(): TypeStyle;
-    viewportStyles(): TypeStyle;
-    headStyles(): TypeStyle;
-    eyeStyles(): TypeStyle;
-    scleraStyles(): TypeStyle;
-    irisStyles(): TypeStyle;
-    lidLeftTopStyles(): TypeStyle;
-    lidLeftBotStyles(): TypeStyle;
-    lidRightTopStyles(): TypeStyle;
-    lidRightBotStyles(): TypeStyle;
+    getContainerStyles(): TypeStyle;
+    getBodyStyles(): TypeStyle;
+    getScreenStyles(): TypeStyle;
+    getViewportStyles(): TypeStyle;
+    getHeadStyles(): TypeStyle;
+    getEyeStyles(): TypeStyle;
+    getScleraStyles(): TypeStyle;
+    getIrisStyles(): TypeStyle;
+    getLidLeftTopStyles(): TypeStyle;
+    getLidLeftBotStyles(): TypeStyle;
+    getLidRightTopStyles(): TypeStyle;
+    getLidRightBotStyles(): TypeStyle;
 }
 
 export interface BotCommandList {

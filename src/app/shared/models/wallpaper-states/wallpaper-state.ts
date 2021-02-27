@@ -12,27 +12,20 @@ export class WallpaperState implements WallpaperCommand {
 
     }
 
-    // export interface WallpaperTransition {
-    //     name: Transition;
-    //     delay: TypeMilliseconds;
-    //     offset: TypeMilliseconds;
-    //     duration: TypeMilliseconds;
-    // }
-
-    backgroundStyles(): TypeStyle {
+    getBackgroundStyles(): TypeStyle {
         return {
             backgroundColor: this.component.color,
         };
     }
 
-    viewportStyles(): TypeStyle {
+    getViewportStyles(): TypeStyle {
         return {
             height: `${this.component.height}%`,
             width: `${this.component.width}%`,
         };
     }
 
-    imageStyles(): TypeStyle {
+    getImageStyles(): TypeStyle {
         return {
             backgroundImage: `url(${this.metadata.path})`,
             filter: this.metadata.effect

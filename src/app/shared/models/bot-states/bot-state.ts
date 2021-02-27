@@ -26,38 +26,38 @@ export class BotState implements BotCommand, BotActive {
         this.containerData = calculateBaseContainerData();
     }
 
-    public containerStyles(): TypeStyle {
+    public getContainerStyles(): TypeStyle {
         return {
             transform: `rotateX(${this.containerRotation.x}deg) rotateY(${this.containerRotation.y}deg)`
         };
     }
 
-    public bodyStyles(): TypeStyle {
+    public getBodyStyles(): TypeStyle {
         return {
             fill: this.body.color,
         };
     }
 
-    public screenStyles(): TypeStyle {
+    public getScreenStyles(): TypeStyle {
         return {
             backgroundColor: this.head.color,
         };
     }
 
-    public headStyles(): TypeStyle {
+    public getHeadStyles(): TypeStyle {
         return {
             transform: `rotate(${this.head.rotate}deg)`,
         };
     }
 
-    public viewportStyles(): TypeStyle {
+    public getViewportStyles(): TypeStyle {
         return {
             width: `${Size.EYE_WIDTH}px`,
             height: `${Size.EYE_HEIGHT}px`,
         };
     }
 
-    public eyeStyles(): TypeStyle {
+    public getEyeStyles(): TypeStyle {
         return {
             width: `${this.eye.width}%`,
             height: `${this.eye.height}%`,
@@ -65,14 +65,14 @@ export class BotState implements BotCommand, BotActive {
         };
     }
 
-    public scleraStyles(): TypeStyle {
+    public getScleraStyles(): TypeStyle {
         return {
             borderRadius: `${this.eye.radius}%`,
             backgroundColor: this.eye.color
         };
     }
 
-    public irisStyles(): TypeStyle {
+    public getIrisStyles(): TypeStyle {
         return {
             backgroundColor: this.iris.color,
             clipPath: this.iris.clip,
@@ -84,28 +84,28 @@ export class BotState implements BotCommand, BotActive {
         };
     }
 
-    public lidLeftTopStyles(): TypeStyle {
+    public getLidLeftTopStyles(): TypeStyle {
         return {
             transform: `rotate(${this.lid.left.top.rotate}deg)`,
             top: `-${100 - (this.lid.left.top.closed)}%`,
         };
     }
 
-    public lidLeftBotStyles(): TypeStyle {
+    public getLidLeftBotStyles(): TypeStyle {
         return {
             transform: `rotate(${this.lid.left.bot.rotate}deg)`,
             bottom: `-${100 - (this.lid.left.bot.closed)}%`,
         };
     }
 
-    public lidRightTopStyles(): TypeStyle {
+    public getLidRightTopStyles(): TypeStyle {
         return {
             transform: `rotate(${this.lid.right.top.rotate}deg)`,
             top: `-${100 - (this.lid.right.top.closed)}%`,
         };
     }
 
-    public lidRightBotStyles(): TypeStyle {
+    public getLidRightBotStyles(): TypeStyle {
         return {
             transform: `rotate(${this.lid.right.bot.rotate}deg)`,
             bottom: `-${100 - (this.lid.right.bot.closed)}%`,

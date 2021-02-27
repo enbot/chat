@@ -5,9 +5,9 @@ export interface WallpaperCommand {
     metadata: parts.WallpaperMetadata;
     component: parts.WallpaperComponent;
     transition: parts.WallpaperTransition;
-    backgroundStyles(): TypeStyle;
-    viewportStyles(): TypeStyle;
-    imageStyles(): TypeStyle;
+    getBackgroundStyles(): TypeStyle;
+    getViewportStyles(): TypeStyle;
+    getImageStyles(): TypeStyle;
 }
 
 export interface WallpaperCommandList {
