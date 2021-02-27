@@ -4,7 +4,7 @@ import { ChatState } from './chat-state';
 export class ChatStateStandard extends ChatState {
     constructor() {
         super(
-            standard.image,
+            standard.content,
             standard.shape,
         );
     }

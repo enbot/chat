@@ -4,7 +4,7 @@ import { ChatState } from './chat-state';
 export class ChatStateWarning extends ChatState {
     constructor() {
         super(
-            warning.image,
+            warning.content,
             warning.shape,
         );
     }

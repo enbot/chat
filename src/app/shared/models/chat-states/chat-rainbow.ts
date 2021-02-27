@@ -4,7 +4,7 @@ import { ChatState } from './chat-state';
 export class ChatStateRainbow extends ChatState {
     constructor() {
         super(
-            rainbow.image,
+            rainbow.content,
             rainbow.shape,
         );
     }

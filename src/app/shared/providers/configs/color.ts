@@ -1,6 +1,6 @@
 export enum Color {
     BLACK = '#000000',
-    DARK = '#222222',
+    DARK = '#202020',
     WHITE = '#ffffff',
     RED = '#ff0000',
     YELLOW = '#ffff00',
@@ -11,4 +11,5 @@ export enum Color {
     CYAN = '#00ffff',
     LIGHTRED = '#000000',
     LIGHTYELLOW = '#000000',
+    TRANSPARENT = 'transparent',
 }
