@@ -1,3 +1,4 @@
-export const path = {
-    localhost: 'www.google.com',
-}
+export const api = {
+    chat: 'http://localhost:5000',
+    emotion: 'http://localhost:3000',
+};
