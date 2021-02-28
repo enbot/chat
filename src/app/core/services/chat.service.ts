@@ -2,11 +2,9 @@ import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs';
 import { CommandService } from './command.service';
 import { ChatMessage } from 'src/app/shared/models/general-config/chat-message';
-import { AllCommandsKey } from 'src/app/shared/interfaces/command-types';
 import { SerializedEmotionDTO, SerializedMessageDTO, ResponseEmotionDTO, ResponseMessageDTO } from 'src/app/shared/interfaces/chat-requests';
 import { api } from 'src/app/core/api/paths';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
 
 @Injectable({
     providedIn: 'root'
@@ -38,7 +36,7 @@ export class ChatService {
 
         //     console.log('asdsadad');
 
-        //     return this.commandService.runCommand(inputMessage as AllCommandsKey);  // TEMP
+        //     return this.commandService.runCommand(inputMessage as AnyCommandKey);  // TEMP
         // }
 
         // const sentMessage = new ChatMessage(inputMessage, 'you', 'left');

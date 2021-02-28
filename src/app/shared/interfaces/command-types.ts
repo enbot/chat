@@ -2,19 +2,19 @@ import { BotCommand, BotCommandKey, BotCommandList } from './bot-types';
 import { ChatCommand, ChatCommandKey, ChatCommandList } from './chat-types';
 import { WallpaperCommand, WallpaperCommandKey, WallpaperCommandList } from './wallpaper-types';
 
-export type AllCommandsKey = BotCommandKey | ChatCommandKey | WallpaperCommandKey;
+export type AnyCommandKey = BotCommandKey | ChatCommandKey | WallpaperCommandKey;
 
-export interface AllCommandsList {
+export interface AnyCommandList {
     bot: BotCommandList;
     chat: ChatCommandList;
     wallpaper: WallpaperCommandList;
 }
 
-export type AllCommandsListKey = keyof AllCommandsList;
+export type AnyCommandListKey = keyof AnyCommandList;
 
 export type AnyCommand = BotCommand | ChatCommand | WallpaperCommand;
 
 export interface ResolvedCommand {
-    instance: AnyCommand,
-    type: AllCommandsListKey;
+    instance: AnyCommand;
+    type: AnyCommandListKey;
 }

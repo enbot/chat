@@ -5,7 +5,7 @@ import { WallpaperCommandList } from 'src/app/shared/interfaces/wallpaper-types'
 import { makeBotCommands } from 'src/app/shared/factories/bot-command-factory';
 import { makeChatCommands } from 'src/app/shared/factories/chat-command-factory';
 import { makeWallpaperCommands } from 'src/app/shared/factories/wallpaper-command-factory';
-import { AllCommandsKey, ResolvedCommand, AllCommandsListKey } from 'src/app/shared/interfaces/command-types';
+import { AnyCommandKey, ResolvedCommand, AnyCommandListKey } from 'src/app/shared/interfaces/command-types';
 import { WallpaperState } from 'src/app/shared/models/wallpaper-states/wallpaper-state';
 import { BotState } from 'src/app/shared/models/bot-states/bot-state';
 import { Subject } from 'rxjs';
@@ -44,14 +44,14 @@ export class CommandService {
   }
 
   // public isCommand(command: string): boolean {
-  //   // return CommandResolver.resolve(command as AllCommandsKey).valid;
+  //   // return CommandResolver.resolve(command as AnyCommandKey).valid;
   // }
 
   // public getCommandKey(aaaa, bbbb) {
   //   // TODO: change "AllCommandsX" to "AnyCommandX" or something like that
   // }
 
-  public runCommand(commandKey: AllCommandsKey): void {
+  public runCommand(commandKey: AnyCommandKey): void {
     const command = this.resolveInstance(commandKey);
 
     if (command) {
@@ -63,11 +63,11 @@ export class CommandService {
     }
   }
 
-  public resolveCommand(type: AllCommandsListKey, matcher: string): AllCommandsKey | undefined {
+  public resolveCommand(type: AnyCommandListKey, matcher: string): AnyCommandKey | undefined {
     const commandList = this[`${type}CommandList`];
     const commandKeys = Object.keys(commandList);
 
-    for (const key of commandKeys as AllCommandsKey[]) {
+    for (const key of commandKeys as AnyCommandKey[]) {
       const lowerKey = key.toLowerCase();
       const lowerMatcher = matcher.toLowerCase();
       lowerKey.includes(lowerMatcher);
@@ -78,7 +78,7 @@ export class CommandService {
     return undefined;
   }
 
-  public resolveInstance(commandKey: AllCommandsKey): ResolvedCommand | undefined {
+  public resolveInstance(commandKey: AnyCommandKey): ResolvedCommand | undefined {
     const botCommandList = this.botCommandList;
     const chatCommandList = this.chatCommandList;
     const wallpaperCommandList = this.wallpaperCommandList;
@@ -91,7 +91,7 @@ export class CommandService {
 
     for (const list of lists) {
       const commandList = list.commands;
-      const commandType = list.type as AllCommandsListKey;
+      const commandType = list.type as AnyCommandListKey;
       const commandKeys = Object.keys(commandList);
       const commandIndex = commandKeys.indexOf(commandKey);
       const commandInstance = commandList[commandKey];
