@@ -7,7 +7,7 @@ import { BotStateHappy } from 'src/app/shared/models/bot-states/bot-happy';
 import { BotStateBored } from 'src/app/shared/models/bot-states/bot-bored';
 import { BotStateSad } from 'src/app/shared/models/bot-states/bot-sad';
 
-export function botCommandFactory(): BotCommandList {
+export function makeBotCommands(): BotCommandList {
     return {
         CHANGE_EMOTION_NORMAL: new BotStateNormal(),
         CHANGE_EMOTION_ANGRY: new BotStateAngry(),

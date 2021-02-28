@@ -4,7 +4,7 @@ import { ChatStateStandard } from 'src/app/shared/models/chat-states/chat-standa
 import { ChatStateRainbow } from 'src/app/shared/models/chat-states/chat-rainbow';
 import { ChatStateWarning } from 'src/app/shared/models/chat-states/chat-warning';
 
-export function chatCommandFactory(): ChatCommandList {
+export function makeChatCommands(): ChatCommandList {
     return {
         CHANGE_BALLOON_DANGER: new ChatStateDanger(),
         CHANGE_BALLOON_STANDARD: new ChatStateStandard(),

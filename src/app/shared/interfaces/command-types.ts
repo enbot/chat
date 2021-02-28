@@ -12,10 +12,9 @@ export interface AllCommandsList {
 
 export type AllCommandsListKey = keyof AllCommandsList;
 
-export type TypeCommand = BotCommand | ChatCommand | WallpaperCommand;
+export type AnyCommand = BotCommand | ChatCommand | WallpaperCommand;
 
-export interface TypeCommandResolved {
-    valid: boolean;
-    list?: AllCommandsListKey;
-    key?: AllCommandsKey;
+export interface ResolvedCommand {
+    instance: AnyCommand,
+    type: AllCommandsListKey;
 }

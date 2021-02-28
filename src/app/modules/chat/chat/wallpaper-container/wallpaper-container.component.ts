@@ -19,7 +19,7 @@ export class WallpaperContainerComponent implements OnInit, OnDestroy {
   constructor(private commandService: CommandService) { }
 
   ngOnInit(): void {
-    this.subscription = this.commandService.wallpaperState
+    this.subscription = this.commandService.onWallpaperChange
       .pipe(debounce(() => interval(400)))
       .subscribe(command => this.command = command);
   }

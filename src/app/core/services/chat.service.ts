@@ -38,10 +38,12 @@ export class ChatService {
 
             console.log('asdsadad');
 
-
-
             return this.commandService.runCommand(inputMessage as AllCommandsKey);  // TEMP
         }
+
+        const sentMessage = new ChatMessage(inputMessage, 'you', 'left');
+
+        this.onSend.next(sentMessage);
 
         try {
             // const serializedEmotionRequest = this.serializeEmotionRequest(inputMessage);

@@ -19,7 +19,7 @@ export class BotContainerComponent implements OnInit, OnDestroy {
     constructor(private commandService: CommandService) { }
 
     ngOnInit(): void {
-        this.subscription = this.commandService.botState
+        this.subscription = this.commandService.onBotChange
             .pipe(debounce(() => interval(400)))
             .subscribe(command => this.command = command);
     }
