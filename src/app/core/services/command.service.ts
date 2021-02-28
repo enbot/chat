@@ -16,6 +16,8 @@ export class CommandService {
   public readonly wallpaperState: Subject<WallpaperState>;
   public readonly chatState: Subject<ChatCommand>;
 
+  // xesque? dalhe : deregue
+
   //   <!-- bot commands -->
   // <!-- <button (click)="test('CHANGE_EMOTION_NORMAL')"> CHANGE_EMOTION_NORMAL </button> -->
   // <!-- <button (click)="test('CHANGE_EMOTION_ANGRY')"> CHANGE_EMOTION_ANGRY </button> -->

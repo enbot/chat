@@ -21,9 +21,10 @@ export class ChatControlsComponent implements OnInit {
   }
 
   async send(): Promise<void> {
+    const message = this.message;
     this.disableChat();
-    await this.chatService.input(this.message);
-    setTimeout(() => this.enableChat(), 3000);
+    await this.chatService.input(message);
+    this.enableChat();
   }
 
   public enableChat(): void {
