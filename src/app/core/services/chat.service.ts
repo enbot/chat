@@ -28,22 +28,22 @@ export class ChatService {
 
     public async input(inputMessage: string): Promise<void> {
 
-        console.log(inputMessage);
+        // console.log(inputMessage);
 
-        const isCommand = this.commandService.isCommand(inputMessage);  // TEMP
+        // const isCommand = this.commandService.isCommand(inputMessage);  // TEMP
 
-        console.log(isCommand);
+        // console.log(isCommand);
 
-        if (isCommand) {
+        // if (isCommand) {
 
-            console.log('asdsadad');
+        //     console.log('asdsadad');
 
-            return this.commandService.runCommand(inputMessage as AllCommandsKey);  // TEMP
-        }
+        //     return this.commandService.runCommand(inputMessage as AllCommandsKey);  // TEMP
+        // }
 
-        const sentMessage = new ChatMessage(inputMessage, 'you', 'left');
+        // const sentMessage = new ChatMessage(inputMessage, 'you', 'left');
 
-        this.onSend.next(sentMessage);
+        // this.onSend.next(sentMessage);
 
         try {
             // const serializedEmotionRequest = this.serializeEmotionRequest(inputMessage);

@@ -10,9 +10,6 @@ import { WallpaperState } from 'src/app/shared/models/wallpaper-states/wallpaper
 import { BotState } from 'src/app/shared/models/bot-states/bot-state';
 import { Subject } from 'rxjs';
 
-// import { AllCommandsKey, AllCommandsListKey, TypeCommand, TypeCommandResolved } from 'src/app/shared/interfaces/command-types';
-// import { CommandContainer } from './command-container';
-
 @Injectable({
   providedIn: 'root'
 })
@@ -46,37 +43,42 @@ export class CommandService {
     this.onWallpaperChange = new Subject();
   }
 
-  public isCommand(command: string): boolean {
-    return CommandResolver.resolve(command as AllCommandsKey).valid;
-  }
+  // public isCommand(command: string): boolean {
+  //   // return CommandResolver.resolve(command as AllCommandsKey).valid;
+  // }
 
-  public getCommandKey(aaaa, bbbb) {
-    // TODO: change "AllCommandsX" to "AnyCommandX" or something like that
-  }
+  // public getCommandKey(aaaa, bbbb) {
+  //   // TODO: change "AllCommandsX" to "AnyCommandX" or something like that
+  // }
 
-  public getCommandInstance(command: AllCommandsKey) {
+  public runCommand(commandKey: AllCommandsKey): void {
+    const command = this.resolveInstance(commandKey);
 
-  }
-
-  public runCommand(command: AllCommandsKey): void {
-    const resolved = CommandResolver.resolve(command);
-    if (resolved.valid) {
-      const listName = resolved.list;
-      const keyName = resolved.key;
-      const instance = CommandResolver.assemble(listName, keyName);
-      const subjectName = `${listName}State`;
+    if (command) {
+      const commandInstance = command.instance;
+      const commandType = command.type;
+      const subjectName = `on${commandType.replace(/\b[a-z]/g, (x) => x.toUpperCase())}Change`;
       const subjectEmitter = this[subjectName];
-      subjectEmitter.next(instance);
+      subjectEmitter.next(commandInstance);
     }
   }
 
-  // private assembleCommand() {
-  //   public static assemble(listKey: AllCommandsListKey, commandKey: AllCommandsKey): TypeCommand {
-  //     return CommandContainer[listKey][commandKey];
-  //   }
-  // }
+  public resolveCommand(type: AllCommandsListKey, matcher: string): AllCommandsKey | undefined {
+    const commandList = this[`${type}CommandList`];
+    const commandKeys = Object.keys(commandList);
 
-  private resolveCommand(commandKey: AllCommandsKey): ResolvedCommand {
+    for (const key of commandKeys as AllCommandsKey[]) {
+      const lowerKey = key.toLowerCase();
+      const lowerMatcher = matcher.toLowerCase();
+      lowerKey.includes(lowerMatcher);
+
+      return key;
+    }
+
+    return undefined;
+  }
+
+  public resolveInstance(commandKey: AllCommandsKey): ResolvedCommand | undefined {
     const botCommandList = this.botCommandList;
     const chatCommandList = this.chatCommandList;
     const wallpaperCommandList = this.wallpaperCommandList;
@@ -88,9 +90,6 @@ export class CommandService {
     ];
 
     for (const list of lists) {
-
-      console.log(list);
-
       const commandList = list.commands;
       const commandType = list.type as AllCommandsListKey;
       const commandKeys = Object.keys(commandList);
@@ -102,7 +101,7 @@ export class CommandService {
         return {
           instance: commandInstance,
           type: commandType,
-        }
+        };
       }
     }
 
