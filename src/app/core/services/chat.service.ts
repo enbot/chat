@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs';
 import { CommandService } from './command.service';
-import { ChatMessage } from 'src/app/shared/models/general-config/chat-message';
+import { ChatMessage } from 'src/app/shared/models/chat/chat-message';
 import { SerializedEmotionDTO, SerializedMessageDTO, ResponseEmotionDTO, ResponseMessageDTO } from 'src/app/shared/interfaces/chat-requests';
 import { api } from 'src/app/core/api/paths';
 import { HttpClient } from '@angular/common/http';
@@ -11,31 +11,23 @@ import { HttpClient } from '@angular/common/http';
 })
 export class ChatService {
 
-    public readonly onSend: Subject<ChatMessage>;
-    public readonly onReceive: Subject<ChatMessage>;
+    public readonly onMessage: Subject<ChatMessage>;
     public readonly onError: Subject<Error>;
 
     constructor(
         private httpClient: HttpClient,
         private commandService: CommandService,
     ) {
-        this.onSend = new Subject();
-        this.onReceive = new Subject();
+        this.onMessage = new Subject();
         this.onError = new Subject();
     }
 
     public async input(inputMessage: string): Promise<void> {
 
-        // console.log(inputMessage);
+        console.log(inputMessage);
 
         // const isCommand = this.commandService.isCommand(inputMessage);  // TEMP
-
-        // console.log(isCommand);
-
         // if (isCommand) {
-
-        //     console.log('asdsadad');
-
         //     return this.commandService.runCommand(inputMessage as AnyCommandKey);  // TEMP
         // }
 

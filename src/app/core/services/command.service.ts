@@ -6,8 +6,8 @@ import { makeBotCommands } from 'src/app/shared/factories/bot-command-factory';
 import { makeChatCommands } from 'src/app/shared/factories/chat-command-factory';
 import { makeWallpaperCommands } from 'src/app/shared/factories/wallpaper-command-factory';
 import { AnyCommandKey, ResolvedCommand, AnyCommandListKey } from 'src/app/shared/interfaces/command-types';
-import { WallpaperState } from 'src/app/shared/models/wallpaper-states/wallpaper-state';
-import { BotState } from 'src/app/shared/models/bot-states/bot-state';
+import { WallpaperState } from 'src/app/shared/models/wallpaper/wallpaper-state';
+import { BotState } from 'src/app/shared/models/bot/bot-state';
 import { Subject } from 'rxjs';
 
 @Injectable({

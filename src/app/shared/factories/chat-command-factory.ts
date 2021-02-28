@@ -1,8 +1,8 @@
 import { ChatCommandList } from 'src/app/shared/interfaces/chat-types';
-import { ChatStateDanger } from 'src/app/shared/models/chat-states/chat-danger';
-import { ChatStateStandard } from 'src/app/shared/models/chat-states/chat-standard';
-import { ChatStateRainbow } from 'src/app/shared/models/chat-states/chat-rainbow';
-import { ChatStateWarning } from 'src/app/shared/models/chat-states/chat-warning';
+import { ChatStateDanger } from 'src/app/shared/models/chat/chat-danger';
+import { ChatStateStandard } from 'src/app/shared/models/chat/chat-standard';
+import { ChatStateRainbow } from 'src/app/shared/models/chat/chat-rainbow';
+import { ChatStateWarning } from 'src/app/shared/models/chat/chat-warning';
 
 export function makeChatCommands(): ChatCommandList {
     return {

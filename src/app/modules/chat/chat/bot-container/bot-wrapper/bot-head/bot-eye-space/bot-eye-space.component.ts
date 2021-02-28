@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { BotState } from 'src/app/shared/models/bot-states/bot-state';
+import { BotState } from 'src/app/shared/models/bot/bot-state';
 
 @Component({
   selector: 'app-bot-eye-space',

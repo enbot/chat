@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { WallpaperState } from 'src/app/shared/models/wallpaper-states/wallpaper-state';
+import { WallpaperState } from 'src/app/shared/models/wallpaper/wallpaper-state';
 
 @Component({
   selector: 'app-wallpaper-transition',

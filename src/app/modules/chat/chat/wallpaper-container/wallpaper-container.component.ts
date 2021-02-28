@@ -2,8 +2,8 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Subscription, interval } from 'rxjs';
 import { debounce } from 'rxjs/operators';
 import { CommandService } from 'src/app/core/services/command.service';
-import { WallpaperState } from 'src/app/shared/models/wallpaper-states/wallpaper-state';
-import { WallpaperStateDark } from 'src/app/shared/models/wallpaper-states/wallpaper-dark';
+import { WallpaperState } from 'src/app/shared/models/wallpaper/wallpaper-state';
+import { WallpaperStateDark } from 'src/app/shared/models/wallpaper/wallpaper-dark';
 
 @Component({
   selector: 'app-wallpaper-container',

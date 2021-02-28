@@ -1,6 +1,6 @@
 import { WallpaperCommandList } from 'src/app/shared/interfaces/wallpaper-types';
-import { WallpaperStateForest } from 'src/app/shared/models/wallpaper-states/wallpaper-forest';
-import { WallpaperStateDark } from 'src/app/shared/models/wallpaper-states/wallpaper-dark';
+import { WallpaperStateForest } from 'src/app/shared/models/wallpaper/wallpaper-forest';
+import { WallpaperStateDark } from 'src/app/shared/models/wallpaper/wallpaper-dark';
 
 export function makeWallpaperCommands(): WallpaperCommandList {
     return {

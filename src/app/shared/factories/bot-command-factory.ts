@@ -1,11 +1,11 @@
 import { BotCommandList } from 'src/app/shared/interfaces/bot-types';
-import { BotStateNormal } from 'src/app/shared/models/bot-states/bot-normal';
-import { BotStateCareful } from 'src/app/shared/models/bot-states/bot-careful';
-import { BotStateConfused } from 'src/app/shared/models/bot-states/bot-confused';
-import { BotStateAngry } from 'src/app/shared/models/bot-states/bot-angry';
-import { BotStateHappy } from 'src/app/shared/models/bot-states/bot-happy';
-import { BotStateBored } from 'src/app/shared/models/bot-states/bot-bored';
-import { BotStateSad } from 'src/app/shared/models/bot-states/bot-sad';
+import { BotStateNormal } from 'src/app/shared/models/bot/bot-normal';
+import { BotStateCareful } from 'src/app/shared/models/bot/bot-careful';
+import { BotStateConfused } from 'src/app/shared/models/bot/bot-confused';
+import { BotStateAngry } from 'src/app/shared/models/bot/bot-angry';
+import { BotStateHappy } from 'src/app/shared/models/bot/bot-happy';
+import { BotStateBored } from 'src/app/shared/models/bot/bot-bored';
+import { BotStateSad } from 'src/app/shared/models/bot/bot-sad';
 
 export function makeBotCommands(): BotCommandList {
     return {

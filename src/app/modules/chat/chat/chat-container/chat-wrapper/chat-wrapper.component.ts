@@ -1,7 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ChatService } from 'src/app/core/services/chat.service';
 import { CommandService } from 'src/app/core/services/command.service';
-import { ChatMessage } from 'src/app/shared/models/general-config/chat-message';
+import { ChatMessage } from 'src/app/shared/models/chat/chat-message';
 import { ChatBalloon } from 'src/app/shared/interfaces/chat-balloon';
 import { Subscription } from 'rxjs';
 
@@ -31,12 +31,7 @@ export class ChatWrapperComponent implements OnInit, OnDestroy {
 
   public ngOnInit(): void {
 
-    this.receiveSubscription = this.chatService.onReceive
-      .subscribe((message: ChatMessage) => {
-        console.log(message);
-      });
-
-    this.sendSubscription = this.chatService.onSend
+    this.sendSubscription = this.chatService.onMessage
       .subscribe((message: ChatMessage) => {
         console.log(message);
       });
