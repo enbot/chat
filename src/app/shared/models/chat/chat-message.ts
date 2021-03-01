@@ -5,19 +5,13 @@ export class ChatMessage {
 
     private when: Date;
 
-    private content: ChatBalloonContent;
-
     constructor(
         public readonly message: string,
         public readonly author: string,
         public readonly side: TypeSide,
+        public readonly content: ChatBalloonContent,
     ) {
         this.when = new Date();
-        this.content = 'standard';
-    }
-
-    public setContent(content: ChatBalloonContent): void {
-        this.content = content;
     }
 
     // getXesque() {

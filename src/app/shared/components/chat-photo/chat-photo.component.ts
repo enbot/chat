@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { ChatBalloon } from 'src/app/shared/interfaces/chat-balloon';
 
 @Component({
   selector: 'app-chat-photo',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ChatPhotoComponent implements OnInit {
 
+  @Input() message: ChatBalloon;
+
   constructor() { }
 
   ngOnInit(): void {
+    console.log(this.message);
   }
 
 }

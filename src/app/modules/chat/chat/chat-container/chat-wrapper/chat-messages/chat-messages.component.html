@@ -1,10 +1,42 @@
 <div class="messages">
 
-    messages
+    <ng-template ngFor let-message [ngForOf]="messages">
 
-    <!-- for -->
+        <div class="message">
 
-    app-chat-balloon
-    app-chat-photo
+            <!-- {{message | json}} -->
+
+            <!-- {
+                "message": {
+                    "message": "sim",
+                    "author": "you",
+                    "side": "right",la
+                    "content": "standard",
+                    "when": "2021-03-01T01:04:47.655Z"
+                },
+                "command": {
+                    "content": {
+                        "color": "#f0f0f0",
+                        "effect": "none"
+                    },
+                    "shape": {
+                        "background": "#000000",
+                        "shape": "spiked",
+                        "effect": "none"
+                    }
+                }
+            } -->
+
+            <!-- <div class="balloon">
+                <app-chat-balloon [message]="message"> </app-chat-balloon>
+            </div>
+
+            <div class="photo">
+                <app-chat-photo [message]="message"> </app-chat-photo>
+            </div> -->
+
+        </div>
+
+    </ng-template>
 
 </div>

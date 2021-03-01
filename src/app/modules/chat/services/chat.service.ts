@@ -1,10 +1,12 @@
 import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs';
-import { CommandService } from './command.service';
+import { CommandService } from 'src/app/core/services/command.service';
 import { ChatMessage } from 'src/app/shared/models/chat/chat-message';
 import { SerializedEmotionDTO, SerializedMessageDTO, ResponseEmotionDTO, ResponseMessageDTO } from 'src/app/shared/interfaces/chat-requests';
 import { api } from 'src/app/core/api/paths';
 import { HttpClient } from '@angular/common/http';
+import { TypeSide } from 'src/app/shared/interfaces/metric-types';
+import { ChatBalloonContent } from 'src/app/shared/interfaces/chat-balloon';
 
 @Injectable({
     providedIn: 'root'
@@ -25,6 +27,8 @@ export class ChatService {
     public async input(inputMessage: string): Promise<void> {
 
         console.log(inputMessage);
+
+        this.propagateMessage(inputMessage, 'you', 'right', 'standard');
 
         // const isCommand = this.commandService.isCommand(inputMessage);  // TEMP
         // if (isCommand) {
@@ -60,6 +64,11 @@ export class ChatService {
         } catch (error) {
             this.onError.next(error);
         }
+    }
+
+    private propagateMessage(message: string, owner: string, side: TypeSide, content: ChatBalloonContent = 'standard'): void {
+        const chatMessage = new ChatMessage(message, owner, side, content);
+        this.onMessage.next(chatMessage);
     }
 
     private inputChatMessage(serializedEmotionRequest: SerializedEmotionDTO): Promise<ResponseEmotionDTO> {
