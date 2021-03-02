@@ -8,7 +8,6 @@ export interface ChatCommand {
 export interface ChatCommandList {
     CHANGE_BALLOON_DANGER: ChatCommand;
     CHANGE_BALLOON_STANDARD: ChatCommand;
-    CHANGE_BALLOON_RAINBOW: ChatCommand;
     CHANGE_BALLOON_WARNING: ChatCommand;
 }
 

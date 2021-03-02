@@ -6,4 +6,4 @@ export interface ChatBalloon {
     command: ChatCommand;
 }
 
-export type ChatBalloonContent = 'standard' | 'warning' | 'danger' | 'rainbow';
+export type ChatBalloonContent = 'standard' | 'warning' | 'danger';
