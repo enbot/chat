@@ -13,7 +13,7 @@ import { ChatCommand } from 'src/app/shared/interfaces/chat-types';
 })
 export class ChatWrapperComponent implements OnInit, OnDestroy {
 
-    public messages: ChatBalloon[];
+    public balloons: ChatBalloon[];
 
     private receiveSubscription: Subscription;
     private sendSubscription: Subscription;
@@ -23,7 +23,7 @@ export class ChatWrapperComponent implements OnInit, OnDestroy {
         private chatService: ChatService,
         private commandService: CommandService,
     ) {
-        this.messages = [];
+        this.balloons = [];
     }
 
     public ngOnInit(): void {
@@ -37,7 +37,7 @@ export class ChatWrapperComponent implements OnInit, OnDestroy {
         const key = this.commandService.resolveCommand('chat', message.content);
         const command = this.commandService.resolveInstance(key).instance as ChatCommand;
 
-        this.messages.push({
+        this.balloons.push({
             message,
             command,
         });

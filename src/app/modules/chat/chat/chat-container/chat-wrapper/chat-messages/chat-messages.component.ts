@@ -8,7 +8,7 @@ import { ChatBalloon } from 'src/app/shared/interfaces/chat-balloon';
 })
 export class ChatMessagesComponent implements OnInit {
 
-  @Input() messages: ChatBalloon[];
+  @Input() balloons: ChatBalloon[];
 
   constructor() { }
 

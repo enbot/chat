@@ -1,10 +1,12 @@
 <div class="messages">
 
-    <ng-template ngFor let-message [ngForOf]="messages">
+    <ng-template ngFor let-balloon [ngForOf]="balloons">
 
         <div class="message">
 
             <!-- {{message | json}} -->
+
+            {{balloon.message.getTimeSince()}}
 
             <!-- {
                 "message": {
@@ -27,13 +29,13 @@
                 }
             } -->
 
-            <!-- <div class="balloon">
+            <div class="balloon">
 
             </div>
 
             <div class="photo">
 
-            </div> -->
+            </div>
 
         </div>
 

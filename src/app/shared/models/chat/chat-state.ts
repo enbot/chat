@@ -17,4 +17,10 @@ export class ChatState implements ChatCommand {
         };
     }
 
+    // public getContainerStyles(): TypeStyle {
+    //     return {
+
+    //     };
+    // }
+
 }
