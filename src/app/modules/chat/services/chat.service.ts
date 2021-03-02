@@ -30,6 +30,9 @@ export class ChatService {
 
         this.propagateMessage(inputMessage, 'you', 'right', 'standard');
         this.propagateMessage(inputMessage, 'enbot', 'left', 'standard');
+        this.propagateMessage(inputMessage, 'enbot', 'left', 'warning');
+        this.propagateMessage(inputMessage, 'enbot', 'left', 'danger');
+        this.propagateMessage(inputMessage, 'enbot', 'left', 'rainbow');
 
         // this.propagateMessage(inputMessage, 'you', 'right', 'standard');
         // this.propagateMessage(inputMessage, 'enbot', 'left', 'standard');
