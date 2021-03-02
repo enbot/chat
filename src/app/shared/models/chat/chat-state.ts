@@ -11,7 +11,17 @@ export class ChatState implements ChatCommand {
 
     public getBalloonStyles(): TypeStyle {
         return {
-            'background-color': this.shape.background,
+            backgroundColor: this.shape.background,
+        };
+    }
+
+    public getContentClasses(): TypeClass {
+        return `${this.content.effect}`;
+    }
+
+    public getCornerStyles(): TypeStyle {
+        return {
+            borderTopColor: this.shape.background,
         };
     }
 
@@ -23,10 +33,6 @@ export class ChatState implements ChatCommand {
         return {
             color: this.content.color,
         };
-    }
-
-    public getContentClasses(): TypeClass {
-        return `${this.content.effect}`;
     }
 
 }

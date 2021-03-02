@@ -24,13 +24,13 @@ export class ChatMessage {
         const aMinuteInSeconds = 60;
 
         if ((secondsFromNow / aDayInSeconds) > 1) {
-            return Math.floor(secondsFromNow / aDayInSeconds) + 'days ago';
+            return Math.floor(secondsFromNow / aDayInSeconds) + ' days ago';
         } else if ((secondsFromNow / aHourInSeconds) > 1) {
-            return Math.floor(secondsFromNow / aHourInSeconds) + 'hours ago';
+            return Math.floor(secondsFromNow / aHourInSeconds) + '  hours ago';
         } else if ((secondsFromNow / aMinuteInSeconds) > 1) {
-            return Math.floor(secondsFromNow / aMinuteInSeconds) + 'minutes ago';
+            return Math.floor(secondsFromNow / aMinuteInSeconds) + '  minutes ago';
         } else {
-            return 'a few seconds ago';
+            return 'A few seconds ago';
         }
     }
 

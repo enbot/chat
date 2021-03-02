@@ -2,9 +2,10 @@
     <ng-template ngFor let-balloon [ngForOf]="balloons">
         <div [ngClass]="['message', balloon.message.side]">
             <div [ngClass]="['balloon', balloon.command.getBalloonClasses()]" [ngStyle]="balloon.command.getBalloonStyles()">
+                <div class="corner" [ngStyle]="balloon.command.getCornerStyles()"> </div>
                 <div [ngClass]="['content', balloon.command.getContentClasses()]" [ngStyle]="balloon.command.getContentStyles()">
                     <div class="header">
-                        <span class="author"> {{balloon.message.author}} </span>
+                        <!-- <span class="author"> {{balloon.message.author}} </span> -->
                         <span class="when"> {{balloon.message.getTimeSince()}} </span>
                     </div>
                     <div class="message"> {{balloon.message.message}} </div>
@@ -12,4 +13,4 @@
             </div>
         </div>
     </ng-template>
-</div>
+</div> 
