@@ -70,9 +70,10 @@ export class CommandService {
     for (const key of commandKeys as AnyCommandKey[]) {
       const lowerKey = key.toLowerCase();
       const lowerMatcher = matcher.toLowerCase();
-      lowerKey.includes(lowerMatcher);
 
-      return key;
+      if (lowerKey.includes(lowerMatcher)) {
+        return key;
+      }
     }
 
     return undefined;
