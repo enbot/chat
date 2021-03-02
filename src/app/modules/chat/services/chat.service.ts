@@ -29,13 +29,17 @@ export class ChatService {
         console.log(inputMessage);
 
         this.propagateMessage(inputMessage, 'you', 'right', 'standard');
+        this.propagateMessage(inputMessage, 'enbot', 'left', 'standard');
+
+        // this.propagateMessage(inputMessage, 'you', 'right', 'standard');
+        // this.propagateMessage(inputMessage, 'enbot', 'left', 'standard');
+
+        // const sentMessage = new ChatMessage(inputMessage, 'you', 'left');
 
         // const isCommand = this.commandService.isCommand(inputMessage);  // TEMP
         // if (isCommand) {
         //     return this.commandService.runCommand(inputMessage as AnyCommandKey);  // TEMP
         // }
-
-        // const sentMessage = new ChatMessage(inputMessage, 'you', 'left');
 
         // this.onSend.next(sentMessage);
 
@@ -60,7 +64,6 @@ export class ChatService {
             // this.onReceive.next(receivedMessage);
 
             // TODO: comptute response and emit events
-
         } catch (error) {
             this.onError.next(error);
         }

@@ -45,7 +45,6 @@ export class ChatWrapperComponent implements OnInit, OnDestroy {
 
     public handleChatError(error: Error): void {
         console.log('error');
-
     }
 
     public ngOnDestroy(): void {

@@ -1,5 +1,5 @@
 import { TypeSide } from 'src/app/shared/interfaces/metric-types';
-import { ChatBalloonContent } from '../../interfaces/chat-balloon';
+import { ChatBalloonContent } from 'src/app/shared/interfaces/chat-balloon';
 
 export class ChatMessage {
 
@@ -14,44 +14,24 @@ export class ChatMessage {
         this.when = new Date();
     }
 
-    getTimeSince(): string {
+    public getTimeSince(): string {
         const nowTime = new Date().getTime();
         const messageTime = this.when.getTime();
         const secondsFromNow = Math.floor(((nowTime - messageTime) / 1000));
 
-        const aYearInSeconds = 31536000;
-        const aMonthInSeconds = 2592000;
         const aDayInSeconds = 86400;
         const aHourInSeconds = 3600;
         const aMinuteInSeconds = 60;
 
-        let amount: number;
-        let unit: string;
-
-        if ((secondsFromNow / aYearInSeconds) > 1) {
-            amount = secondsFromNow / aYearInSeconds;
-            unit = 'year';
-        } else if ((secondsFromNow / aMonthInSeconds) > 1) {
-            amount = secondsFromNow / aMonthInSeconds;
-            unit = 'month';
-        } else if ((secondsFromNow / aDayInSeconds) > 1) {
-            amount = secondsFromNow / aDayInSeconds;
-            unit = 'day';
+        if ((secondsFromNow / aDayInSeconds) > 1) {
+            return Math.floor(secondsFromNow / aDayInSeconds) + 'days ago';
         } else if ((secondsFromNow / aHourInSeconds) > 1) {
-            amount = secondsFromNow / aHourInSeconds;
-            unit = 'hour';
+            return Math.floor(secondsFromNow / aHourInSeconds) + 'hours ago';
         } else if ((secondsFromNow / aMinuteInSeconds) > 1) {
-            amount = secondsFromNow / aMinuteInSeconds;
-            unit = 'minute';
+            return Math.floor(secondsFromNow / aMinuteInSeconds) + 'minutes ago';
         } else {
-            amount = secondsFromNow;
-            unit = 'second';
+            return 'a few seconds ago';
         }
-
-        const roundedAmount = Math.floor(amount);
-        const fixedUnit = roundedAmount > 1 ? `${unit}s` : unit;
-
-        return `${roundedAmount} ${fixedUnit}`;
     }
 
 }
