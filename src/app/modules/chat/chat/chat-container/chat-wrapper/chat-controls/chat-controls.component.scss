@@ -14,7 +14,7 @@
     }
 
     .input-wrapper {
-        width: calc(100% - 120px);
+        width: calc(100% - 135px);
 
         .input {
             width: 100%;
@@ -32,51 +32,85 @@
             font-size: 17px;
             color: #202020;
 
-            &.disabled{
+            &.disabled {
                 background: #c1c1c1;
                 color: #9b9b9b;
-            } 
+            }
         }
     }
 
     .submit-wrapper {
-        width: 120px;
+        width: 135px;
 
         .submit {
             height: 100%;
             width: 100%;
-            display: inline-block;
-            text-transform: uppercase;
+            position: relative;
             border: none;
-            width: 100%;
             margin: 0;
-            font-size: 15px;
-            text-decoration: none;
             font-size: 1rem;
-            line-height: 1;
             border-top-right-radius: 15px;
             border-bottom-right-radius: 15px;
-            transition: background 250ms ease-in-out, transform 150ms ease;
             cursor: pointer;
             text-align: center;
             -webkit-appearance: none;
             -moz-appearance: none;
+            outline: none !important;
+            border: none !important;
+
+            &:after {
+                content: "send";
+                border-top-right-radius: 15px;
+                border-bottom-right-radius: 15px;
+                text-transform: uppercase;
+                width: 96%;
+                height: 94%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                position: absolute;
+                top: 3%;
+                left: 2%;
+            }
 
             &.disabled {
-                background: #c1c1c1;
-                color: #9b9b9b;
-                outline: none !important;
-                border: none !important;
-                cursor: default;
+                background: #4a4a4a;
+                cursor: wait;
+
+                &:after {
+                    background-color: #b1b1b1;
+                    color: #545454;
+                    font-size: 1.1rem;
+                }
             }
 
             &:not(.disabled) {
-                background: $theme-blue;
                 color: #ffffff;
+                background-image: linear-gradient(
+                    135deg,
+                    $theme-blue 0%,
+                    $theme-yellow 49%,
+                    $theme-red 80%,
+                    $theme-blue 100%
+                );
 
                 &:hover,
                 &:focus {
-                    background: darken($theme-blue, 10%);
+                    animation: runRainbow 2s linear infinite;
+
+                    @at-root {
+                        @keyframes runRainbow {
+                            100% {
+                                background-position: 20vw;
+                            }
+                        }
+                    }
+                }
+
+                &:after {
+                    background-color: #191919;
+                    color: #ffffff;
+                    font-size: 1.3rem;
                 }
 
                 &:focus {
@@ -85,7 +119,7 @@
                 }
 
                 &:active {
-                    transform: scale(0.99);
+                    transform: scale(0.97);
                 }
             }
         }
