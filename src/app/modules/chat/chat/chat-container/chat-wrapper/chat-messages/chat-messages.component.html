@@ -1,4 +1,4 @@
-<div class="messages">
+<div class="messages" #chat>
     <ng-template ngFor let-balloon [ngForOf]="balloons">
         <div [ngClass]="['message', balloon.message.side]">
             <div [ngClass]="['balloon', balloon.command.getBalloonClasses()]" [ngStyle]="balloon.command.getBalloonStyles()">
