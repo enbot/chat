@@ -18,13 +18,6 @@ export class WallpaperState implements WallpaperCommand {
         };
     }
 
-    getViewportStyles(): TypeStyle {
-        return {
-            height: `${this.component.height}%`,
-            width: `${this.component.width}%`,
-        };
-    }
-
     getImageStyles(): TypeStyle {
         return {
             backgroundImage: `url(${this.metadata.path})`,

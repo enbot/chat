@@ -12,13 +12,11 @@ export const metadata: parts.WallpaperMetadata = {
 export const component: parts.WallpaperComponent = {
     wallpaper: Wallpaper.IMAGE,
     color: Color.DARK,
-    width: 100,
-    height: 100,
 };
 
 export const transition: parts.WallpaperTransition = {
     name: Transition.NONE,
-    duration: 1000,
-    offset: 3000,
-    delay: 100,
+    duration: 0,
+    offset: 0,
+    delay: 0,
 };
