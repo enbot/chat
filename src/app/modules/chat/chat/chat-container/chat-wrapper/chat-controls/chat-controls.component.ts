@@ -16,11 +16,11 @@ export class ChatControlsComponent implements OnInit {
     private chatService: ChatService,
   ) { }
 
-  ngOnInit(): void {
+  public ngOnInit(): void {
     this.enableChat();
   }
 
-  async send(): Promise<void> {
+  public async send(): Promise<void> {
     const message = this.message;
 
     if (message) {

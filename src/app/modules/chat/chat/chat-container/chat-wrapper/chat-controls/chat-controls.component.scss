@@ -63,14 +63,14 @@
                 border-top-right-radius: 15px;
                 border-bottom-right-radius: 15px;
                 text-transform: uppercase;
-                width: 96%;
+                width: 97%;
                 height: 94%;
                 display: flex;
                 align-items: center;
                 justify-content: center;
                 position: absolute;
+                left: 1.5%;
                 top: 3%;
-                left: 2%;
             }
 
             &.disabled {
@@ -87,21 +87,23 @@
             &:not(.disabled) {
                 color: #ffffff;
                 background-image: linear-gradient(
-                    135deg,
-                    $theme-blue 0%,
-                    $theme-yellow 49%,
-                    $theme-red 80%,
-                    $theme-blue 100%
+                    90deg,
+                    $theme-red 0%,
+                    $theme-orange 15%,
+                    $theme-yellow 30%,
+                    $theme-green 45%,
+                    $theme-blue 50%,
+                    $theme-red 100%,
                 );
 
                 &:hover,
                 &:focus {
-                    animation: runRainbow 2s linear infinite;
+                    animation: runRainbow 1s linear infinite;
 
                     @at-root {
                         @keyframes runRainbow {
                             100% {
-                                background-position: 20vw;
+                                background-position: -129px;
                             }
                         }
                     }

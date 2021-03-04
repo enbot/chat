@@ -12,6 +12,6 @@ export class BotEyeSpaceComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit(): void { }
+  public ngOnInit(): void { }
 
 }

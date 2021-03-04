@@ -8,9 +8,9 @@ describe('WallpaperBackgroundComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ WallpaperBackgroundComponent ]
+      declarations: [WallpaperBackgroundComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

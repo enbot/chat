@@ -9,5 +9,8 @@
         <ng-container *ngIf="command.component.wallpaper === 'image'">
             <app-wallpaper-image [command]="command"> </app-wallpaper-image>
         </ng-container>
+        <ng-container *ngIf="command.component.wallpaper === 'engine'">
+            <app-wallpaper-engine [command]="command"> </app-wallpaper-engine>
+        </ng-container>
     </div>
 </div>

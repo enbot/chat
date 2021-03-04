@@ -16,12 +16,12 @@ export class BotWrapperComponent implements OnInit, OnDestroy {
 
   constructor(private eventService: EventService) { }
 
-  ngOnInit(): void {
+  public ngOnInit(): void {
     this.subscription = this.eventService.onMouseMove
       .subscribe(() => this.command.inputMousePosition(this.eventService.percentConfig));
   }
 
-  ngOnDestroy(): void {
+  public ngOnDestroy(): void {
     this.subscription.unsubscribe();
   }
 

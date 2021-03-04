@@ -19,6 +19,7 @@ import { WallpaperWrapperComponent } from './chat/wallpaper-container/wallpaper-
 import { WallpaperImageComponent } from './chat/wallpaper-container/wallpaper-wrapper/wallpaper-image/wallpaper-image.component';
 import { WallpaperTransitionComponent } from './chat/wallpaper-container/wallpaper-wrapper/wallpaper-transition/wallpaper-transition.component';
 import { WallpaperBackgroundComponent } from './chat/wallpaper-container/wallpaper-wrapper/wallpaper-background/wallpaper-background.component';
+import { WallpaperEngineComponent } from './chat/wallpaper-container/wallpaper-wrapper/wallpaper-engine/wallpaper-engine.component';
 
 @NgModule({
     declarations: [
@@ -40,6 +41,7 @@ import { WallpaperBackgroundComponent } from './chat/wallpaper-container/wallpap
         WallpaperImageComponent,
         WallpaperTransitionComponent,
         WallpaperBackgroundComponent,
+        WallpaperEngineComponent,
     ],
     imports: [
         ChatRoutingModule,

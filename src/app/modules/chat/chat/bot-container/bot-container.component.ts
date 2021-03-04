@@ -12,19 +12,19 @@ import { BotState } from 'src/app/shared/models/bot/bot-state';
 })
 export class BotContainerComponent implements OnInit, OnDestroy {
 
-    command: BotState = new BotStateNormal();
+    public command: BotState = new BotStateNormal();
 
-    subscription: Subscription;
+    private subscription: Subscription;
 
     constructor(private commandService: CommandService) { }
 
-    ngOnInit(): void {
+    public ngOnInit(): void {
         this.subscription = this.commandService.onBotChange
             .pipe(debounce(() => interval(400)))
             .subscribe(command => this.command = command);
     }
 
-    ngOnDestroy(): void {
+    public ngOnDestroy(): void {
         if (this.subscription) {
             this.subscription.unsubscribe();
         }

@@ -12,13 +12,6 @@ export class WallpaperTransitionComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit(): void { }
+  public ngOnInit(): void { }
 
 }
-
-// <!-- command.transition: = {
-//   name: Transition.NONE,
-//   delay: 100,
-//   offset: 3000,
-//   duration: 1000,
-// }  -->

@@ -6,14 +6,12 @@ export interface WallpaperCommand {
     component: parts.WallpaperComponent;
     transition: parts.WallpaperTransition;
     getBackgroundStyles(): TypeStyle;
-    getViewportStyles(): TypeStyle;
     getImageStyles(): TypeStyle;
 }
 
 export interface WallpaperCommandList {
     CHANGE_SCENARIO_DARK: WallpaperCommand;
-    CHANGE_SCENARIO_FOREST: WallpaperCommand;
-    CHANGE_SCENARIO_SNOW: WallpaperCommand;
+    CHANGE_SCENARIO_ENGINE: WallpaperCommand;
 }
 
 export type WallpaperCommandKey = keyof WallpaperCommandList;

@@ -12,6 +12,6 @@ export class WallpaperImageComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit(): void { }
+  public ngOnInit(): void { }
 
 }

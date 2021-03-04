@@ -3,7 +3,7 @@ import { Subscription, interval } from 'rxjs';
 import { debounce } from 'rxjs/operators';
 import { CommandService } from 'src/app/core/services/command.service';
 import { WallpaperState } from 'src/app/shared/models/wallpaper/wallpaper-state';
-import { WallpaperStateDark } from 'src/app/shared/models/wallpaper/wallpaper-dark';
+import { WallpaperStateEngine } from 'src/app/shared/models/wallpaper/wallpaper-engine';
 
 @Component({
   selector: 'app-wallpaper-container',
@@ -12,19 +12,19 @@ import { WallpaperStateDark } from 'src/app/shared/models/wallpaper/wallpaper-da
 })
 export class WallpaperContainerComponent implements OnInit, OnDestroy {
 
-  command: WallpaperState = new WallpaperStateDark();
+  public command: WallpaperState = new WallpaperStateEngine();
 
-  subscription: Subscription;
+  private subscription: Subscription;
 
   constructor(private commandService: CommandService) { }
 
-  ngOnInit(): void {
+  public ngOnInit(): void {
     this.subscription = this.commandService.onWallpaperChange
       .pipe(debounce(() => interval(400)))
       .subscribe(command => this.command = command);
   }
 
-  ngOnDestroy(): void {
+  public ngOnDestroy(): void {
     if (this.subscription) {
       this.subscription.unsubscribe();
     }
