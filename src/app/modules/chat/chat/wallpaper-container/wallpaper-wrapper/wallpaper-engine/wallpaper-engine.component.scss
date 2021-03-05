@@ -1,18 +1,45 @@
 .background {
+    background: linear-gradient(135deg, rgba(#000000, 0.3) 0%, rgba(#000000, 0.2) 35%, rgba(#000000, 0.01) 100%);
+    position: relative;
     width: 100%;
     height: 100%;
-    position: relative;
 
     .gear {
-        width: 200px;
+        position: absolute;
+        transform: rotate(0deg);
+        height: auto;
+
         &.gear-1 {
-            background-color: line;
+            width: 50vw;
+            top: -10vw;
+            right: -30px;
+            animation: rotate 15s linear infinite;
+            z-index: 1;
         }
+
         &.gear-2 {
-            background-color: blue;
+            width: 25vw;
+            top: 50vh;
+            right: 25vw;
+            animation: rotate 10s linear infinite;
+            z-index: 2;
         }
+
         &.gear-3 {
-            background-color: purple;
+            width: 100vw;
+            top: -120vh;
+            left: -57vw;
+            animation: rotate 30s linear infinite;
+            z-index: 4;
+        }
+
+        &.gear-4 {
+            width: 200vw;
+            top: 20vh;
+            left: -57vw;
+            animation: rotate 30s linear infinite;
+            z-index: 3;
+            // background-color: red;
         }
     }
 }

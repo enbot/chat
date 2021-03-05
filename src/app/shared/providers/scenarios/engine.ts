@@ -3,11 +3,13 @@ import { Transition } from '../configs/transition';
 import { Wallpaper } from '../configs/wallpaper';
 import { Color } from '../configs/color';
 
-export const metadata: parts.WallpaperMetadata = {};
+export const metadata: parts.WallpaperMetadata = {
+    color: Color.DARKGRAY,
+};
 
 export const component: parts.WallpaperComponent = {
     wallpaper: Wallpaper.ENGINE,
-    color: Color.DARK,
+    color: Color.DARKGRAY,
 };
 
 export const transition: parts.WallpaperTransition = {

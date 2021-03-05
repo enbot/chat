@@ -12,13 +12,13 @@ export class WallpaperState implements WallpaperCommand {
 
     }
 
-    getBackgroundStyles(): TypeStyle {
+    public getBackgroundStyles(): TypeStyle {
         return {
             backgroundColor: this.component.color,
         };
     }
 
-    getImageStyles(): TypeStyle {
+    public getImageStyles(): TypeStyle {
         return {
             backgroundImage: `url(${this.metadata.path})`,
             filter: this.metadata.effect

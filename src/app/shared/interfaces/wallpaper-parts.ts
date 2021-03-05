@@ -8,6 +8,7 @@ export interface WallpaperMetadata {
     url?: string;
     path?: string;
     effect?: Effect;
+    color?: Color;
 }
 
 export interface WallpaperComponent {

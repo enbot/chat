@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { TypeStyle } from 'src/app/shared/interfaces/metric-types';
 import { WallpaperState } from 'src/app/shared/models/wallpaper/wallpaper-state';
 
 @Component({
@@ -13,5 +14,11 @@ export class WallpaperEngineComponent implements OnInit {
   constructor() { }
 
   public ngOnInit(): void { }
+
+  public getBackgroundFromMetadata(): TypeStyle {
+    return {
+      fill: this.command.metadata.color,
+    };
+  }
 
 }
