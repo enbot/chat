@@ -1,0 +1,54 @@
+@import "../../assets/styles/transitions.scss";
+
+.viewport {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .eye {
+        @include transitioning;
+
+        .wrapper {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            mix-blend-mode: lighten;
+            filter: blur(0.3rem) contrast(25) grayscale(0.4);
+
+            .sclera {
+                width: 85%;
+                height: 85%;
+                position: relative;
+                border-radius: 100%;
+                overflow: hidden;
+                box-shadow: 0 0 0 8px #000000;
+                background: #ffffff;
+
+                &::after {
+                    content: "";
+                    width: 100%;
+                    height: 100%;
+                    background-color: rgba(#ffffff, 0.35);
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                }
+
+                .iris {
+                    position: absolute;
+                    transition: all 600ms ease, top 10ms ease, left 10ms ease;
+                }
+
+                .lid {
+                    position: absolute;
+                    width: 300%;
+                    height: 100%;
+                    left: -100%;
+                    background: black;
+                }
+            }
+        }
+    }
+}

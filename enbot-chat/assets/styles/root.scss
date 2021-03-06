@@ -1,0 +1,11 @@
+@import "./variables";
+
+:root {
+    --theme-dark: #{$theme-dark};
+    --theme-light: #{$theme-light};
+    --theme-orange: #{$theme-orange};
+    --theme-yellow: #{$theme-yellow};
+    --theme-red: #{$theme-red};
+    --theme-blue: #{$theme-blue};
+    --theme-green: #{$theme-green};
+}
