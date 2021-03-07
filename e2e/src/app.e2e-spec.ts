@@ -10,7 +10,7 @@ describe('workspace-project App', () => {
 
   it('should display welcome message', () => {
     page.navigateTo();
-    expect(page.getTitleText()).toEqual('enbot-chat app is running!');
+    expect(page.getTitleText()).toEqual('chat app is running!');
   });
 
   afterEach(async () => {

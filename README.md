@@ -16,7 +16,7 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 
 ## Deploy
 
-Run `ng build --prod --base-href /chat/` to build to the correct path. Then, run `npx ngh --branch=gh-pages --dir=dist/enbot-chat` to deploy the correct directory to gh-pages branch.
+Run `ng build --prod --base-href /chat/` to build to the correct path. Then, run `npx ngh --branch=gh-pages --dir=dist/chat` to deploy the correct directory to gh-pages branch.
 
 ## Running unit tests
 
