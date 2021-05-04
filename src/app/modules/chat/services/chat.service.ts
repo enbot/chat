@@ -3,7 +3,7 @@ import { Subject } from 'rxjs';
 import { CommandService } from 'src/app/core/services/command.service';
 import { ChatMessage } from 'src/app/shared/models/chat/chat-message';
 import { SerializedEmotionDTO, SerializedMessageDTO, ResponseEmotionDTO, ResponseMessageDTO } from 'src/app/shared/interfaces/chat-requests';
-import { api } from 'src/app/core/api/paths';
+import { Api } from 'src/app/core/constants/api';
 import { HttpClient } from '@angular/common/http';
 import { TypeSide } from 'src/app/shared/interfaces/metric-types';
 import { ChatBalloonContent } from 'src/app/shared/interfaces/chat-balloon';
@@ -12,7 +12,6 @@ import { ChatBalloonContent } from 'src/app/shared/interfaces/chat-balloon';
     providedIn: 'root'
 })
 export class ChatService {
-
     public readonly onMessage: Subject<ChatMessage>;
     public readonly onError: Subject<Error>;
 
@@ -28,13 +27,10 @@ export class ChatService {
 
         console.log(inputMessage);
 
-        this.propagateMessage(inputMessage, 'you', 'right', 'standard');
-        this.propagateMessage(inputMessage, 'enbot', 'left', 'standard');
-        this.propagateMessage(inputMessage, 'enbot', 'left', 'warning');
-        this.propagateMessage(inputMessage, 'enbot', 'left', 'danger');
-
         // this.propagateMessage(inputMessage, 'you', 'right', 'standard');
         // this.propagateMessage(inputMessage, 'enbot', 'left', 'standard');
+        // this.propagateMessage(inputMessage, 'enbot', 'left', 'warning');
+        // this.propagateMessage(inputMessage, 'enbot', 'left', 'danger');
 
         // const sentMessage = new ChatMessage(inputMessage, 'you', 'left');
 
@@ -46,9 +42,11 @@ export class ChatService {
         // this.onSend.next(sentMessage);
 
         try {
-            // const serializedEmotionRequest = this.serializeEmotionRequest(inputMessage);
+            const serializedEmotionRequest = this.serializeEmotionRequest(inputMessage);
 
-            // const { emotion: responseEmotion } = await this.inputChatMessage(serializedEmotionRequest);
+            const responseEmotion = await this.inputChatMessage(serializedEmotionRequest);
+
+            console.log(responseEmotion);
 
             // const serializedMessageRequest = this.serializeMessageRequest(inputMessage, responseEmotion);
 
@@ -78,7 +76,7 @@ export class ChatService {
 
     private inputChatMessage(serializedEmotionRequest: SerializedEmotionDTO): Promise<ResponseEmotionDTO> {
         return new Promise((resolve, reject) => {
-            this.httpClient.post(`${api.emotion}/emotion/predict`, serializedEmotionRequest)
+            this.httpClient.post(`${Api.CORE}/emotion/predict`, serializedEmotionRequest)
                 .subscribe(
                     (response: any) => resolve(response),
                     (error: Error) => reject(error),
