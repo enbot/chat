@@ -30,7 +30,7 @@ export class ChatMessagesComponent implements OnInit, OnDestroy {
     this.sendSubscription = this.chatService.onMessage
       .subscribe((message: ChatMessage) => this.handleNewChatMessage(message));
     this.errorSubscription = this.chatService.onError
-      .subscribe((error: Error) => this.handleChatError(error));
+      .subscribe((error: ChatMessage) => this.handleNewChatMessage(error));
   }
 
   public handleNewChatMessage(message: ChatMessage): void {
@@ -38,10 +38,6 @@ export class ChatMessagesComponent implements OnInit, OnDestroy {
     const command = this.commandService.resolveInstance(key).instance as ChatCommand;
     this.balloons.push({ message, command, });
     this.scrollToBottom();
-  }
-
-  public handleChatError(error: Error): void {
-    console.log('error');
   }
 
   public scrollToBottom(): void {
