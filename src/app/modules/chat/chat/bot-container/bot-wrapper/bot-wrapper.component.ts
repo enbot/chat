@@ -9,7 +9,6 @@ import { Subscription } from 'rxjs';
   styleUrls: ['./bot-wrapper.component.scss']
 })
 export class BotWrapperComponent implements OnInit, OnDestroy {
-
   @Input() command: BotState;
 
   subscription: Subscription;
@@ -24,5 +23,4 @@ export class BotWrapperComponent implements OnInit, OnDestroy {
   public ngOnDestroy(): void {
     this.subscription.unsubscribe();
   }
-
 }

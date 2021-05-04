@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy, Input, ViewChild, ElementRef } from '@angular/core';
+import { Component, OnInit, OnDestroy, ViewChild, ElementRef } from '@angular/core';
 import { CommandService } from 'src/app/core/services/command.service';
 import { ChatService } from 'src/app/modules/chat/services/chat.service';
 import { ChatMessage } from 'src/app/shared/models/chat/chat-message';
@@ -12,13 +12,11 @@ import { Subscription } from 'rxjs';
   styleUrls: ['./chat-messages.component.scss']
 })
 export class ChatMessagesComponent implements OnInit, OnDestroy {
-
   @ViewChild('chat', { static: true }) chat: ElementRef;
 
   private receiveSubscription: Subscription;
   private sendSubscription: Subscription;
   private errorSubscription: Subscription;
-
   public balloons: ChatBalloon[];
 
   constructor(
@@ -61,5 +59,4 @@ export class ChatMessagesComponent implements OnInit, OnDestroy {
       this.errorSubscription.unsubscribe();
     }
   }
-
 }

@@ -9,9 +9,7 @@ import { BotCommand } from 'src/app/shared/interfaces/bot-types';
 import { Size } from 'src/app/shared/providers/configs/size';
 
 export class BotState implements BotCommand, BotActive {
-
     private irisData: BotActiveIrisData;
-
     private containerData: BotActiveContainerData;
 
     constructor(
@@ -132,5 +130,4 @@ export class BotState implements BotCommand, BotActive {
     private updateContainerData(config: TypeAxis): void {
         this.containerData.degRotation = calculateContainerData(config, this.containerData);
     }
-
 }

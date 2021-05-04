@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { BotState } from 'src/app/shared/models/bot/bot-state';
 
 @Component({
@@ -6,12 +6,6 @@ import { BotState } from 'src/app/shared/models/bot/bot-state';
   templateUrl: './bot-helmet.component.html',
   styleUrls: ['./bot-helmet.component.scss']
 })
-export class BotHelmetComponent implements OnInit {
-
+export class BotHelmetComponent {
   @Input() command: BotState;
-
-  constructor() { }
-
-  public ngOnInit(): void { }
-
 }

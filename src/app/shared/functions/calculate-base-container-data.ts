@@ -2,7 +2,6 @@ import { BotActiveContainerData } from '../interfaces/bot-active';
 import { Rotation } from '../providers/configs/rotation';
 
 export function calculateBaseContainerData(): BotActiveContainerData {
-
     const containerBaseRotation = {
         x: Rotation.CONTAINER_X,
         y: Rotation.CONTAINER_Y,

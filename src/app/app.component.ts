@@ -1,4 +1,4 @@
-import { Component, HostListener, OnInit } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
 import { EventService } from 'src/app/core/services/event.service';
 import { ScreenEvent } from './shared/interfaces/screen-events';
@@ -8,8 +8,7 @@ import { ScreenEvent } from './shared/interfaces/screen-events';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnInit {
-
+export class AppComponent {
   private configs = {
     appLocale: 'en',
     appName: 'Enbot chat',
@@ -34,10 +33,6 @@ export class AppComponent implements OnInit {
     private meta: Meta,
     private title: Title,
   ) {
-
-  }
-
-  public ngOnInit(): void {
     this.title.setTitle(this.configs.appTitle);
     this.meta.addTags([
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -66,5 +61,4 @@ export class AppComponent implements OnInit {
   @HostListener('window:resize', ['$event']) resizeHandler(event: ScreenEvent): void {
     this.eventService.inputScreenResize(event);
   }
-
 }

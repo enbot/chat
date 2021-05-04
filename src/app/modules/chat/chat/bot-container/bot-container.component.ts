@@ -11,9 +11,7 @@ import { BotState } from 'src/app/shared/models/bot/bot-state';
     styleUrls: ['./bot-container.component.scss']
 })
 export class BotContainerComponent implements OnInit, OnDestroy {
-
     public command: BotState = new BotStateNormal();
-
     private subscription: Subscription;
 
     constructor(private commandService: CommandService) { }
@@ -29,5 +27,4 @@ export class BotContainerComponent implements OnInit, OnDestroy {
             this.subscription.unsubscribe();
         }
     }
-
 }

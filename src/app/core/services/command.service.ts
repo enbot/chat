@@ -14,26 +14,12 @@ import { Subject } from 'rxjs';
   providedIn: 'root'
 })
 export class CommandService {
-
   public readonly botCommandList: BotCommandList;
   public readonly chatCommandList: ChatCommandList;
   public readonly wallpaperCommandList: WallpaperCommandList;
 
   public readonly onBotChange: Subject<BotState>;
   public readonly onWallpaperChange: Subject<WallpaperState>;
-
-  // <!-- bot commands -->
-  // <!-- <button (click)="test('CHANGE_EMOTION_NORMAL')"> CHANGE_EMOTION_NORMAL </button> -->
-  // <!-- <button (click)="test('CHANGE_EMOTION_ANGRY')"> CHANGE_EMOTION_ANGRY </button> -->
-  // <!-- <button (click)="test('CHANGE_EMOTION_SAD')"> CHANGE_EMOTION_SAD </button> -->
-  // <!-- <button (click)="test('CHANGE_EMOTION_HAPPY')"> CHANGE_EMOTION_HAPPY </button> -->
-  // <!-- <button (click)="test('CHANGE_EMOTION_BORED')"> CHANGE_EMOTION_BORED </button> -->
-  // <!-- <button (click)="test('CHANGE_EMOTION_CAREFUL')"> CHANGE_EMOTION_CAREFUL </button> -->
-  // <!-- <button (click)="test('CHANGE_EMOTION_CONFUSED')"> CHANGE_EMOTION_CONFUSED </button> -->
-
-  // <!-- wallpaper commands -->
-  // <!-- <button (click)="test('CHANGE_SCENARIO_FOREST')"> CHANGE_SCENARIO_FOREST </button> -->
-  // <!-- <button class="disabled"> CHANGE_SCENARIO_SNOW </button> (click)="test('CHANGE_SCENARIO_SNOW')" -->
 
   constructor() {
     this.botCommandList = makeBotCommands();
@@ -42,14 +28,6 @@ export class CommandService {
     this.onBotChange = new Subject();
     this.onWallpaperChange = new Subject();
   }
-
-  // public isCommand(command: string): boolean {
-  //   // return CommandResolver.resolve(command as AnyCommandKey).valid;
-  // }
-
-  // public getCommandKey(aaaa, bbbb) {
-  //   // TODO: change "AllCommandsX" to "AnyCommandX" or something like that
-  // }
 
   public runCommand(commandKey: AnyCommandKey): void {
     const command = this.resolveInstance(commandKey);
@@ -108,5 +86,4 @@ export class CommandService {
 
     return undefined;
   }
-
 }

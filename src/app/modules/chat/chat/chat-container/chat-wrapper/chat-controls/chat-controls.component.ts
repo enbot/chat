@@ -7,10 +7,17 @@ import { ChatService } from 'src/app/modules/chat/services/chat.service';
   styleUrls: ['./chat-controls.component.scss']
 })
 export class ChatControlsComponent implements OnInit {
-
   public message: string;
   public placeholder: string;
   public disabled: boolean;
+  public emotions = {
+    anger: 0.0,
+    fear: 0.0,
+    joy: 0.0,
+    love: 0.0,
+    sadness: 0.0,
+    surprise: 0.0,
+  };
 
   constructor(
     private chatService: ChatService,
@@ -41,5 +48,4 @@ export class ChatControlsComponent implements OnInit {
     this.disabled = true;
     this.placeholder = 'Waiting...';
   }
-
 }

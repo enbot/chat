@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { BotState } from 'src/app/shared/models/bot/bot-state';
 
 @Component({
@@ -6,12 +6,6 @@ import { BotState } from 'src/app/shared/models/bot/bot-state';
   templateUrl: './bot-eye-space.component.html',
   styleUrls: ['./bot-eye-space.component.scss']
 })
-export class BotEyeSpaceComponent implements OnInit {
-
+export class BotEyeSpaceComponent {
   @Input() command: BotState;
-
-  constructor() { }
-
-  public ngOnInit(): void { }
-
 }

@@ -2,7 +2,6 @@ import { TypeSide } from 'src/app/shared/interfaces/metric-types';
 import { ChatBalloonContent } from 'src/app/shared/interfaces/chat-balloon';
 
 export class ChatMessage {
-
     private when: Date;
 
     constructor(
@@ -33,5 +32,4 @@ export class ChatMessage {
             return 'A few seconds ago';
         }
     }
-
 }

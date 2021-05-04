@@ -11,9 +11,7 @@ import { WallpaperStateEngine } from 'src/app/shared/models/wallpaper/wallpaper-
   styleUrls: ['./wallpaper-container.component.scss']
 })
 export class WallpaperContainerComponent implements OnInit, OnDestroy {
-
   public command: WallpaperState = new WallpaperStateEngine();
-
   private subscription: Subscription;
 
   constructor(private commandService: CommandService) { }
@@ -29,5 +27,4 @@ export class WallpaperContainerComponent implements OnInit, OnDestroy {
       this.subscription.unsubscribe();
     }
   }
-
 }

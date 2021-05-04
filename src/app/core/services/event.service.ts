@@ -7,7 +7,6 @@ import { Subject } from 'rxjs';
   providedIn: 'root'
 })
 export class EventService {
-
   public readonly onMouseMove: Subject<MouseEvent>;
   public readonly onScreenResize: Subject<ScreenEvent>;
 
@@ -57,5 +56,4 @@ export class EventService {
     this.screenHeight = event.target.innerHeight;
     this.onScreenResize.next(event);
   }
-
 }
