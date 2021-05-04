@@ -17,7 +17,6 @@ export class CommandService {
   public readonly botCommandList: BotCommandList;
   public readonly chatCommandList: ChatCommandList;
   public readonly wallpaperCommandList: WallpaperCommandList;
-
   public readonly onBotChange: Subject<BotState>;
   public readonly onWallpaperChange: Subject<WallpaperState>;
 
