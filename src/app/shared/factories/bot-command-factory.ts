@@ -1,6 +1,6 @@
 import { BotCommandList } from 'src/app/shared/interfaces/bot-types';
 import { BotStateNormal } from 'src/app/shared/models/bot/bot-normal';
-import { BotStateCareful } from 'src/app/shared/models/bot/bot-careful';
+import { BotStateFear } from 'src/app/shared/models/bot/bot-fear';
 import { BotStateSurprise } from 'src/app/shared/models/bot/bot-surprise';
 import { BotStateAnger } from 'src/app/shared/models/bot/bot-anger';
 import { BotStateJoy } from 'src/app/shared/models/bot/bot-joy';
@@ -15,6 +15,6 @@ export function makeBotCommands(): BotCommandList {
         CHANGE_EMOTION_SADNESS: new BotStateSadness(),
         CHANGE_EMOTION_SURPRISE: new BotStateSurprise(),
         CHANGE_EMOTION_BORED: new BotStateBored(),
-        CHANGE_EMOTION_CAREFUL: new BotStateCareful(),
+        CHANGE_EMOTION_FEAR: new BotStateFear(),
     };
 }

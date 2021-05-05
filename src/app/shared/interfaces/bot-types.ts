@@ -29,7 +29,7 @@ export interface BotCommandList {
     CHANGE_EMOTION_SADNESS: BotCommand;
     CHANGE_EMOTION_SURPRISE: BotCommand;
     CHANGE_EMOTION_BORED: BotCommand;
-    CHANGE_EMOTION_CAREFUL: BotCommand;
+    CHANGE_EMOTION_FEAR: BotCommand;
 }
 
 export type BotCommandKey = keyof BotCommandList;

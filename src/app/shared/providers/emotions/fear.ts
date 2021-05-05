@@ -19,7 +19,7 @@ export const eyebrow: parts.BotCommandEyebrow = {
 };
 
 export const eye: parts.BotCommandEye = {
-    color: Color.CYAN,
+    color: Color.BLACK30,
     width: 100,
     height: 30,
     radius: 100,
@@ -41,7 +41,7 @@ export const lid: parts.BotCommandLid = {
         },
         bot: {
             rotate: -3,
-            closed: 30,
+            closed: 15,
         },
     },
     right: {
@@ -51,7 +51,7 @@ export const lid: parts.BotCommandLid = {
         },
         bot: {
             rotate: 3,
-            closed: 30,
+            closed: 15,
         },
     },
 };
