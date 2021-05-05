@@ -42,20 +42,14 @@ export class ChatService {
         try {
             const emotionRequestDTO = this.serializeEmotionRequest(inputMessage);
             const emotionResponseDTO = await this.sendEmotionRequest(emotionRequestDTO);
-
             const calculateRequestDTO = this.serializeCalculateRequest(currentChatCategorization, emotionResponseDTO);
             const calculateResponseDTO = await this.sendCalculateRequest(calculateRequestDTO);
-
             const messageRequestDTO = this.serializeMessageRequest(inputMessage, calculateResponseDTO);
             const messageResponseDTO = await this.sendMessageRequest(messageRequestDTO);
 
             const newChatResponse = messageResponseDTO.data.response;
             const newChatCategorization = calculateResponseDTO.data.categorization;
             const newChatEmotion = calculateResponseDTO.data.emotion.name;
-
-            console.log(newChatResponse);
-            console.log(newChatCategorization);
-            console.log(newChatEmotion);
 
             this.currentChatCategorization = newChatCategorization;
 
@@ -75,44 +69,8 @@ export class ChatService {
     }
 
     private propagateEmotion(emotion: string): void {
-        // bot
-        // const newChatCommand = this.getNewChatCommand(newChatEmotion);
-        // const serializedMessageRequest = this.serializeMessageRequest(inputMessage, responseEmotion);
-
-        // this.commandService.runCommand(newChatCommand);
-        // return this.commandService.resolveCommand('bot', emotion);
-
-        // console.log(this.commandService.resolveCommand('bot', 'normal'));
-
-        // this.commandService.runCommand('CHANGE_EMOTION_NORMAL' as AnyCommandKey);
-        // this.commandService.runCommand('CHANGE_EMOTION_ANGRY' as AnyCommandKey);
-        // this.commandService.runCommand('CHANGE_EMOTION_SAD' as AnyCommandKey);
-        // this.commandService.runCommand('CHANGE_EMOTION_HAPPY' as AnyCommandKey);
-        // this.commandService.runCommand('CHANGE_EMOTION_BORED' as AnyCommandKey);
-        // this.commandService.runCommand('CHANGE_EMOTION_CAREFUL' as AnyCommandKey);
-        // this.commandService.runCommand('CHANGE_EMOTION_CONFUSED' as AnyCommandKey);
-
-        //   <!-- bot commands -->
-        //   CHANGE_EMOTION_NORMAL
-        //   CHANGE_EMOTION_ANGRY
-        //   CHANGE_EMOTION_SAD
-        //   CHANGE_EMOTION_HAPPY
-        //   CHANGE_EMOTION_BORED
-        //   CHANGE_EMOTION_CAREFUL
-        //   CHANGE_EMOTION_CONFUSED
-
-        //   <!-- wallpaper commands -->
-        //   CHANGE_SCENARIO_FOREST
-        //   CHANGE_SCENARIO_SNOW
-
-        // anger: 0.0,
-        // fear: 0.0,
-        // joy: 0.0,
-        // love: 0.0,
-        // sadness: 0.0,
-        // surprise: 0.0,
-
-        return;
+        const command = this.commandService.resolveCommand('bot', emotion);
+        this.commandService.runCommand(command);
     }
 
     private sendEmotionRequest(emotionRequestDTO: EmotionRequestDTO): Promise<EmotionResponseDTO> {
