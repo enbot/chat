@@ -8,7 +8,6 @@ import { Api } from 'src/app/core/constants/api';
 import { HttpClient } from '@angular/common/http';
 import { TypeSide } from 'src/app/shared/interfaces/metric-types';
 import { ChatBalloonContent } from 'src/app/shared/interfaces/chat-balloon';
-import { AnyCommandKey } from 'src/app/shared/interfaces/command-types';
 
 @Injectable({
     providedIn: 'root'
