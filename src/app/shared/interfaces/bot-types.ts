@@ -25,7 +25,7 @@ export interface BotCommand {
 export interface BotCommandList {
     CHANGE_EMOTION_NORMAL: BotCommand;
     CHANGE_EMOTION_ANGER: BotCommand;
-    CHANGE_EMOTION_HAPPY: BotCommand;
+    CHANGE_EMOTION_JOY: BotCommand;
     CHANGE_EMOTION_SADNESS: BotCommand;
     CHANGE_EMOTION_CONFUSED: BotCommand;
     CHANGE_EMOTION_BORED: BotCommand;
