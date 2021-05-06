@@ -1,14 +1,14 @@
 # Chat
-The chat is the *`front-end`* of the applications that contains all integrations of the api, of the chat and of the emotions visualizations. This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.1.
+Chat is the * `front-end` * of applications that contains both screen functions, such as sending messages and the visualization of the emotions within a robot, as well as the API calls and it's integrations. This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.1.
 
 ## Requirements
-For this application only a basic node and angular setup is necessary:
+For this application basic node and angular setup is necessary:
 * node: `12.8.2` or similar.
 * npm:  `6.14.5` or similar;
 * angular: `10.0.1` or greater.
 
 ## Installation
-Use the package manager [NPM](https://www.npmjs.com/) to install the application dependencies:
+Use the package manager [npm](https://www.npmjs.com/) to install the application dependencies:
 ```bash
 npm install
 ```
@@ -25,12 +25,12 @@ npm start
 ```
 
 ## Build
-To generate a bundle of this project you can use angular build command:
+To generate a bundle of this project you can use the angular build command:
 ```bash
 ng build --prod=true --aot=true
 ```
 
-As always, a npm alias can be called to simplify this command:
+As always, a npm alias can be called to simplify this process:
 ```bash
 npm run build
 ```
