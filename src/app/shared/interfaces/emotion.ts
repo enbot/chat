@@ -12,3 +12,9 @@ export interface EmotionClassification {
     neutral: number;
     positive: number;
 }
+
+export interface MessageInputResult {
+    categorization: EmotionCategorization;
+    emotion: keyof EmotionCategorization;
+    response: string;
+}

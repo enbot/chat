@@ -19,9 +19,7 @@ export class ChatControlsComponent implements OnInit {
     surprise: 0.0,
   };
 
-  constructor(
-    private chatService: ChatService,
-  ) { }
+  constructor(private chatService: ChatService) { }
 
   public ngOnInit(): void {
     this.enableChat();

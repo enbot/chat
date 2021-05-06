@@ -3,11 +3,11 @@ import { Subject } from 'rxjs';
 import { CommandService } from 'src/app/core/services/command.service';
 import { ChatMessage } from 'src/app/shared/models/chat/chat-message';
 import { EmotionRequestDTO, EmotionResponseDTO, CalculateRequestDTO, CalculateResponseDTO, MessageRequestDTO, MessageResponseDTO } from 'src/app/shared/interfaces/chat-requests'; // #
-import { EmotionCategorization } from 'src/app/shared/interfaces/emotion';
+import { EmotionCategorization, MessageInputResult } from 'src/app/shared/interfaces/emotion';
 import { Api } from 'src/app/core/constants/api';
 import { HttpClient } from '@angular/common/http';
-import { TypeSide } from 'src/app/shared/interfaces/metric-types';
 import { ChatBalloonContent } from 'src/app/shared/interfaces/chat-balloon';
+import { TypeSide } from 'src/app/shared/interfaces/metric-types';
 
 @Injectable({
     providedIn: 'root'
@@ -33,37 +33,57 @@ export class ChatService {
         };
     }
 
-    public async input(inputMessage: string): Promise<void> {
-        this.propagateMessage(inputMessage, 'you', 'right', 'standard');
+    public async input(baseMessage: string): Promise<void> {
+        const currentCategorization = this.currentChatCategorization;
+        const messages = baseMessage.split(/[.!?]/).filter(message => !!message);
 
-        const currentChatCategorization = this.currentChatCategorization;
+        const chatResponses: string[] = [];
+        const chatEmotions: string[] = [];
+        const chatErrors: string[] = [];
 
-        try {
-            const emotionRequestDTO = this.serializeEmotionRequest(inputMessage);
-            const emotionResponseDTO = await this.sendEmotionRequest(emotionRequestDTO);
-            const calculateRequestDTO = this.serializeCalculateRequest(currentChatCategorization, emotionResponseDTO);
-            const calculateResponseDTO = await this.sendCalculateRequest(calculateRequestDTO);
-            const messageRequestDTO = this.serializeMessageRequest(inputMessage, calculateResponseDTO);
-            const messageResponseDTO = await this.sendMessageRequest(messageRequestDTO);
+        this.propagateMessage(baseMessage, 'you', 'right');
 
-            const newChatResponse = messageResponseDTO.data.response;
-            const newChatCategorization = calculateResponseDTO.data.categorization;
-            const newChatEmotion = calculateResponseDTO.data.emotion.name;
+        for (const message of messages) {
+            try {
+                const { emotion, response, categorization } = await this.requestChatResponse(message, currentCategorization);
 
-            this.currentChatCategorization = newChatCategorization;
+                this.currentChatCategorization = categorization;
 
-            this.propagateMessage(newChatResponse, 'enbot', 'left', 'standard');
-            this.propagateEmotion(newChatEmotion);
-        } catch (error) {
-            this.propagateError('An internal error happened in my head.', 'enbot', 'left', 'danger');
+                chatResponses.push(response);
+                chatEmotions.push(emotion);
+            } catch (error) {
+                chatErrors.push(error.message);
+            }
         }
+
+        if (chatErrors.length === 0) {
+            this.propagateMessage([...new Set(chatResponses)].join(' '), 'enbot', 'left');
+            this.propagateEmotion(chatEmotions[chatEmotions.length - 1]);
+        } else {
+            this.propagateError('An internal error happened in my head.', 'enbot', 'left');
+        }
+    }
+
+    private async requestChatResponse(message: string, categorization: EmotionCategorization): Promise<MessageInputResult> {
+        const emotionRequestDTO = this.serializeEmotionRequest(message);
+        const emotionResponseDTO = await this.sendEmotionRequest(emotionRequestDTO);
+        const calculateRequestDTO = this.serializeCalculateRequest(categorization, emotionResponseDTO);
+        const calculateResponseDTO = await this.sendCalculateRequest(calculateRequestDTO);
+        const messageRequestDTO = this.serializeMessageRequest(message, calculateResponseDTO);
+        const messageResponseDTO = await this.sendMessageRequest(messageRequestDTO);
+
+        return {
+            categorization: calculateResponseDTO.data.categorization,
+            emotion: calculateResponseDTO.data.emotion.name,
+            response: messageResponseDTO.data.response,
+        };
     }
 
     private propagateMessage(message: string, owner: string, side: TypeSide, content: ChatBalloonContent = 'standard'): void {
         this.onMessage.next(new ChatMessage(message, owner, side, content));
     }
 
-    private propagateError(message: string, owner: string, side: TypeSide, content: ChatBalloonContent = 'standard'): void {
+    private propagateError(message: string, owner: string, side: TypeSide, content: ChatBalloonContent = 'danger'): void {
         this.onError.next(new ChatMessage(message, owner, side, content));
     }
 
