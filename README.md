@@ -1,31 +1,42 @@
-# EnbotChat
+# Chat
+The chat is the *`front-end`* of the applications that contains all integrations of the api, of the chat and of the emotions visualizations. This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.1.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.1.
+## Requirements
+For this application only a basic node and angular setup is necessary:
+* node: `12.8.2` or similar.
+* npm:  `6.14.5` or similar;
+* angular: `10.0.1` or greater.
 
-## Development server
+## Installation
+Use the package manager [NPM](https://www.npmjs.com/) to install the application dependencies:
+```bash
+npm install
+```
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Usage
+Run the angular serve script to start the application locally:
+```bash
+ng serve --open
+```
 
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+You can also call the npm start alias:
+```bash
+npm start
+```
 
 ## Build
+To generate a bundle of this project you can use angular build command:
+```bash
+ng build --prod=true --aot=true
+```
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+As always, a npm alias can be called to simplify this command:
+```bash
+npm run build
+```
 
-## Deploy
+## Contributing
+This application is part of a undergraduate thesis, and the projects will be read-only after they are completed. Unfortunately, no contributions will be accepted.
 
-Run `ng build --prod --base-href /chat/` to build to the correct path. Then, run `npx ngh --branch=gh-pages --dir=dist/chat` to deploy the correct directory to gh-pages branch.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+## License
+[MIT](https://github.com/enbot/chat/blob/master/LICENSE)
