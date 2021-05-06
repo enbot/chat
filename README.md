@@ -1,5 +1,5 @@
 # Chat
-Chat is the * `front-end` * of applications that contains both screen functions, such as sending messages and the visualization of the emotions within a robot, as well as the API calls and it's integrations. This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.1.
+Chat is the `front-end` of applications that contains both screen functions, such as sending messages and the visualization of the emotions within a robot, as well as the API calls and it's integrations. This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.1.
 
 ## Requirements
 For this application basic node and angular setup is necessary:
