@@ -5,6 +5,9 @@
     "ng": "ng",
     "start": "ng serve --open",
     "build": "ng build --prod=true --aot=true",
+    "deploy:build": "ng build --prod --base-href /chat/",
+    "deploy:gitpages": "npx ngh --branch=gh-pages --dir=dist/chat",
+    "deploy": "npm run deploy:build && npm run deploy:gitpages",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
