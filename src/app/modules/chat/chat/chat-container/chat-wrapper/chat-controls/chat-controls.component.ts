@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ChatService } from 'src/app/modules/chat/services/chat.service';
+import { EmotionCategorization } from 'src/app/shared/interfaces/emotion';
 
 @Component({
   selector: 'app-chat-controls',
@@ -10,29 +11,39 @@ export class ChatControlsComponent implements OnInit {
   public message: string;
   public placeholder: string;
   public disabled: boolean;
-  public emotions = {
-    anger: 0.0,
-    fear: 0.0,
-    joy: 0.0,
-    love: 0.0,
-    sadness: 0.0,
-    surprise: 0.0,
-  };
+  private categorization: EmotionCategorization;
 
-  constructor(private chatService: ChatService) { }
+  constructor(
+    private chatService: ChatService,
+  ) {
+    this.categorization = {
+      anger: 0.0,
+      fear: 0.0,
+      joy: 0.0,
+      love: 0.0,
+      sadness: 0.0,
+      surprise: 0.0,
+    };
+  }
 
   public ngOnInit(): void {
     this.enableChat();
+    this.sendDefaultMessage();
   }
 
   public async send(): Promise<void> {
-    const message = this.message;
+    const newMessage = this.message;
+    const newCategorization = this.categorization;
 
-    if (message) {
+    if (newMessage) {
       this.disableChat();
-      await this.chatService.input(message);
+      this.categorization = await this.chatService.input(newMessage, newCategorization);
       this.enableChat();
     }
+  }
+
+  public sendDefaultMessage() {
+    this.chatService.propagateMessage('Hello! I\'m Enbot. Talk to me!', 'enbot', 'left');
   }
 
   public enableChat(): void {

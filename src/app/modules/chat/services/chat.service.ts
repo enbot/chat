@@ -15,7 +15,6 @@ import { TypeSide } from 'src/app/shared/interfaces/metric-types';
 export class ChatService {
     public readonly onMessage: Subject<ChatMessage>;
     public readonly onError: Subject<ChatMessage>;
-    private currentChatCategorization: EmotionCategorization;
 
     constructor(
         private httpClient: HttpClient,
@@ -23,20 +22,12 @@ export class ChatService {
     ) {
         this.onMessage = new Subject();
         this.onError = new Subject();
-        this.currentChatCategorization = {
-            anger: 0.0,
-            fear: 0.0,
-            joy: 0.0,
-            love: 0.0,
-            sadness: 0.0,
-            surprise: 0.0,
-        };
     }
 
-    public async input(baseMessage: string): Promise<void> {
-        const currentCategorization = this.currentChatCategorization;
+    public async input(baseMessage: string, currentCategorization: EmotionCategorization): Promise<EmotionCategorization> {
         const messages = baseMessage.split(/[.!?]/).filter(message => !!message);
 
+        const chatCategorizations: EmotionCategorization[] = [];
         const chatResponses: string[] = [];
         const chatEmotions: string[] = [];
         const chatErrors: string[] = [];
@@ -47,8 +38,7 @@ export class ChatService {
             try {
                 const { emotion, response, categorization } = await this.requestChatResponse(message, currentCategorization);
 
-                this.currentChatCategorization = categorization;
-
+                chatCategorizations.push(categorization);
                 chatResponses.push(response);
                 chatEmotions.push(emotion);
             } catch (error) {
@@ -59,8 +49,10 @@ export class ChatService {
         if (chatErrors.length === 0) {
             this.propagateMessage([...new Set(chatResponses)].join(' '), 'enbot', 'left');
             this.propagateEmotion(chatEmotions[chatEmotions.length - 1]);
+            return chatCategorizations[chatCategorizations.length - 1]
         } else {
             this.propagateError('An internal error happened in my head.', 'enbot', 'left');
+            return currentCategorization;
         }
     }
 
@@ -79,15 +71,15 @@ export class ChatService {
         };
     }
 
-    private propagateMessage(message: string, owner: string, side: TypeSide, content: ChatBalloonContent = 'standard'): void {
+    public propagateMessage(message: string, owner: string, side: TypeSide, content: ChatBalloonContent = 'standard'): void {
         this.onMessage.next(new ChatMessage(message, owner, side, content));
     }
 
-    private propagateError(message: string, owner: string, side: TypeSide, content: ChatBalloonContent = 'danger'): void {
+    public propagateError(message: string, owner: string, side: TypeSide, content: ChatBalloonContent = 'danger'): void {
         this.onError.next(new ChatMessage(message, owner, side, content));
     }
 
-    private propagateEmotion(emotion: string): void {
+    public propagateEmotion(emotion: string): void {
         const command = this.commandService.resolveCommand('bot', emotion);
         this.commandService.runCommand(command);
     }
